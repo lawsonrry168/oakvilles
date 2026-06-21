@@ -22,11 +22,17 @@
 
   {% set imgH = ogImageHeight %}
 
+{% elif 'og-home-1200' in seoImage %}
+
+  {% set imgW = 1200 %}
+
+  {% set imgH = 630 %}
+
 {% elif 'og-home' in seoImage %}
 
-  {% set imgW = site.heroOgImageWidth %}
+  {% set imgW = 1024 %}
 
-  {% set imgH = site.heroOgImageHeight %}
+  {% set imgH = 686 %}
 
 {% elif '/og/' in seoImage %}
 

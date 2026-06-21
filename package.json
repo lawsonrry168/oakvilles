@@ -6,6 +6,7 @@
     "build:images": "node scripts/optimize-images.mjs",
     "build:favicons": "node scripts/generate-favicons.mjs",
     "build:site": "eleventy && node scripts/clean-stale-index.mjs",
+    "build:deploy": "npm run build:js && npm run build:images && npm run build:site",
     "build": "npm run build:js && npm run build:favicons && npm run build:images && npm run build:site",
     "seo": "python scripts/seo-enhance.py",
     "audit:layout": "node scripts/layout-audit.mjs",

@@ -590,9 +590,16 @@ html[lang="en"] .df-form-card__title{ font-family:"Noto Serif",Georgia,"Times Ne
   font-size:11px; line-height:1.7; letter-spacing:.04em; color:rgba(247,242,231,.38); max-width:72ch; }
 
 /* ═══════════════════  WA FLOAT  ═══════════════════ */
-.df-wa-float{ position:fixed; bottom:24px; right:24px; z-index:50; width:56px; height:56px;
+.df-wa-float{
+  position:fixed; bottom:calc(24px + env(safe-area-inset-bottom, 0px)); right:24px; z-index:50;
+  width:56px; height:56px;
   display:grid; place-items:center; background:var(--pine); color:var(--paper); border-radius:50%;
-  box-shadow:0 14px 30px -10px rgba(22,39,31,.7); transition:transform .3s; }
+  box-shadow:0 14px 30px -10px rgba(22,39,31,.7);
+  transition:bottom .28s ease, transform .3s;
+}
+@media(max-width:1023px){
+  .df-wa-float{ right:16px; }
+}
 .df-wa-float:hover{ transform:scale(1.05); }
 .df-wa-float:active{ transform:scale(.95); }
 .df-wa-float svg{ width:26px; height:26px; }

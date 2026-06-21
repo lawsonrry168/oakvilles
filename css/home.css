@@ -140,19 +140,36 @@ html[lang="en"] .df-home-hero__type-en-brand--in-main{
   z-index:0;
   pointer-events:none;
 }
+html[lang="en"] .df-home-hero__main{
+  position:relative;
+}
 html[lang="en"] .df-home-hero__main > :not(.df-home-hero__type-en-brand--in-main){
   position:relative;
   z-index:1;
 }
 @media(max-width:767px){
   html[lang="en"] .df-home-hero__type-en-brand--in-main{
-    opacity:.32;
-    font-size:clamp(2rem, 6.5vw, 2.75rem);
-    top:calc(0.75em + 20px);
+    left:50%;
+    top:46%;
+    transform:translate(-50%, -50%) rotate(-2deg);
+    opacity:1;
+    font-size:clamp(2.35rem, 12.5vw, 3.25rem);
+    width:min(92vw, 360px);
+    align-items:center;
+    text-align:center;
+    color:rgba(42,70,60,.16);
+  }
+  html[lang="en"] .df-home-hero__type-en-brand--in-main .df-home-hero__type-en-brand__line--accent{
+    color:rgba(162,58,46,.13);
+    padding-left:0;
   }
 }
 @media(max-width:479px){
-  html[lang="en"] .df-home-hero__type-en-brand--in-main{ display:none; }
+  html[lang="en"] .df-home-hero__type-en-brand--in-main{
+    font-size:clamp(2rem, 11vw, 2.75rem);
+    top:44%;
+    color:rgba(42,70,60,.15);
+  }
 }
 @media(min-width:768px){
   html[lang="en"] .df-home-hero__type-en-brand--in-main{ top:calc(1em + 36px); }
@@ -259,14 +276,6 @@ html[lang="en"] .df-home-hero__main > :not(.df-home-hero__type-en-brand--in-main
     width:min(70vw, 380px);
     font-size:clamp(4.2rem, 20vw, 6.5rem);
   }
-  html[lang="en"] .df-home-hero__type-en-brand--in-main,
-  html[lang="en"] .df-home-hero__type-en-brand{
-    width:auto;
-    max-width:min(88vw, 380px);
-    font-size:clamp(2.2rem, 11vw, 3.6rem);
-    align-items:flex-start;
-    text-align:left;
-  }
   .df-home-hero__type-en--side{
     right:10px;
     left:auto;
@@ -276,6 +285,16 @@ html[lang="en"] .df-home-hero__main > :not(.df-home-hero__type-en-brand--in-main
     writing-mode:horizontal-tb;
     letter-spacing:.32em;
     font-size:10px;
+  }
+}
+@media(min-width:768px) and (max-width:1023px){
+  html[lang="en"] .df-home-hero__type-en-brand--in-main,
+  html[lang="en"] .df-home-hero__type-en-brand{
+    width:auto;
+    max-width:min(88vw, 380px);
+    font-size:clamp(2.2rem, 11vw, 3.6rem);
+    align-items:flex-start;
+    text-align:left;
   }
 }
 @media(max-width:639px){
@@ -1011,6 +1030,7 @@ html[lang="en"] .df-home-creed__watermark{
   border-top:1px solid var(--line);
   box-shadow:0 -8px 32px -12px rgba(22,39,31,.25);
 }
+.df-sticky-cta[hidden]{ display:none !important; }
 @media(min-width:1024px){ .df-sticky-cta{ display:none !important; } }
 .df-sticky-cta__btn{
   flex:1; min-height:48px; display:inline-flex; align-items:center; justify-content:center;
@@ -1036,8 +1056,10 @@ html[lang="en"] .df-home-calc__label{
   background:#1F7A4D; color:#fff;
 }
 @media(max-width:1023px){
-  body.sticky-cta-visible .df-wa-float{
-    visibility:hidden; pointer-events:none;
+  body.sticky-cta-visible .df-wa-float,
+  body:has(.df-sticky-cta:not([hidden])) .df-wa-float{
+    bottom:calc(84px + env(safe-area-inset-bottom, 0px));
+    z-index:51;
   }
   body.sticky-cta-visible{
     padding-bottom:calc(80px + env(safe-area-inset-bottom, 0px));

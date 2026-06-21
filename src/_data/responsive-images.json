@@ -136,6 +136,15 @@
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
   },
+  "/images/og/logo.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/logo-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
   "/images/og/og-blog.png": {
     "webp": [
       {
@@ -149,6 +158,15 @@
     "webp": [
       {
         "url": "/images/og/og-default-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-home-1200.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-home-1200-640.webp",
         "width": 640
       }
     ],

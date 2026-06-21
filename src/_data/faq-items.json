@@ -1,0 +1,246 @@
+﻿{
+  "zh": [
+    {
+      "q": "如何預約伍醫師診症？",
+      "a": "最方便的方式是直接 WhatsApp 我們（+852 6734 9532），告知您的姓名、希望診症的問題及偏好日期。我們會在一個工作日內確認預約時間。您也可以致電診所或填寫網站預約表格。"
+    },
+    {
+      "q": "需要提前多久預約？",
+      "a": "一般建議提前 1–2 天預約，以確保有合適時段。如屬急症痛症，可 WhatsApp 查詢當日是否有空缺，我們會盡力安排。"
+    },
+    {
+      "q": "如需取消或改期，應如何處理？",
+      "a": "請提前至少 24 小時以 WhatsApp 或電話通知我們，以便安排其他病人。我們理解突發情況，如有急事請盡早聯絡。"
+    },
+    {
+      "q": "首次到診需要準備什麼？",
+      "a": "請提早 5 分鐘到達填寫健康資料表。如有以下資料請一併攜帶：西醫報告或診斷書、正在服用的藥物清單（包括西藥及保健品）、化驗或影像報告（如 X 光、MRI）。首診當天建議穿著寬鬆衣物，方便檢查。"
+    },
+    {
+      "q": "針灸會痛嗎？",
+      "a": "大多數人形容針灸是輕微的酸麻脹感，而非劇痛。使用的是極細的毫針（比普通注射針頭細得多），進針瞬間可能有輕微刺感，之後留針時一般很舒適，很多人甚至在留針期間入睡。初次嘗試如有緊張，請告知醫師，會調整手法讓您更舒適。"
+    },
+    {
+      "q": "針灸用的針是否一次性？安全嗎？",
+      "a": "我們使用符合國際標準的一次性無菌毫針，每位病人用後即棄，不會重複使用。安全衛生是我們診所的基本標準。"
+    },
+    {
+      "q": "針灸後有什麼注意事項？",
+      "a": "針灸後建議：避免劇烈運動 2 小時；多喝暖水；當日避免飲酒；針孔部位避免沾水約 4 小時；如有輕微瘀青屬正常，一般數天自然消退。"
+    },
+    {
+      "q": "孕婦可以接受針灸嗎？",
+      "a": "懷孕期間的針灸需要特別謹慎，某些穴位孕婦禁用。如您懷孕，請在預約時說明，伍醫師會評估是否適合及調整針灸方案。整體而言，有經驗的中醫師為孕婦針灸是有一定實踐的，但務必事先告知。"
+    },
+    {
+      "q": "中藥有副作用嗎？",
+      "a": "在合資格中醫師處方及監督下，中藥一般耐受良好。伍醫師會根據您的體質精心配製，避免使用可能引起不適的藥材。服藥初期個別人士可能有短暫腸胃反應，如有不適應立即聯絡醫師調整處方。"
+    },
+    {
+      "q": "中藥可以與西藥同時服用嗎？",
+      "a": "部分中藥與西藥同服可能產生相互作用，需要謹慎處理。請在首診時告知伍醫師您正在服用的所有藥物（包括保健品），醫師會評估並建議合適的服藥時間間隔（一般建議中西藥相隔至少 1 小時）。"
+    },
+    {
+      "q": "中藥很難喝嗎？有其他形式嗎？",
+      "a": "傳統煎藥湯劑口感因藥方而異，部分較苦澀。我們也提供沖劑形式（已萃取濃縮），服用更方便。請告知醫師您的偏好，會盡量配合。"
+    },
+    {
+      "q": "需要幾次療程才有效果？",
+      "a": "療程次數因病症性質及個人體質而異。急性痛症一般 3–5 次有明顯改善；慢性問題（如濕疹、月經失調）通常需要 1–3 個月持續調理。伍醫師會在首診後給出更具體的療程建議，並定期評估進展。"
+    },
+    {
+      "q": "中醫可以治療我的問題嗎？",
+      "a": "中醫對很多問題都有調理空間，特別是慢性病、功能性問題及體質調整。痛症、皮膚病、婦科問題、失眠等是常見就診範疇。如您不確定中醫是否適合您的情況，歡迎先 WhatsApp 描述症狀，我們初步評估後給您建議。"
+    },
+    {
+      "q": "中醫治療和西醫可以同時進行嗎？",
+      "a": "中西醫結合治療在許多情況下效果更佳，尤其是慢性病管理。請告知伍醫師您正在接受的西醫治療，讓醫師全面了解您的情況，制定最合適的中醫輔助方案。一般不建議私自停止西醫處方藥物。"
+    },
+    {
+      "q": "兒童可以接受中醫治療嗎？",
+      "a": "兒童可以接受中醫治療，但藥方劑量和針灸手法需要相應調整。如為兒童預約，請在預約時說明年齡，伍醫師會評估並制定適合的方案。"
+    },
+    {
+      "q": "診所位於哪裡？交通方便嗎？",
+      "a": "診所位於香港中環皇后大道中 176A–176F 號錦安大廈 6 樓 602 室，鄰近中環港鐵站及各主要巴士路線，步行約 5–8 分鐘。詳見中環中醫診所及診所環境頁面。"
+    },
+    {
+      "q": "診所環境如何？是否注重私隱？",
+      "a": "頤安本草以高私密、禪意寧靜為設計理念，設有獨立診症空間，候診人數受控，確保每次面診有充足時間。歡迎瀏覽診所環境實景照片。"
+    },
+    {
+      "q": "營業時間是什麼？",
+      "a": "週一至五 10:30–19:30；週六 10:30–17:30；週日及公眾假期休診。最新調整請留意最新消息。"
+    },
+    {
+      "q": "伍厚臻醫師的資歷如何？",
+      "a": "伍厚臻為香港註冊中醫師（註冊編號 003769），畢業於廣州中醫藥大學及廈門大學針灸學，擁有二十五年香港執業經驗，Google 地圖評價 5.0 / 5（3 則真實好評）。詳見關於伍醫師。"
+    },
+    {
+      "q": "是否可以使用醫療保險索償？",
+      "a": "本診所為註冊中醫師門診，可發出正式收據。部分公司團體醫療保險計劃接受中醫診症索償，請預約時告知，並向您的保險公司確認保障範圍。"
+    },
+    {
+      "q": "中藥是否安全？",
+      "a": "本診所選用符合規範的中藥材及濃縮沖劑，由註冊中醫師按體質處方，一人一方。處方前會說明用藥方向及注意事項。詳見中藥處方。"
+    },
+    {
+      "q": "中醫可以治療濕疹嗎？",
+      "a": "可以。中醫認為濕疹多與脾虛濕盛、血熱有關，以內服中藥調理體質，配合外用及針灸，從根本減少復發。詳見濕疹中醫治療及養生專欄。"
+    },
+    {
+      "q": "暗瘡要治多久才見效？",
+      "a": "視乎暗瘡類型及體質，一般 4–8 週可見皮損改善，慢性或荷爾蒙暗瘡需 2–3 個月調理。伍醫師會在首診評估後給出具體預期。參考暗瘡中醫治療。"
+    },
+    {
+      "q": "中醫治皮膚是否需要停用類固醇？",
+      "a": "不建議自行突然停用。請告知醫師目前使用的西藥或類固醇藥膏，伍醫師會制定漸進式過渡方案，在控制症狀的同時調理體質，避免反彈。"
+    },
+    {
+      "q": "中醫如何調理不孕或備孕？",
+      "a": "透過滋腎填精、調理衝任的中藥，配合任督脈針灸，改善卵巢功能及子宮環境。壓力型難孕體質一般需 3–9 個月調理。詳見不孕備孕調理。"
+    },
+    {
+      "q": "月經不調中醫要調多久？",
+      "a": "一般建議至少跟進 2–3 個月經週期，按週期階段調整方藥。痛經、PCOS 等問題需視個案而定，首診後伍醫師會說明預期療程。"
+    },
+    {
+      "q": "頸痛、坐骨神經痛中醫有效嗎？",
+      "a": "針灸配合推拿常用於痛症調理，可疏通經絡、緩解肌肉緊張。急性痛症部分個案 3–5 次後可見改善；慢性問題需配合中藥調理，效果因人而異。參考頸痛、坐骨神經痛專頁。"
+    },
+    {
+      "q": "針灸減肥有效嗎？",
+      "a": "針灸減肥需配合體質辨證及中藥調理，針對代謝、食慾及水腫等問題，屬健康減重而非快速瘦身。詳見針灸療法頁面。"
+    },
+    {
+      "q": "診金及中藥費用如何計算？",
+      "a": "診金、針灸及中藥分項計算，首診前會說明預計費用。完整價目及流程請見流程與收費，或 WhatsApp 查詢。"
+    },
+    {
+      "q": "接受哪些付款方式？",
+      "a": "接受現金、轉數快（FPS）、八達通及信用卡（請查詢）。診畢即付，中藥費另計。"
+    },
+    {
+      "q": "首次到診有優惠嗎？",
+      "a": "首診享有延長問診時間，進行詳細四診體質評估。具體優惠請 WhatsApp 查詢或留意最新消息。"
+    }
+  ],
+  "en": [
+    {
+      "q": "How do I book a consultation with Dr. Ng?",
+      "a": "The easiest way is WhatsApp (+852 6734 9532) with your name, main concern and preferred date. We confirm within one business day. You can also call the clinic or use the online booking form."
+    },
+    {
+      "q": "How far in advance should I book?",
+      "a": "We recommend booking 1–2 days ahead for your preferred time slot. For acute pain, WhatsApp to check same-day availability — we will try to accommodate."
+    },
+    {
+      "q": "What should I bring to my first visit?",
+      "a": "Arrive five minutes early to complete a health form. Bring any Western medical reports, medication lists (including supplements) and lab or imaging results if available. Wear loose, comfortable clothing for examination."
+    },
+    {
+      "q": "How do I cancel or reschedule?",
+      "a": "Please notify us at least 24 hours in advance via WhatsApp or phone so we can offer the slot to another patient. We understand emergencies — contact us as early as possible."
+    },
+    {
+      "q": "Does acupuncture hurt?",
+      "a": "Most people describe a mild aching, tingling or heavy sensation rather than sharp pain. We use very fine needles — much thinner than injection needles. There may be a brief prick on insertion; during retention most patients find it comfortable, and many rest or fall asleep. Let Dr. Ng know if you are nervous — he can adjust his technique."
+    },
+    {
+      "q": "Are the needles single-use and sterile?",
+      "a": "Yes. We use internationally standard single-use sterile needles, disposed of immediately after each patient. Hygiene and safety are fundamental to our practice."
+    },
+    {
+      "q": "What should I do after acupuncture?",
+      "a": "Avoid strenuous exercise for about 2 hours; drink warm water; avoid alcohol on the day; keep needle sites dry for about 4 hours. Mild bruising is normal and usually fades within a few days."
+    },
+    {
+      "q": "Can pregnant women receive acupuncture?",
+      "a": "Acupuncture during pregnancy requires special care — certain points are contraindicated. Please inform us when booking if you are pregnant; Dr. Ng will assess suitability and adjust the treatment plan accordingly."
+    },
+    {
+      "q": "Are there reactions to herbal medicine?",
+      "a": "Under the supervision of a qualified practitioner, herbal medicine is generally well tolerated. Dr. Ng prescribes according to your constitution and avoids ingredients that may cause discomfort. Some people experience brief digestive adjustment when starting — contact us promptly if you have any concerns so your formula can be adjusted."
+    },
+    {
+      "q": "Can I take herbs alongside Western medication?",
+      "a": "Some herbs may interact with Western drugs and require careful management. Tell Dr. Ng about all medications and supplements at your first visit. He will advise on appropriate timing — typically at least one hour apart from Western medication."
+    },
+    {
+      "q": "Are there alternatives to decoctions?",
+      "a": "Traditional decoctions vary in taste — some are bitter. We also offer concentrated granule formulas for easier preparation. Let Dr. Ng know your preference and he will accommodate where possible."
+    },
+    {
+      "q": "How many sessions before I see results?",
+      "a": "This varies by condition and constitution. Acute pain may show improvement within 3–5 sessions for some patients; chronic issues such as eczema or irregular periods often need 1–3 months of sustained care. Dr. Ng will outline expectations at your first visit and review progress at follow-ups. Results vary individually."
+    },
+    {
+      "q": "Can TCM help with my condition?",
+      "a": "TCM may support many chronic, functional and constitution-related concerns — pain, skin conditions, gynaecological issues and insomnia are common reasons for consultation. If you are unsure whether TCM is suitable, WhatsApp us with a brief description and we can offer initial guidance."
+    },
+    {
+      "q": "Can I combine TCM with Western medicine?",
+      "a": "Integrative care is common, especially for chronic conditions. Inform Dr. Ng of any Western treatments you are receiving. Do not stop prescribed Western medication without consulting your doctor."
+    },
+    {
+      "q": "Can children receive TCM treatment?",
+      "a": "Yes, with adjusted dosages and techniques. Please mention the child's age when booking so Dr. Ng can plan appropriately."
+    },
+    {
+      "q": "Where is the clinic and how do I get there?",
+      "a": "Unit 602, 6/F, Kam On Building, 176A–176F Queen's Road Central, Central, Hong Kong — approx. 3–5 minutes from Sheung Wan MTR Exit E2. See our Central clinic and clinic environment pages for details."
+    },
+    {
+      "q": "Is the clinic private?",
+      "a": "Oakville Wellness is designed for privacy and calm — separate consultation spaces with controlled waiting numbers so each visit has adequate time. Browse clinic photos for a preview."
+    },
+    {
+      "q": "What are the opening hours?",
+      "a": "Monday–Friday 10:30–19:30; Saturday 10:30–17:30; closed Sundays and public holidays. Check news for any schedule updates."
+    },
+    {
+      "q": "What are Dr. Ng's qualifications?",
+      "a": "Dr. Ng Hau Chun is a Registered Chinese Medicine Practitioner (003769), graduate of Guangzhou University of Chinese Medicine and Xiamen University (acupuncture), with twenty-five years of practice in Hong Kong and a Google Maps rating of 5.0 / 5 (3 verified reviews). See About Dr. Ng."
+    },
+    {
+      "q": "Can I claim medical insurance?",
+      "a": "We issue official receipts for registered CMP consultations. Some corporate medical plans cover TCM — please confirm with your insurer and let us know when booking."
+    },
+    {
+      "q": "Can TCM support eczema?",
+      "a": "TCM views eczema as often linked to spleen deficiency, dampness and blood heat. Internal herbs, topical care and acupuncture may help manage symptoms and reduce recurrence over time. See eczema care for more."
+    },
+    {
+      "q": "How long for acne to improve?",
+      "a": "Depending on acne type and constitution, some patients notice skin changes within 4–8 weeks; hormonal or chronic acne may need 2–3 months. Dr. Ng will set expectations at your first visit. See acne care."
+    },
+    {
+      "q": "Should I stop steroid creams for TCM skin care?",
+      "a": "Do not stop steroids abruptly on your own. Tell Dr. Ng what you are currently using — he can plan a gradual transition while managing symptoms and supporting constitution, to reduce rebound flare-ups."
+    },
+    {
+      "q": "How does TCM support fertility and preconception?",
+      "a": "Through kidney-nourishing and Chong-Ren-regulating herbs with Ren and Du meridian acupuncture to support ovarian function and uterine health. Stress-related subfertility often involves 3–9 months of care. See fertility support."
+    },
+    {
+      "q": "How long for irregular periods?",
+      "a": "We typically recommend at least 2–3 menstrual cycles of follow-up, adjusting formulas by cycle phase. Duration for dysmenorrhoea or PCOS varies — Dr. Ng will explain at your first consultation."
+    },
+    {
+      "q": "Can TCM help neck pain and sciatica?",
+      "a": "Acupuncture and tuina are commonly used to unblock meridians and ease muscle tension. Some acute cases improve within 3–5 sessions; chronic pain may benefit from combined herbal care. Results vary. See neck pain and sciatica."
+    },
+    {
+      "q": "Can acupuncture support metabolic wellness?",
+      "a": "Constitution-based acupuncture may support appetite regulation, digestion and fluid balance as part of overall care, combined with herbs and dietary guidance where appropriate. It is not a substitute for medical weight-loss treatment and results vary. See acupuncture services."
+    },
+    {
+      "q": "How are consultation and herb fees calculated?",
+      "a": "Consultation, acupuncture and herbs are itemised separately; estimated costs are explained before treatment. Full details on our process & fees page, or WhatsApp for a quote."
+    },
+    {
+      "q": "What payment methods do you accept?",
+      "a": "Cash, FPS, Octopus and credit card (please enquire). Payment is due after each visit; herbal fees are additional."
+    }
+  ]
+}

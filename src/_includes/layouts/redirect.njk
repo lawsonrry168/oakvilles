@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <title>{{ title }}</title>
+  <link rel="canonical" href="{{ canonical }}">
+  <meta http-equiv="refresh" content="0;url={{ redirectTo }}">
+  <script>location.replace("{{ redirectTo }}");</script>
+</head>
+<body>
+  <p>此頁面已移至 <a href="{{ redirectTo }}">{{ redirectLabel }}</a>。</p>
+</body>
+</html>

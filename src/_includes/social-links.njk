@@ -1,0 +1,23 @@
+{# IG + FB — use site.instagram / site.facebook from _data #}
+{% set style = socialStyle | default('text') %}
+
+{% if style == 'icons' %}
+<div class="df-social df-social--icons" aria-label="{% if locale == 'en' %}Social media{% else %}社交媒體{% endif %}">
+  <a href="{{ site.instagram }}" target="_blank" rel="noopener noreferrer" class="df-social__icon" aria-label="Instagram · {{ site.instagramHandle }}">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  </a>
+  <a href="{{ site.facebook }}" target="_blank" rel="noopener noreferrer" class="df-social__icon" aria-label="Facebook · {{ site.facebookHandle }}">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h2.8l.7-3H13v-2c0-.6.4-1 1-1z"/></svg>
+  </a>
+</div>
+{% elif style == 'contact' %}
+<p class="df-social df-social--contact">
+  <a href="{{ site.instagram }}" target="_blank" rel="noopener noreferrer">Instagram · {{ site.instagramHandle }}</a><br>
+  <a href="{{ site.facebook }}" target="_blank" rel="noopener noreferrer">Facebook · {{ site.facebookHandle }}</a>
+</p>
+{% else %}
+<div class="df-social df-social--text">
+  <a href="{{ site.instagram }}" target="_blank" rel="noopener noreferrer" class="ink-link">{{ site.instagramHandle }} →</a>
+  <a href="{{ site.facebook }}" target="_blank" rel="noopener noreferrer" class="ink-link">Facebook →</a>
+</div>
+{% endif %}

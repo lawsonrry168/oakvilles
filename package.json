@@ -1,0 +1,22 @@
+{
+  "name": "oakvilles",
+  "private": true,
+  "scripts": {
+    "build:js": "esbuild js/src/dongfang.js js/src/home.js --bundle --outdir=js --minify",
+    "build:images": "node scripts/optimize-images.mjs",
+    "build:favicons": "node scripts/generate-favicons.mjs",
+    "build:site": "eleventy && node scripts/clean-stale-index.mjs",
+    "build": "npm run build:js && npm run build:favicons && npm run build:images && npm run build:site",
+    "seo": "python scripts/seo-enhance.py",
+    "audit:layout": "node scripts/layout-audit.mjs",
+    "dev": "npm run build:js && eleventy --serve --port=3010",
+    "preview": "npm run build && npx --yes serve _site --listen 3010",
+    "watch:js": "esbuild js/src/dongfang.js js/src/home.js --bundle --outdir=js --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "esbuild": "^0.25.0",
+    "puppeteer": "^25.1.0",
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "/images/blog-acne.png": {
+    "webp": [
+      {
+        "url": "/images/blog-acne-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/blog-eczema.png": {
+    "webp": [
+      {
+        "url": "/images/blog-eczema-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/blog-eczema-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/blog-fertility.png": {
+    "webp": [
+      {
+        "url": "/images/blog-fertility-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/blog-fertility-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/blog-insomnia.png": {
+    "webp": [
+      {
+        "url": "/images/blog-insomnia-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/blog-insomnia-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/conditions/acne.png": {
+    "webp": [
+      {
+        "url": "/images/conditions/acne-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/conditions/neck-pain.png": {
+    "webp": [
+      {
+        "url": "/images/conditions/neck-pain-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/conditions/sciatica.png": {
+    "webp": [
+      {
+        "url": "/images/conditions/sciatica-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/doctor-2.jpeg": {
+    "webp": [
+      {
+        "url": "/images/doctor-2-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/doctor-3.jpeg": {
+    "webp": [
+      {
+        "url": "/images/doctor-3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/doctor-3-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/doctor-4.jpeg": {
+    "webp": [
+      {
+        "url": "/images/doctor-4-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/doctor-5.jpeg": {
+    "webp": [
+      {
+        "url": "/images/doctor-5-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/logo.png": {
+    "webp": [
+      {
+        "url": "/images/logo-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/office-1.jpg": {
+    "webp": [
+      {
+        "url": "/images/office-1-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/office-1-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-blog.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-blog-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-default.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-default-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-home.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-home-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-process.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-process-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/process/step-01-booking.png": {
+    "webp": [
+      {
+        "url": "/images/process/step-01-booking-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/process/step-02-checkin.png": {
+    "webp": [
+      {
+        "url": "/images/process/step-02-checkin-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/process/step-03-diagnosis.png": {
+    "webp": [
+      {
+        "url": "/images/process/step-03-diagnosis-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/process/step-04-plan.png": {
+    "webp": [
+      {
+        "url": "/images/process/step-04-plan-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/process/step-05-treatment.png": {
+    "webp": [
+      {
+        "url": "/images/process/step-05-treatment-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/process/step-06-followup.png": {
+    "webp": [
+      {
+        "url": "/images/process/step-06-followup-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/acupuncture-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/acupuncture-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/cupping-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/cupping-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/gynaecology-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/gynaecology-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/herbs-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/herbs-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/internal-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/internal-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/moxibustion-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/moxibustion-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/pain-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/pain-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/services/skin-hero.png": {
+    "webp": [
+      {
+        "url": "/images/services/skin-hero-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-1.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-1-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-10.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-10-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-2.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-2-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/shop-2-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-3.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-3-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/shop-3-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-4.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-4-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-5.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-5-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-6.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-6-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-7.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-7-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-8.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-8-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/shop-9.jpeg": {
+    "webp": [
+      {
+        "url": "/images/shop-9-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  }
+}

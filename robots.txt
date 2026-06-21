@@ -1,0 +1,32 @@
+# 頤安本草 · 伍厚臻中醫師 — oakvilles.com
+# 香港中環註冊中醫診所 | SEO · GEO · AI 索引
+
+User-agent: *
+Allow: /
+Disallow: /archive/
+
+# 生成式引擎 / AI 檢索（GEO）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# 站點地圖與 LLM 摘要
+Sitemap: https://oakvilles.com/sitemap.xml
+# LLMs: https://oakvilles.com/llms.txt

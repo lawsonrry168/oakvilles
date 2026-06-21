@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="{{ lang | default(site.lang) }}">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style id="df-critical">html,body{margin:0;background:#F7F2E7;color:#23201B}#top .reveal,.reveal.in{opacity:1!important;transform:none!important}</style>
+
+<title>{{ title }}</title>
+
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+
+{% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+
+{% include "favicon.njk" %}
+
+{% include "seo-head.njk" %}
+
+<meta name="theme-color" content="#2A463C">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{% if locale == 'en' %}
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+{% else %}
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Ma+Shan+Zheng&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+{% endif %}
+
+<link rel="stylesheet" href="/css/dongfang.css">
+
+{% if extraCss %}<link rel="stylesheet" href="/css/{{ extraCss }}">{% endif %}
+
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+{% if schema %}
+
+<script type="application/ld+json">
+
+{{ schema | safe }}
+
+</script>
+
+{% endif %}
+
+</head>
+
+<body{% if bodyClass %} class="{{ bodyClass }}{% if locale == 'en' %} lang-en{% endif %}"{% elif locale == 'en' %} class="lang-en"{% endif %} data-locale="{{ locale | default('zh') }}">
+
+
+
+{% include "nav.njk" %}
+
+
+
+{{ content | safe }}
+
+
+
+{% include "footer.njk" %}
+
+{% if stickyCta %}{% include "sticky-cta.njk" %}{% endif %}
+
+{% include "wa-float.njk" %}
+
+{% include "scripts.njk" %}
+
+</body>
+
+</html>
+

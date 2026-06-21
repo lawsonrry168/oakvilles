@@ -1,0 +1,889 @@
+{
+  "total": 58,
+  "byCluster": {
+    "home": 2,
+    "service": 18,
+    "condition": 12,
+    "blog": 10,
+    "news": 4,
+    "core": 12
+  },
+  "rows": [
+    {
+      "file": "src/about/central-hk.html",
+      "url": "/about/central-hk.html",
+      "title": "中環中醫診所頤安本草｜香港中環 · 伍厚臻中醫師",
+      "titleLen": 24,
+      "metaLen": 124,
+      "h1": "中環中醫診所頤安本草",
+      "h2": 5,
+      "links": 3,
+      "words": 1176,
+      "eczemaHits": 2,
+      "issues": [
+        "title-len:24"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/about.html",
+      "url": "/about.html",
+      "title": "關於伍厚臻醫師 · 頤安本草 | 香港中環 · 25年臨床",
+      "titleLen": 29,
+      "metaLen": 149,
+      "h1": "伍厚臻中醫師",
+      "h2": 5,
+      "links": 3,
+      "words": 1092,
+      "eczemaHits": 4,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/blog/acne-face-zones.html",
+      "url": "/blog/acne-face-zones.html",
+      "title": "暗瘡位置與臟腑關係 · 中醫面部分區｜伍厚臻中醫師",
+      "titleLen": 25,
+      "metaLen": 127,
+      "h1": "暗瘡位置與臟腑關係",
+      "h2": 7,
+      "links": 7,
+      "words": 1030,
+      "eczemaHits": 1,
+      "issues": [
+        "title-len:25"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/blog/eczema-from-within.html",
+      "url": "/blog/eczema-from-within.html",
+      "title": "濕疹為何要從內調？中醫內外同治｜伍厚臻中醫師",
+      "titleLen": 22,
+      "metaLen": 130,
+      "h1": "濕疹為何要從內調？",
+      "h2": 5,
+      "links": 7,
+      "words": 1044,
+      "eczemaHits": 17,
+      "issues": [
+        "title-len:22"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/blog/fertility-stress.html",
+      "url": "/blog/fertility-stress.html",
+      "title": "壓力型難孕體質調理 · 中醫備孕｜伍厚臻中醫師",
+      "titleLen": 23,
+      "metaLen": 130,
+      "h1": "壓力型難孕體質調理",
+      "h2": 6,
+      "links": 7,
+      "words": 1139,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:23"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/blog/index.html",
+      "url": "/blog/",
+      "title": "養生專欄 · 中醫健康知識｜香港中環 · 伍厚臻中醫師",
+      "titleLen": 27,
+      "metaLen": 129,
+      "h1": "養生專欄",
+      "h2": 3,
+      "links": 11,
+      "words": 555,
+      "eczemaHits": 6,
+      "issues": [
+        "title-len:27"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/blog/insomnia-tcm-guide.html",
+      "url": "/blog/insomnia-tcm-guide.html",
+      "title": "失眠中醫分型 · 心腎不交與肝鬱化火｜伍厚臻中醫師",
+      "titleLen": 25,
+      "metaLen": 128,
+      "h1": "失眠中醫分型調理",
+      "h2": 7,
+      "links": 7,
+      "words": 1066,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:25"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/clinic.html",
+      "url": "/clinic.html",
+      "title": "診所環境 · 香港中環 · 伍厚臻中醫師",
+      "titleLen": 20,
+      "metaLen": 122,
+      "h1": "診所環境",
+      "h2": 3,
+      "links": 4,
+      "words": 278,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:20",
+        "thin:278"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/conditions/acne.html",
+      "url": "/conditions/acne.html",
+      "title": "暗瘡中醫治療｜頤安本草｜香港中環｜伍厚臻中醫師",
+      "titleLen": 23,
+      "metaLen": 118,
+      "h1": "暗瘡中醫治療",
+      "h2": 5,
+      "links": 2,
+      "words": 1044,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:23"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/conditions/eczema.html",
+      "url": "/conditions/eczema.html",
+      "title": "濕疹中醫治療｜頤安本草｜香港中環｜伍厚臻中醫師",
+      "titleLen": 23,
+      "metaLen": 118,
+      "h1": "濕疹中醫治療",
+      "h2": 5,
+      "links": 4,
+      "words": 1238,
+      "eczemaHits": 16,
+      "issues": [
+        "title-len:23"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/conditions/fertility.html",
+      "url": "/conditions/fertility.html",
+      "title": "不孕備孕中醫調理｜頤安本草｜香港中環",
+      "titleLen": 18,
+      "metaLen": 115,
+      "h1": "不孕備孕中醫調理",
+      "h2": 5,
+      "links": 2,
+      "words": 1039,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:18"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/conditions/insomnia.html",
+      "url": "/conditions/insomnia.html",
+      "title": "失眠中醫調理｜頤安本草｜香港中環｜伍厚臻中醫師",
+      "titleLen": 23,
+      "metaLen": 116,
+      "h1": "失眠中醫調理",
+      "h2": 5,
+      "links": 2,
+      "words": 1049,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:23"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/conditions/neck-pain.html",
+      "url": "/conditions/neck-pain.html",
+      "title": "頸痛頸椎中醫｜頤安本草｜香港中環｜伍厚臻中醫師",
+      "titleLen": 23,
+      "metaLen": 117,
+      "h1": "頸痛頸椎中醫",
+      "h2": 5,
+      "links": 2,
+      "words": 1046,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:23"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/conditions/sciatica.html",
+      "url": "/conditions/sciatica.html",
+      "title": "坐骨神經痛中醫｜頤安本草｜香港中環",
+      "titleLen": 17,
+      "metaLen": 113,
+      "h1": "坐骨神經痛中醫",
+      "h2": 5,
+      "links": 2,
+      "words": 1037,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:17"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/contact.html",
+      "url": "/contact.html",
+      "title": "聯絡與預約 · 頤安本草 | 香港中環 · 伍厚臻中醫師",
+      "titleLen": 28,
+      "metaLen": 124,
+      "h1": "預約診症",
+      "h2": 2,
+      "links": 4,
+      "words": 661,
+      "eczemaHits": 1,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/about/central-hk.html",
+      "url": "/en/about/central-hk.html",
+      "title": "Central Hong Kong TCM Clinic | Oakville Wellness | Dr Ng",
+      "titleLen": 56,
+      "metaLen": 150,
+      "h1": "Central Hong Kong Clinic",
+      "h2": 5,
+      "links": 5,
+      "words": 3920,
+      "eczemaHits": 2,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/about.html",
+      "url": "/en/about.html",
+      "title": "About Dr Ng Hau Chun | Oakville Wellness · Central HK",
+      "titleLen": 53,
+      "metaLen": 151,
+      "h1": "Dr Ng Hau Chun",
+      "h2": 5,
+      "links": 4,
+      "words": 4126,
+      "eczemaHits": 4,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/blog/acne-face-zones.html",
+      "url": "/en/blog/acne-face-zones.html",
+      "title": "Acne Zones & Organ Balance | TCM Facial Mapping | Dr Ng",
+      "titleLen": 55,
+      "metaLen": 142,
+      "h1": "Acne zones &amp; organ balance",
+      "h2": 7,
+      "links": 8,
+      "words": 3332,
+      "eczemaHits": 1,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/blog/eczema-from-within.html",
+      "url": "/en/blog/eczema-from-within.html",
+      "title": "Why Eczema Needs Internal Care | TCM Guide | Dr Ng Hau Chun",
+      "titleLen": 59,
+      "metaLen": 152,
+      "h1": "Why eczema needs internal care",
+      "h2": 5,
+      "links": 8,
+      "words": 3515,
+      "eczemaHits": 15,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/blog/fertility-stress.html",
+      "url": "/en/blog/fertility-stress.html",
+      "title": "Stress-Related Fertility Patterns | TCM Pre-Conception | Dr Ng",
+      "titleLen": 62,
+      "metaLen": 152,
+      "h1": "Stress-related fertility patterns",
+      "h2": 6,
+      "links": 8,
+      "words": 4050,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/blog/index.html",
+      "url": "/en/blog/",
+      "title": "Wellness Journal | TCM Insights | Dr Ng Hau Chun",
+      "titleLen": 48,
+      "metaLen": 130,
+      "h1": "Wellness journal",
+      "h2": 3,
+      "links": 12,
+      "words": 1665,
+      "eczemaHits": 6,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/blog/insomnia-tcm-guide.html",
+      "url": "/en/blog/insomnia-tcm-guide.html",
+      "title": "Insomnia TCM Patterns | Heart-Kidney & Liver | Dr Ng Hau Chun",
+      "titleLen": 61,
+      "metaLen": 137,
+      "h1": "Insomnia TCM patterns",
+      "h2": 7,
+      "links": 8,
+      "words": 3960,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/clinic.html",
+      "url": "/en/clinic.html",
+      "title": "Clinic Environment | Oakville Wellness · Central Hong Kong",
+      "titleLen": 58,
+      "metaLen": 163,
+      "h1": "Clinic Environment",
+      "h2": 3,
+      "links": 5,
+      "words": 784,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/conditions/acne.html",
+      "url": "/en/conditions/acne.html",
+      "title": "Acne TCM Treatment | Central Hong Kong | Dr Ng Hau Chun",
+      "titleLen": 55,
+      "metaLen": 160,
+      "h1": "Acne TCM Treatment",
+      "h2": 5,
+      "links": 3,
+      "words": 3583,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/conditions/eczema.html",
+      "url": "/en/conditions/eczema.html",
+      "title": "Eczema TCM Treatment | Central Hong Kong | Dr Ng",
+      "titleLen": 48,
+      "metaLen": 128,
+      "h1": "Eczema TCM Treatment",
+      "h2": 5,
+      "links": 5,
+      "words": 4644,
+      "eczemaHits": 16,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/conditions/fertility.html",
+      "url": "/en/conditions/fertility.html",
+      "title": "Fertility TCM Support | Central Hong Kong | Dr Ng Hau Chun",
+      "titleLen": 58,
+      "metaLen": 146,
+      "h1": "Fertility & Pre-Conception TCM Support",
+      "h2": 5,
+      "links": 3,
+      "words": 3659,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/conditions/insomnia.html",
+      "url": "/en/conditions/insomnia.html",
+      "title": "Insomnia TCM Care | Central Hong Kong | Dr Ng Hau Chun",
+      "titleLen": 54,
+      "metaLen": 145,
+      "h1": "Insomnia TCM Care",
+      "h2": 5,
+      "links": 3,
+      "words": 3809,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/conditions/neck-pain.html",
+      "url": "/en/conditions/neck-pain.html",
+      "title": "Neck Pain TCM | Central Hong Kong | Dr Ng Hau Chun",
+      "titleLen": 50,
+      "metaLen": 148,
+      "h1": "Neck Pain & Cervical TCM",
+      "h2": 5,
+      "links": 3,
+      "words": 3500,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/conditions/sciatica.html",
+      "url": "/en/conditions/sciatica.html",
+      "title": "Sciatica TCM | Central Hong Kong | Dr Ng Hau Chun",
+      "titleLen": 49,
+      "metaLen": 147,
+      "h1": "Sciatica TCM",
+      "h2": 5,
+      "links": 3,
+      "words": 3610,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/contact.html",
+      "url": "/en/contact.html",
+      "title": "Contact & Booking | Oakville Wellness · Central HK",
+      "titleLen": 50,
+      "metaLen": 121,
+      "h1": "Book a Consultation",
+      "h2": 2,
+      "links": 5,
+      "words": 1543,
+      "eczemaHits": 1,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/faq.html",
+      "url": "/en/faq.html",
+      "title": "FAQ | Oakville Wellness TCM · Dr Ng Hau Chun",
+      "titleLen": 44,
+      "metaLen": 159,
+      "h1": "Frequently Asked Questions",
+      "h2": 1,
+      "links": 15,
+      "words": 7588,
+      "eczemaHits": 4,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/index.html",
+      "url": "/en/",
+      "title": "Dr Ng Hau Chun | Central Hong Kong TCM | Oakville Wellness",
+      "titleLen": 58,
+      "metaLen": 148,
+      "h1": "Modern knowledgemeets classical healing",
+      "h2": 10,
+      "links": 25,
+      "words": 7091,
+      "eczemaHits": 4,
+      "issues": [
+        "alt:1"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/news/index.html",
+      "url": "/en/news/",
+      "title": "Latest News | Oakville Wellness Clinic · Central Hong Kong",
+      "titleLen": 58,
+      "metaLen": 125,
+      "h1": "Latest news",
+      "h2": 2,
+      "links": 5,
+      "words": 615,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/news/saturday-hours-2026.html",
+      "url": "/en/news/saturday-hours-2026.html",
+      "title": "Saturday Clinic Hours 2026 | Oakville Wellness · Central HK",
+      "titleLen": 59,
+      "metaLen": 153,
+      "h1": "Saturday clinic hours",
+      "h2": 6,
+      "links": 15,
+      "words": 2390,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/process.html",
+      "url": "/en/process.html",
+      "title": "Consultation Process & Fees | Dr Ng Hau Chun · Central HK",
+      "titleLen": 57,
+      "metaLen": 153,
+      "h1": "Consultation Process & Fees",
+      "h2": 5,
+      "links": 6,
+      "words": 3466,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/acupuncture.html",
+      "url": "/en/services/acupuncture.html",
+      "title": "Acupuncture | Cosmetic & Clinical | Dr Ng Hau Chun",
+      "titleLen": 50,
+      "metaLen": 149,
+      "h1": "Acupuncture Therapy",
+      "h2": 3,
+      "links": 3,
+      "words": 2290,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/cupping.html",
+      "url": "/en/services/cupping.html",
+      "title": "Cupping & Gua Sha | Central Hong Kong TCM | Dr Ng Hau Chun",
+      "titleLen": 58,
+      "metaLen": 157,
+      "h1": "Cupping & Gua Sha",
+      "h2": 2,
+      "links": 5,
+      "words": 1485,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/gynaecology.html",
+      "url": "/en/services/gynaecology.html",
+      "title": "TCM Gynaecology | Menstrual & Fertility | Dr Ng Hau Chun",
+      "titleLen": 56,
+      "metaLen": 136,
+      "h1": "Menstrual Health · Dysmenorrhoea · Fertility · PCOS",
+      "h2": 4,
+      "links": 8,
+      "words": 2849,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/herbs.html",
+      "url": "/en/services/herbs.html",
+      "title": "Personalised Herbs | Dr Ng Hau Chun · Central HK",
+      "titleLen": 48,
+      "metaLen": 155,
+      "h1": "Personalised Herbal Prescriptions",
+      "h2": 2,
+      "links": 7,
+      "words": 1464,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/internal.html",
+      "url": "/en/services/internal.html",
+      "title": "TCM Internal Medicine | Insomnia & Digestion | Dr Ng Hau Chun",
+      "titleLen": 61,
+      "metaLen": 153,
+      "h1": "Insomnia · Digestion · Fatigue · Immunity",
+      "h2": 3,
+      "links": 8,
+      "words": 1890,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/moxibustion.html",
+      "url": "/en/services/moxibustion.html",
+      "title": "Moxibustion Therapy | Central Hong Kong | Dr Ng Hau Chun",
+      "titleLen": 56,
+      "metaLen": 145,
+      "h1": "Moxibustion Therapy",
+      "h2": 2,
+      "links": 5,
+      "words": 1416,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/pain.html",
+      "url": "/en/services/pain.html",
+      "title": "TCM Pain Management | Neck, Back & Joints | Dr Ng Hau Chun",
+      "titleLen": 58,
+      "metaLen": 158,
+      "h1": "Acupuncture & Tuina for Pain",
+      "h2": 4,
+      "links": 6,
+      "words": 2009,
+      "eczemaHits": 0,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services/skin.html",
+      "url": "/en/services/skin.html",
+      "title": "TCM Dermatology | Acne, Eczema & Hair Loss | Dr Ng Hau Chun",
+      "titleLen": 59,
+      "metaLen": 162,
+      "h1": "Acne · Eczema · Sensitive Skin · Hair Loss",
+      "h2": 4,
+      "links": 9,
+      "words": 2559,
+      "eczemaHits": 10,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/en/services.html",
+      "url": "/en/services.html",
+      "title": "TCM Services | Pain · Skin · Gynaecology | Dr Ng Hau Chun",
+      "titleLen": 57,
+      "metaLen": 157,
+      "h1": "TCM Services",
+      "h2": 4,
+      "links": 17,
+      "words": 3226,
+      "eczemaHits": 2,
+      "issues": [],
+      "lang": "zh"
+    },
+    {
+      "file": "src/faq.html",
+      "url": "/faq.html",
+      "title": "常見問題 FAQ · 頤安本草 | 香港中環中醫",
+      "titleLen": 24,
+      "metaLen": 117,
+      "h1": "常見問題",
+      "h2": 1,
+      "links": 17,
+      "words": 2827,
+      "eczemaHits": 4,
+      "issues": [
+        "title-len:24"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/index.html",
+      "url": "/",
+      "title": "伍厚臻中醫師 · 頤安本草 | 香港中環高端中醫診所",
+      "titleLen": 26,
+      "metaLen": 138,
+      "h1": "以現代之學啟岐黃之力",
+      "h2": 10,
+      "links": 25,
+      "words": 2665,
+      "eczemaHits": 4,
+      "issues": [
+        "title-len:26",
+        "alt:1"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/news/index.html",
+      "url": "/news/",
+      "title": "最新消息 · 頤安本草診所公告｜香港中環",
+      "titleLen": 20,
+      "metaLen": 118,
+      "h1": "最新消息",
+      "h2": 2,
+      "links": 4,
+      "words": 314,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:20",
+        "thin:314"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/news/saturday-hours-2026.html",
+      "url": "/news/saturday-hours-2026.html",
+      "title": "週六應診時間公告 2026｜頤安本草中環",
+      "titleLen": 20,
+      "metaLen": 134,
+      "h1": "週六應診時間公告",
+      "h2": 6,
+      "links": 14,
+      "words": 908,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:20"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/process.html",
+      "url": "/process.html",
+      "title": "診症流程與收費 · 香港中環 · 伍厚臻中醫師",
+      "titleLen": 23,
+      "metaLen": 115,
+      "h1": "診症流程與收費",
+      "h2": 5,
+      "links": 5,
+      "words": 1100,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:23"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/acupuncture.html",
+      "url": "/services/acupuncture.html",
+      "title": "針灸療法｜美顏·減肥·治療｜香港中環｜伍厚臻中醫師",
+      "titleLen": 25,
+      "metaLen": 121,
+      "h1": "針灸療法",
+      "h2": 3,
+      "links": 2,
+      "words": 667,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:25"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/cupping.html",
+      "url": "/services/cupping.html",
+      "title": "拔罐刮痧｜香港中環中醫｜伍厚臻中醫師",
+      "titleLen": 18,
+      "metaLen": 122,
+      "h1": "拔罐刮痧",
+      "h2": 2,
+      "links": 4,
+      "words": 423,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:18"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/gynaecology.html",
+      "url": "/services/gynaecology.html",
+      "title": "中醫婦科｜月經·痛經·備孕｜香港中環｜伍厚臻中醫師",
+      "titleLen": 25,
+      "metaLen": 121,
+      "h1": "月經調理·痛經·不孕·PCOS",
+      "h2": 4,
+      "links": 7,
+      "words": 879,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:25"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/herbs.html",
+      "url": "/services/herbs.html",
+      "title": "中藥處方一人一方｜香港中環｜伍厚臻中醫師",
+      "titleLen": 20,
+      "metaLen": 119,
+      "h1": "中藥處方一人一方",
+      "h2": 2,
+      "links": 6,
+      "words": 433,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:20"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/internal.html",
+      "url": "/services/internal.html",
+      "title": "中醫內科｜失眠·腸胃·免疫｜香港中環｜伍厚臻中醫師",
+      "titleLen": 25,
+      "metaLen": 119,
+      "h1": "失眠·腸胃·疲勞·免疫調理",
+      "h2": 3,
+      "links": 7,
+      "words": 632,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:25"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/moxibustion.html",
+      "url": "/services/moxibustion.html",
+      "title": "艾灸療法｜香港中環中醫｜伍厚臻中醫師",
+      "titleLen": 18,
+      "metaLen": 119,
+      "h1": "艾灸療法",
+      "h2": 2,
+      "links": 4,
+      "words": 412,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:18"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/pain.html",
+      "url": "/services/pain.html",
+      "title": "中醫痛症治療｜頸椎腰背關節｜香港中環｜伍厚臻中醫師",
+      "titleLen": 25,
+      "metaLen": 121,
+      "h1": "針灸推拿治療痛症",
+      "h2": 4,
+      "links": 5,
+      "words": 616,
+      "eczemaHits": 0,
+      "issues": [
+        "title-len:25"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services/skin.html",
+      "url": "/services/skin.html",
+      "title": "中醫皮膚科｜暗瘡·濕疹·脫髮｜香港中環｜伍厚臻中醫師",
+      "titleLen": 26,
+      "metaLen": 123,
+      "h1": "暗瘡·濕疹·皮膚敏感·脫髮",
+      "h2": 4,
+      "links": 8,
+      "words": 814,
+      "eczemaHits": 10,
+      "issues": [
+        "title-len:26"
+      ],
+      "lang": "zh"
+    },
+    {
+      "file": "src/services.html",
+      "url": "/services.html",
+      "title": "診症專科 · 頤安本草 | 香港中環 · 伍厚臻中醫師",
+      "titleLen": 27,
+      "metaLen": 118,
+      "h1": "中醫診症服務",
+      "h2": 4,
+      "links": 16,
+      "words": 938,
+      "eczemaHits": 2,
+      "issues": [
+        "title-len:27"
+      ],
+      "lang": "zh"
+    }
+  ],
+  "issueSummary": {
+    "title-len": 27,
+    "thin": 2,
+    "alt": 2
+  }
+}

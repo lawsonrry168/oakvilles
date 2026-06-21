@@ -1,0 +1,29 @@
+﻿{
+  "url": "https://oakvilles.com",
+  "name": "Oakville Wellness · Dr. Ng Hau Chun",
+  "nameEn": "Oakville Wellness",
+  "locale": "en_HK",
+  "lang": "en",
+  "description": "Registered TCM clinic in Central, Hong Kong. Dr. Ng Hau Chun (003769) — eczema, acne, pain, gynaecology, internal medicine & acupuncture. Book via WhatsApp 6734 9532.",
+  "author": "Dr. Ng Hau Chun",
+  "telephone": "+852-2881-8182",
+  "whatsapp": "85267349532",
+  "address": "Unit 602, 6/F, Kam On Building, 176A–176F Queen's Road Central, Central, Hong Kong",
+  "geo": {
+    "region": "HK",
+    "placename": "Central, Hong Kong",
+    "latitude": "22.2847084",
+    "longitude": "114.1533411"
+  },
+  "serviceArea": ["Central", "Admiralty", "Sheung Wan", "Mid-Levels", "Kennedy Town", "Hong Kong Island", "Kowloon", "New Territories"],
+  "defaultOgImage": "https://oakvilles.com/images/og/og-default.png",
+  "defaultOgImageWidth": 1200,
+  "defaultOgImageHeight": 630,
+  "heroOgImageWidth": 1920,
+  "heroOgImageHeight": 823,
+  "twitterSite": "@oakville.wellness",
+  "instagram": "https://www.instagram.com/oakville.wellness/",
+  "instagramHandle": "@oakville.wellness",
+  "facebook": "https://www.facebook.com/oakvillewellness",
+  "facebookHandle": "Oakville Wellness"
+}

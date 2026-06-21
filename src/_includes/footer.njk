@@ -1,0 +1,206 @@
+{% set p = t.urlPrefix %}
+
+<footer class="df-footer paper-grain">
+
+  <div class="df-container">
+
+    <details class="df-footer__sitemap-details" open>
+
+      <summary class="df-footer__sitemap-summary">{{ t.footer.sitemapToggle }}</summary>
+
+      <div class="df-footer__sitemap">
+
+      <div class="df-footer__sitemap-col">
+
+        <h5>{{ t.footer.servicesTitle }}</h5>
+
+        <nav>
+
+          <a href="{{ p }}/services/pain.html">{{ t.nav.pain }}</a>
+
+          <a href="{{ p }}/services/skin.html">{{ t.nav.skin }}</a>
+
+          <a href="{{ p }}/services/internal.html">{{ t.nav.internal }}</a>
+
+          <a href="{{ p }}/services/gynaecology.html">{{ t.nav.gyn }}</a>
+
+          <a href="{{ p }}/services/acupuncture.html">{{ t.nav.acupuncture }}</a>
+
+          <a href="{{ p }}/services/herbs.html">{{ t.nav.herbs }}</a>
+
+          <a href="{{ p }}/services/moxibustion.html">{{ t.nav.moxibustion }}</a>
+
+          <a href="{{ p }}/services/cupping.html">{{ t.nav.cupping }}</a>
+
+        </nav>
+
+      </div>
+
+      <div class="df-footer__sitemap-col">
+
+        <h5>{{ t.footer.conditionsTitle }}</h5>
+
+        <nav>
+
+          <a href="{{ p }}/conditions/eczema.html">{{ t.nav.eczema }}</a>
+
+          <a href="{{ p }}/conditions/acne.html">{{ t.nav.acne }}</a>
+
+          <a href="{{ p }}/conditions/insomnia.html">{{ t.nav.insomnia }}</a>
+
+          <a href="{{ p }}/conditions/fertility.html">{{ t.nav.fertility }}</a>
+
+          <a href="{{ p }}/conditions/neck-pain.html">{{ t.nav.neckPain }}</a>
+
+          <a href="{{ p }}/conditions/sciatica.html">{{ t.nav.sciatica }}</a>
+
+        </nav>
+
+      </div>
+
+      <div class="df-footer__sitemap-col">
+
+        <h5>{{ t.footer.insightsTitle }}</h5>
+
+        <nav>
+
+          <a href="{{ p }}/blog/">{{ t.nav.blog }}</a>
+
+          <a href="{{ p }}/blog/eczema-from-within.html">{{ t.nav.blogEczema }}</a>
+
+          <a href="{{ p }}/blog/acne-face-zones.html">{{ t.nav.blogAcne }}</a>
+
+          <a href="{{ p }}/blog/insomnia-tcm-guide.html">{{ t.nav.blogInsomnia }}</a>
+
+          <a href="{{ p }}/blog/fertility-stress.html">{{ t.nav.blogFertility }}</a>
+
+          <a href="{{ p }}/news/">{{ t.nav.news }}</a>
+
+          <a href="{{ p }}/news/saturday-hours-2026.html">{{ t.footer.saturdayHoursLink }}</a>
+
+        </nav>
+
+      </div>
+
+      <div class="df-footer__sitemap-col">
+
+        <h5>{{ t.footer.aboutTitle }}</h5>
+
+        <nav>
+
+          <a href="{{ p }}/about.html">{{ t.nav.aboutDr }}</a>
+
+          <a href="{{ p }}/about/central-hk.html">{{ t.nav.centralClinic }}</a>
+
+          <a href="{{ p }}/clinic.html">{{ t.nav.clinicEnv }}</a>
+
+          <a href="{{ p }}/process.html">{{ t.nav.process }}</a>
+
+          <a href="{{ p }}/faq.html">{{ t.nav.faq }}</a>
+
+          <a href="{{ p }}/contact.html">{{ t.nav.contact }}</a>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+    </details>
+
+    <div class="df-footer__grid">
+
+      <div>
+
+        <div class="df-footer__brand">
+
+          <span class="seal"><span>頤</span><span>安</span><span>本</span><span>草</span></span>
+
+          <span><span class="df-footer__brand-name">{{ t.brandName }}</span><span class="df-footer__brand-sub">OAKVILLE WELLNESS</span></span>
+
+        </div>
+
+        <p class="df-footer__desc">{{ t.footer.tagline }}</p>
+
+        {% set socialStyle = 'icons' %}
+        {% include "social-links.njk" %}
+
+      </div>
+
+      <div>
+
+        <div class="df-footer__col-title">{{ t.footer.quickLinks }}</div>
+
+        <nav class="df-footer__links">
+
+          <a href="{{ p }}/about.html" class="df-footer__link">{{ t.nav.aboutDr }}</a>
+
+          <a href="{{ p }}/services.html" class="df-footer__link">{{ t.nav.services }}</a>
+
+          <a href="{{ p }}/blog/" class="df-footer__link">{{ t.nav.blog }}</a>
+
+          <a href="{{ p }}/news/" class="df-footer__link">{{ t.nav.news }}</a>
+
+          <a href="{{ p }}/contact.html" class="df-footer__link">{{ t.nav.contact }}</a>
+
+        </nav>
+
+      </div>
+
+      <div>
+
+        <div class="df-footer__col-title">{{ t.footer.addressTitle }}</div>
+
+        <p class="df-footer__contact">{% if locale == 'en' %}Queen's Road Central<br>176A–176F Kam On Building<br>6/F, Unit 602{% else %}中環皇后大道中<br>176A–176F 號<br>錦安大廈 6 樓 602 室{% endif %}</p>
+
+      </div>
+
+      <div>
+
+        <div class="df-footer__col-title">{{ t.footer.hoursTitle }}</div>
+
+        <ul class="df-footer__contact-list">
+          <li class="df-footer__contact-item">
+            <span class="df-footer__contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8 8 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8 8 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
+            </span>
+            <a href="https://wa.me/{{ site.whatsapp }}?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener">6734&nbsp;9532</a>
+          </li>
+          <li class="df-footer__contact-item">
+            <span class="df-footer__contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.5 2.6a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.5-1.1a2 2 0 012.1-.5c.9.2 1.7.4 2.6.5A2 2 0 0122 16.9z"/></svg>
+            </span>
+            <a href="tel:{{ site.telephone }}">2881&nbsp;8182</a>
+          </li>
+          <li class="df-footer__contact-item">
+            <span class="df-footer__contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <span>{% if locale == 'en' %}Mon–Fri 10:30–19:30{% else %}一至五 10:30–19:30{% endif %}</span>
+          </li>
+          <li class="df-footer__contact-item">
+            <span class="df-footer__contact-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </span>
+            <span>{% if locale == 'en' %}Sat 10:30–17:30{% else %}週六 10:30–17:30{% endif %}</span>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="df-footer__bottom">
+
+      <span>{{ t.footer.copyright }}</span>
+
+      <span>{{ t.footer.reg }}</span>
+
+    </div>
+
+    <p class="df-footer__disclaimer">{{ t.footer.disclaimer }}</p>
+
+  </div>
+
+</footer>
+

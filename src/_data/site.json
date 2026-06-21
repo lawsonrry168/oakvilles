@@ -1,0 +1,29 @@
+{
+  "url": "https://oakvilles.com",
+  "name": "頤安本草 · 伍厚臻中醫師",
+  "nameEn": "Oakville Wellness",
+  "locale": "zh_HK",
+  "lang": "zh-HK",
+  "description": "香港中環註冊中醫診所，伍厚臻中醫師專注濕疹、暗瘡、痛症、婦科、內科及針灸調理。一人一方，WhatsApp 6734 9532 預約。",
+  "author": "伍厚臻中醫師",
+  "telephone": "+852-2881-8182",
+  "whatsapp": "85267349532",
+  "address": "香港中環皇后大道中 176A–176F 號錦安大廈 6 樓 602 室",
+  "geo": {
+    "region": "HK",
+    "placename": "中環, 香港",
+    "latitude": "22.2847084",
+    "longitude": "114.1533411"
+  },
+  "serviceArea": ["中環", "金鐘", "上環", "半山", "西環", "香港島", "九龍", "新界"],
+  "defaultOgImage": "https://oakvilles.com/images/og/og-default.png",
+  "defaultOgImageWidth": 1200,
+  "defaultOgImageHeight": 630,
+  "heroOgImageWidth": 1920,
+  "heroOgImageHeight": 823,
+  "twitterSite": "@oakville.wellness",
+  "instagram": "https://www.instagram.com/oakville.wellness/",
+  "instagramHandle": "@oakville.wellness",
+  "facebook": "https://www.facebook.com/oakvillewellness",
+  "facebookHandle": "Oakville Wellness"
+}

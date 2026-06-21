@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <title>{{ title }}</title>
-  <link rel="canonical" href="{{ canonical }}">
+  {% if canonical %}<link rel="canonical" href="{{ canonical | absoluteUrl(site.url) }}">{% endif %}
+  {% set seoImage = (ogImage | default(site.defaultOgImage)) | absoluteUrl(site.url) %}
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:image" content="{{ seoImage }}">
+  <meta property="og:image:alt" content="{{ ogImageAlt | default(title) }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ seoImage }}">
   <meta http-equiv="refresh" content="0;url={{ redirectTo }}">
   <script>location.replace("{{ redirectTo }}");</script>
 </head>

@@ -10,6 +10,87 @@ const SITE_ZH = require("./src/_data/site.json");
 
 const SITE_EN = require("./src/_data/site-en.json");
 
+
+
+function resolveSiteUrl(fallback = SITE_ZH.url) {
+
+  if (process.env.SITE_URL) {
+
+    return process.env.SITE_URL.replace(/\/$/, "");
+
+  }
+
+  const vercelProd = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+
+  if (vercelProd) {
+
+    return `https://${vercelProd.replace(/^https?:\/\//, "").replace(/\/$/, "")}`;
+
+  }
+
+  const vercelUrl = process.env.VERCEL_URL;
+
+  if (vercelUrl) {
+
+    return `https://${vercelUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}`;
+
+  }
+
+  return String(fallback || "https://oakvilles.com").replace(/\/$/, "");
+
+}
+
+
+
+const SITE_BASE_URL = resolveSiteUrl();
+const ORG_ID = `${SITE_BASE_URL}/#organization`;
+
+
+
+function rewriteToSiteUrl(url, base = SITE_BASE_URL) {
+
+  if (!url) return url;
+
+  const origin = String(base).replace(/\/$/, "");
+
+  if (url.startsWith("/")) return `${origin}${url}`;
+
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+
+    try {
+
+      const parsed = new URL(url);
+
+      return `${origin}${parsed.pathname}${parsed.search}${parsed.hash}`;
+
+    } catch {
+
+      return url;
+
+    }
+
+  }
+
+  return `${origin}/${url.replace(/^\//, "")}`;
+
+}
+
+
+
+function withResolvedSite(site) {
+
+  return {
+
+    ...site,
+
+    url: SITE_BASE_URL,
+
+    defaultOgImage: rewriteToSiteUrl(site.defaultOgImage),
+
+  };
+
+}
+
 const FAQ_ITEMS = require("./src/_data/faq-items.json");
 
 const CONDITION_SPECIALTY = {
@@ -43,9 +124,9 @@ function buildMedicalWebPageSchema(data, specialty) {
 
       description: data.description,
 
-      isPartOf: { "@id": "https://oakvilles.com/#organization" },
+      isPartOf: { "@id": ORG_ID },
 
-      about: { "@id": "https://oakvilles.com/#organization" },
+      about: { "@id": ORG_ID },
 
       lastReviewed: "2026-06-01",
 
@@ -91,7 +172,7 @@ function buildFaqSchema(items, pageUrl, lang) {
 
       inLanguage: lang === "en" ? "en" : "zh-HK",
 
-      isPartOf: { "@id": "https://oakvilles.com/#organization" },
+      isPartOf: { "@id": ORG_ID },
 
       mainEntity: items.map(({ q, a }) => ({
 
@@ -131,13 +212,13 @@ function buildArticleSchema(data) {
 
       "@type": "Article",
 
-      "@id": data.canonical + "#article",
+      "@id": rewriteToSiteUrl(data.canonical) + "#article",
 
       headline: data.title,
 
       description: data.description,
 
-      url: data.canonical,
+      url: rewriteToSiteUrl(data.canonical),
 
       datePublished: data.articlePublishedTime,
 
@@ -145,9 +226,9 @@ function buildArticleSchema(data) {
 
       author: { "@type": "Person", name: authorName },
 
-      publisher: { "@id": "https://oakvilles.com/#organization" },
+      publisher: { "@id": ORG_ID },
 
-      image: data.ogImage || "https://oakvilles.com/images/og/og-default.png",
+      image: rewriteToSiteUrl(data.ogImage || "https://oakvilles.com/images/og/og-default.png"),
 
       inLanguage: locale,
 
@@ -380,7 +461,9 @@ module.exports = function (eleventyConfig) {
 
     locale: (data) => resolveLocale(data),
 
-    site: (data) => (resolveLocale(data) === "en" ? SITE_EN : SITE_ZH),
+    site: (data) =>
+
+      withResolvedSite(resolveLocale(data) === "en" ? SITE_EN : SITE_ZH),
 
     langAlternate: buildLangAlternate,
 
@@ -401,6 +484,16 @@ module.exports = function (eleventyConfig) {
 
 
   eleventyConfig.addFilter("urlencode", (str) => encodeURIComponent(str || ""));
+
+  eleventyConfig.addFilter("absoluteUrl", (url, base) => rewriteToSiteUrl(url, base || SITE_BASE_URL));
+
+  eleventyConfig.addFilter("rewriteSchemaUrls", (jsonStr, base) => {
+    if (!jsonStr || typeof jsonStr !== "string") return jsonStr;
+    const origin = String(base || SITE_BASE_URL).replace(/\/$/, "");
+    return jsonStr.replace(/https?:\/\/oakvilles\.com(\/[^"'\s]*)/g, (match) =>
+      rewriteToSiteUrl(match, origin)
+    );
+  });
 
   eleventyConfig.addFilter("prefixUrl", (url, prefix) => {
 

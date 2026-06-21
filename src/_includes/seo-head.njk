@@ -4,9 +4,9 @@
 
 {% set seoDescription = ogDescription | default(description) %}
 
-{% set seoUrl = ogUrl | default(canonical) %}
+{% set seoUrl = (ogUrl | default(canonical)) | absoluteUrl(site.url) %}
 
-{% set seoImage = ogImage | default(site.defaultOgImage) %}
+{% set seoImage = (ogImage | default(site.defaultOgImage)) | absoluteUrl(site.url) %}
 
 {% set seoImageAlt = ogImageAlt | default(seoTitle) %}
 
@@ -21,6 +21,12 @@
   {% set imgW = ogImageWidth %}
 
   {% set imgH = ogImageHeight %}
+
+{% elif 'og-home' in seoImage %}
+
+  {% set imgW = site.heroOgImageWidth %}
+
+  {% set imgH = site.heroOgImageHeight %}
 
 {% elif '/og/' in seoImage %}
 

@@ -5,6 +5,14 @@
 
 /* ── 首頁 Hero 排版 ── */
 .hero-grid{ align-items:start; }
+.hero-portrait{
+  position:relative;
+  padding:48px 12px 8px;
+  overflow:hidden;
+}
+@media(min-width:768px){
+  .hero-portrait{ padding:56px 16px 12px; }
+}
 @media(min-width:1024px){
   .hero-portrait{ position:sticky; top:96px; z-index:2; }
 }
@@ -135,6 +143,16 @@ html[lang="en"] .df-home-hero__type-en-brand--in-main{
 html[lang="en"] .df-home-hero__main > :not(.df-home-hero__type-en-brand--in-main){
   position:relative;
   z-index:1;
+}
+@media(max-width:767px){
+  html[lang="en"] .df-home-hero__type-en-brand--in-main{
+    opacity:.32;
+    font-size:clamp(2rem, 6.5vw, 2.75rem);
+    top:calc(0.75em + 20px);
+  }
+}
+@media(max-width:479px){
+  html[lang="en"] .df-home-hero__type-en-brand--in-main{ display:none; }
 }
 @media(min-width:768px){
   html[lang="en"] .df-home-hero__type-en-brand--in-main{ top:calc(1em + 36px); }
@@ -364,26 +382,40 @@ html[lang="en"] .df-home-hero__main > :not(.df-home-hero__type-en-brand--in-main
   .df-photo-card--hero{ max-width:none; }
 }
 .df-photo-card__deco{
-  position:absolute; bottom:-16px; left:-16px;
-  width:80px; height:80px;
+  position:absolute; bottom:-8px; left:0;
+  width:64px; height:64px;
   background:rgba(42,70,60,.08);
   border-radius:4px;
   pointer-events:none;
   display:none;
 }
 .df-photo-card__deco--tr{
-  left:auto; right:-16px; bottom:auto; top:-16px;
+  left:auto; right:0; bottom:auto; top:-8px;
   background:rgba(162,58,46,.07);
 }
-@media(min-width:640px){ .df-photo-card__deco{ display:block; } }
+@media(min-width:640px){
+  .df-photo-card__deco{
+    display:block; bottom:-12px; left:-12px;
+    width:72px; height:72px;
+  }
+  .df-photo-card__deco--tr{ right:-12px; top:-12px; }
+}
+@media(min-width:1024px){
+  .df-photo-card__deco{ bottom:-16px; left:-16px; width:80px; height:80px; }
+  .df-photo-card__deco--tr{ right:-16px; top:-16px; }
+}
 .df-photo-card__logo{
-  position:absolute; top:-40px; right:24px;
-  height:64px; width:auto;
+  position:absolute; top:-32px; right:16px;
+  height:56px; width:auto;
   opacity:.92; display:none; z-index:10;
   filter:drop-shadow(0 8px 18px rgba(22,39,31,.14));
   transition:transform .45s cubic-bezier(.2,.7,.2,1);
 }
-@media(min-width:768px){ .df-photo-card__logo{ display:block; } }
+@media(min-width:768px){
+  .df-photo-card__logo{
+    display:block; top:-40px; right:24px; height:64px;
+  }
+}
 .df-photo-card__frame{
   overflow:hidden;
   border-radius:4px;
@@ -690,6 +722,51 @@ html[lang="en"] .df-home-creed__watermark{
   align-items:center; padding:24px 0;
   border-bottom:1px solid var(--line);
 }
+@media(max-width:639px){
+  .df-home-hours__head{
+    grid-template-columns:1fr 1fr;
+    gap:8px 12px;
+    font-size:11px;
+    letter-spacing:.08em;
+    padding:12px 0;
+  }
+  .df-home-hours__head span:first-child{ display:none; }
+  .df-home-hours__row{
+    grid-template-columns:1fr 1fr;
+    gap:8px 12px;
+    align-items:center;
+    padding:16px 0;
+  }
+  .df-home-hours__day{
+    grid-column:1 / -1;
+    font-size:16px;
+    letter-spacing:.06em;
+    padding-bottom:8px;
+    margin-bottom:2px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .df-home-hours__cell{
+    text-align:center;
+    font-size:15px;
+    padding:10px 6px;
+    background:var(--paper-deep);
+    border-radius:3px;
+  }
+  .df-home-hours__cell--span{
+    grid-column:1 / -1;
+    background:transparent;
+    padding:4px 0;
+  }
+}
+@media(min-width:640px) and (max-width:767px){
+  .df-home-hours__head,
+  .df-home-hours__row{
+    grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);
+  }
+  .df-home-hours__head{ font-size:12px; letter-spacing:.1em; }
+  .df-home-hours__day{ font-size:16px; }
+  .df-home-hours__cell{ font-size:16px; }
+}
 .df-home-hours__row:last-child{ border-bottom:0; }
 .df-home-hours__day{
   font-size:18px; letter-spacing:.1em; color:var(--pine);
@@ -714,17 +791,26 @@ html[lang="en"] .df-home-creed__watermark{
 }
 .df-home-price-list ul{ list-style:none; margin:8px 0 0; padding:0; }
 .df-home-price-list li{
-  display:flex; align-items:baseline; justify-content:space-between;
+  display:flex; flex-wrap:wrap; align-items:baseline;
+  justify-content:space-between; gap:8px 16px;
   padding:20px 0; border-bottom:1px solid var(--line);
 }
 .df-home-price-list__name{
   font-size:18px; color:var(--pine);
+  flex:1 1 auto; min-width:min(100%, 12rem);
 }
 .df-home-price-list__note{
   display:block; font-size:13px; color:var(--ink-faint); margin-top:4px;
 }
 .df-home-price-list__amt{
   font-size:18px; color:var(--cinnabar); white-space:nowrap;
+  flex-shrink:0; margin-left:auto;
+}
+@media(max-width:479px){
+  .df-home-price-list li{
+    flex-direction:column; align-items:flex-start; gap:6px;
+  }
+  .df-home-price-list__amt{ margin-left:0; }
 }
 .df-home-price-list__cur{
   font-family:"Cormorant Garamond",serif;
@@ -864,10 +950,12 @@ html[lang="en"] .df-home-creed__watermark{
   margin:0 0 20px; font-weight:500;
 }
 .df-funnel__options{
-  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  display:grid; grid-template-columns:1fr; gap:10px;
   margin-bottom:24px;
 }
-@media(min-width:480px){ .df-funnel__options{ gap:12px; } }
+@media(min-width:480px){
+  .df-funnel__options{ grid-template-columns:1fr 1fr; gap:12px; }
+}
 .df-funnel__opt{
   min-height:48px; padding:14px 12px;
   background:var(--paper-deep); border:1px solid var(--line);
@@ -932,7 +1020,13 @@ html[lang="en"] .df-home-creed__watermark{
 .lang-en .df-sticky-cta__btn,
 .lang-en .df-funnel__label,
 .lang-en .df-funnel__submit,
-.lang-en .df-home-calc__label{ font-family:"Noto Serif",Georgia,"Times New Roman",serif; letter-spacing:.08em; }
+.lang-en .df-home-calc__label,
+html[lang="en"] .df-sticky-cta__btn,
+html[lang="en"] .df-funnel__label,
+html[lang="en"] .df-funnel__submit,
+html[lang="en"] .df-home-calc__label{
+  font-family:"Noto Serif",Georgia,"Times New Roman",serif; letter-spacing:.08em;
+}
 .df-sticky-cta__btn:active{ transform:scale(.98); }
 .df-sticky-cta__btn--primary{
   background:var(--cinnabar); color:var(--paper);
@@ -941,11 +1035,16 @@ html[lang="en"] .df-home-creed__watermark{
 .df-sticky-cta__btn--wa{
   background:#1F7A4D; color:#fff;
 }
-body.sticky-cta-visible .df-wa-float{
-  bottom:calc(76px + env(safe-area-inset-bottom, 0px));
-}
 @media(max-width:1023px){
-  body.sticky-cta-visible{ padding-bottom:72px; }
+  body.sticky-cta-visible .df-wa-float{
+    visibility:hidden; pointer-events:none;
+  }
+  body.sticky-cta-visible{
+    padding-bottom:calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+  body.sticky-cta-visible .df-footer{
+    padding-bottom:calc(96px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* ── Reviews header ── */

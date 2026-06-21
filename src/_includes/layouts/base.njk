@@ -14,7 +14,7 @@
 
 {% if description %}<meta name="description" content="{{ description }}">{% endif %}
 
-{% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+{% if canonical %}<link rel="canonical" href="{{ canonical | absoluteUrl(site.url) }}">{% endif %}
 
 {% include "favicon.njk" %}
 
@@ -46,7 +46,7 @@
 
 <script type="application/ld+json">
 
-{{ schema | safe }}
+{{ schema | rewriteSchemaUrls(site.url) | safe }}
 
 </script>
 

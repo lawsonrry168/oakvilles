@@ -365,6 +365,10 @@ function initNavDrawer() {
     burger.setAttribute('aria-label', UI.menuOpen);
     document.body.classList.remove('nav-locked');
     if (backdrop) backdrop.hidden = true;
+    document.querySelectorAll('.nav-drop.open').forEach(drop => {
+      drop.classList.remove('open');
+      drop.querySelector('.nav-drop__trigger')?.setAttribute('aria-expanded', 'false');
+    });
   };
 
   const open = () => {
@@ -497,18 +501,26 @@ function initNavActive() {
 
   const groups = {
     about: [prefix + '/about.html', prefix + '/about/', prefix + '/clinic.html'],
-    services: [prefix + '/services'],
-    conditions: [prefix + '/conditions'],
-    blog: [prefix + '/blog'],
-    news: [prefix + '/news'],
+    services: [prefix + '/services.html', prefix + '/services/'],
+    conditions: [prefix + '/conditions/'],
+    blog: [prefix + '/blog/', prefix + '/blog/index.html'],
+    news: [prefix + '/news/', prefix + '/news/index.html'],
     guide: [prefix + '/process.html', prefix + '/faq.html', prefix + '/contact.html']
   };
+
+  const isGroupActive = (patterns) => patterns.some(p => {
+    const base = norm(p);
+    if (path === base) return true;
+    if (base.endsWith('/') && path.startsWith(base)) return true;
+    if (base.endsWith('.html') && path === base.replace(/\.html$/, '')) return true;
+    return false;
+  });
 
   document.querySelectorAll('.nav-drop').forEach(drop => {
     const trigger = drop.querySelector('.nav-drop__trigger');
     const key = drop.getAttribute('data-nav');
     if (!key || !groups[key]) return;
-    const active = groups[key].some(p => path === p || (p.endsWith('/') && path.startsWith(p)) || (p.endsWith('.html') && path === p));
+    const active = isGroupActive(groups[key]);
     if (active) trigger?.classList.add('active');
   });
 }

@@ -5,3 +5,4 @@ _site/
 .env.*
 *.webp
 !src/_data/responsive-images.json
+.vercel

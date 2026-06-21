@@ -245,26 +245,31 @@ html[lang="en"] .df-page-hero__eyebrow{ letter-spacing:.32em; }
   padding:0 0 0 12px;
 }
 @media(min-width:1280px){
-  /* 透明 hover 橋：填補 trigger 與 panel 之間空隙，避免選單瞬間消失 */
+  /* 透明 hover 橋：填補 trigger 與 panel 之間空隙，寬度對齊下拉面板 */
   .nav-drop::before{
-    content:""; position:absolute; left:-16px; right:-16px;
-    top:100%; height:18px; z-index:59;
+    content:""; position:absolute; left:50%; transform:translateX(-50%);
+    top:calc(100% - 2px); width:max(260px, calc(100% + 56px)); height:22px; z-index:59;
   }
   .nav-drop__panel{
-    position:absolute; top:calc(100% + 6px); left:50%;
+    position:absolute; top:calc(100% - 2px); left:50%;
     transform:translateX(-50%) translateY(4px);
-    min-width:196px; max-height:none; padding:6px 0 8px; overflow:visible;
+    min-width:196px; max-height:none; padding:10px 0 8px; overflow:visible;
     background:var(--paper); border:1px solid var(--line); border-radius:4px;
     border-top:2px solid var(--pine);
     box-shadow:0 16px 40px -16px rgba(22,39,31,.22);
     visibility:hidden; pointer-events:none; z-index:60;
-    transition:opacity .22s ease, transform .22s ease, visibility .22s;
+    transition:opacity .2s ease, transform .2s ease, visibility .2s;
   }
 }
 .nav-drop__panel--wide{ min-width:220px; }
+@media(min-width:1280px){
+  .nav-drop:has(.nav-drop__panel--wide)::before{ width:max(280px, calc(100% + 56px)); }
+}
+@media(max-width:1279px){
   .nav-drop.open .nav-drop__panel{
-  max-height:720px; opacity:1; padding:4px 0 8px 12px;
-  visibility:visible;
+    max-height:720px; opacity:1; padding:4px 0 8px 12px;
+    visibility:visible;
+  }
 }
 @media (max-width:1279px){
   .nav-drop__panel{
@@ -275,12 +280,19 @@ html[lang="en"] .df-page-hero__eyebrow{ letter-spacing:.32em; }
   }
 }
 @media(min-width:1280px){
+  .nav-drop:hover .nav-drop__panel,
   .nav-drop.open .nav-drop__panel,
   .nav-drop:focus-within .nav-drop__panel{
-    max-height:none; opacity:1; padding:6px 0 8px;
+    max-height:none; opacity:1; padding:10px 0 8px;
     visibility:visible; pointer-events:auto;
     transform:translateX(-50%) translateY(0);
   }
+  .nav-drop:hover .nav-drop__trigger,
+  .nav-drop:hover .nav-drop__caret{
+    color:var(--pine);
+  }
+  .nav-drop:hover .nav-drop__trigger::after{ right:0; }
+  .nav-drop:hover .nav-drop__caret{ transform:rotate(180deg); }
 }
 .nav-drop__panel a{
   display:block; padding:10px 12px; font-size:14px; letter-spacing:.08em;

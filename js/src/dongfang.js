@@ -402,7 +402,7 @@ function initNavDrawer() {
 }
 
 function initNavDropdown() {
-  const CLOSE_DELAY = 220;
+  const CLOSE_DELAY = 480;
   const DESKTOP = window.matchMedia('(min-width: 1280px)');
   let closeTimer = null;
 
@@ -418,14 +418,19 @@ function initNavDropdown() {
     });
   };
 
-  const openDrop = (drop) => {
+  const cancelClose = () => {
     clearTimeout(closeTimer);
+    closeTimer = null;
+  };
+
+  const openDrop = (drop) => {
+    cancelClose();
     closeAll(drop);
     setOpen(drop, true);
   };
 
   const scheduleClose = (drop) => {
-    clearTimeout(closeTimer);
+    cancelClose();
     closeTimer = setTimeout(() => setOpen(drop, false), CLOSE_DELAY);
   };
 
@@ -449,9 +454,17 @@ function initNavDropdown() {
       openDrop(drop);
     });
 
-    drop.addEventListener('mouseleave', () => {
+    drop.addEventListener('mouseleave', e => {
       if (!DESKTOP.matches) return;
+      const related = e.relatedTarget;
+      if (related instanceof Node && drop.contains(related)) return;
       scheduleClose(drop);
+    });
+
+    panel.addEventListener('mouseenter', () => {
+      if (!DESKTOP.matches) return;
+      cancelClose();
+      openDrop(drop);
     });
 
     trigger.addEventListener('keydown', e => {

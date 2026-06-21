@@ -670,12 +670,21 @@ html[lang="en"] .df-form-card__title{ font-family:"Noto Serif",Georgia,"Times Ne
 .df-step__media{ margin:0 0 16px; border-radius:6px; overflow:hidden; background:var(--paper-deep); }
 .df-step__media img{ display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
 
-/* inner page hero visual */
+/* inner page hero visual — assets 1920×823 (≈21:9); same ratio on mobile to avoid height-attr stretch */
 .df-section--visual{ padding-top:0; padding-bottom:48px; }
 @media(min-width:768px){ .df-section--visual{ padding-bottom:64px; } }
-.df-page-visual{ margin:0; border-radius:6px; overflow:hidden; box-shadow:var(--shadow-soft); border:1px solid var(--line); }
-.df-page-visual img{ display:block; width:100%; aspect-ratio:21/9; object-fit:cover; max-height:440px; }
-@media(max-width:767px){ .df-page-visual img{ aspect-ratio:3/2; max-height:none; } }
+.df-page-visual{
+  margin:0; border-radius:6px; overflow:hidden;
+  box-shadow:var(--shadow-soft); border:1px solid var(--line);
+  background:var(--paper-deep);
+}
+.df-page-visual picture{ display:block; width:100%; }
+.df-page-visual img{
+  display:block; width:100%; height:auto;
+  aspect-ratio:1920 / 823;
+  object-fit:cover; object-position:center center;
+}
+@media(min-width:768px){ .df-page-visual img{ max-height:440px; } }
 
 .df-price{ border:1px solid var(--line); border-radius:6px; overflow:hidden; }
 .df-price-row{ display:grid; gap:24px; padding:28px 24px; border-bottom:1px solid var(--line); align-items:start; }

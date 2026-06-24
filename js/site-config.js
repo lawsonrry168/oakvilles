@@ -24,6 +24,7 @@ window.SITE_ORG = {
     addressCountry: 'HK'
   },
   sameAs: [
+    'https://maps.app.goo.gl/wZBH8ogRaecemHoe7',
     'https://www.instagram.com/oakville.wellness/',
     'https://www.facebook.com/oakvillewellness'
   ]

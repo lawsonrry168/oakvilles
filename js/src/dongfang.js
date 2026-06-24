@@ -144,6 +144,7 @@ function trackEvent(name, params) {
   window.dataLayer.push(Object.assign({ event: name }, params || {}));
   gaEvent(name, params);
 }
+window.trackEvent = trackEvent;
 
 function initAnalytics() {
   window.dataLayer = window.dataLayer || [];

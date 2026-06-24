@@ -28,6 +28,10 @@ const HOME_UI = {
 };
 const H = HOME_UI[HOME_LOCALE] || HOME_UI.zh;
 
+function emitTrack(name, params) {
+  if (typeof window.trackEvent === 'function') window.trackEvent(name, params);
+}
+
 window.bookingCalcState = null;
 
 const CALC_LABELS = H.calc;
@@ -71,7 +75,7 @@ function initPriceCalculator() {
     const m = (parseInt(meds.value, 10) || 0) * 100;
     total.textContent = String(150 + t + m);
     window.bookingCalcState = readCalcState();
-    trackEvent('calculator_update', {
+    emitTrack('calculator_update', {
       treatment: window.bookingCalcState.treatment.label,
       meds_days: window.bookingCalcState.meds.value,
       total: window.bookingCalcState.total,
@@ -88,7 +92,7 @@ function initPriceCalculator() {
     calcBtn.addEventListener('click', function () {
       window.bookingCalcState = readCalcState();
       saveBookingPrefill({ from: 'calculator' });
-      trackEvent('calculator_to_booking', {
+      emitTrack('calculator_to_booking', {
         total: window.bookingCalcState.total,
         page_path: location.pathname
       });
@@ -169,7 +173,7 @@ function initBookingFunnel() {
     if (stepLabel) {
       stepLabel.textContent = on1 ? H.step1 : H.step2;
     }
-    trackEvent('funnel_step', {
+    emitTrack('funnel_step', {
       step_index: n,
       step_name: on1 ? 'specialty_date' : 'contact',
       page_path: location.pathname

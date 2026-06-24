@@ -1,0 +1,19 @@
+<div class="df-map">
+  <iframe
+    src="{{ site.googleMaps.embedUrl }}"
+    title="{% if locale == 'en' %}Oakville Wellness clinic location on Google Maps{% else %}頤安本草診所位置 — Google 地圖{% endif %}"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen
+  ></iframe>
+</div>
+<div class="df-map-links">
+  <a href="{{ site.googleMaps.shortUrl }}" target="_blank" rel="noopener noreferrer" class="ink-link df-map-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="df-icon-sm" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    {% if locale == 'en' %}Open in Google Maps{% else %}在 Google Maps 中開啟{% endif %}
+  </a>
+  <a href="{% if locale == 'en' %}/en/about/central-hk.html{% else %}/about/central-hk.html{% endif %}" class="ink-link df-map-link df-map-link--secondary">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="df-icon-sm" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    {% if locale == 'en' %}Directions &amp; transport{% else %}查看交通及位置指引{% endif %}
+  </a>
+</div>

@@ -418,7 +418,9 @@ html[lang="en"] .df-page-hero__watermark--long{
 .df-text-faint-sm{ font-size:13px; color:var(--ink-faint); }
 .df-contact-hours-wrap{ margin-top:32px; }
 .df-contact-hours-body{ flex:1; }
-.df-map-link{ display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:14px; color:var(--cinnabar); }
+.df-map-links{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:16px; }
+.df-map-link{ display:inline-flex; align-items:center; gap:6px; margin-top:0; font-size:14px; color:var(--cinnabar); }
+.df-map-link--secondary{ color:var(--pine); }
 .df-map-link .df-icon-sm{ width:16px; height:16px; }
 .df-btn--stack{ margin-top:4px; }
 .df-form-note{ font-size:12px; color:var(--ink-faint); text-align:center; margin-top:14px; }

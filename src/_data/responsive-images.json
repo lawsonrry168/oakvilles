@@ -114,6 +114,60 @@
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
   },
+  "/images/hero-yi-an-ben-cao-wm.png": {
+    "webp": [
+      {
+        "url": "/images/hero-yi-an-ben-cao-wm-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/logo-seal-lishu-source.png": {
+    "webp": [
+      {
+        "url": "/images/logo-seal-lishu-source-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/logo-seal-media.png": {
+    "webp": [
+      {
+        "url": "/images/logo-seal-media-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/logo-seal-source.png": {
+    "webp": [
+      {
+        "url": "/images/logo-seal-source-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/logo-seal-yin-source.png": {
+    "webp": [
+      {
+        "url": "/images/logo-seal-yin-source-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/logo-seal.png": {
+    "webp": [
+      {
+        "url": "/images/logo-seal-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
   "/images/logo.png": {
     "webp": [
       {
@@ -195,6 +249,10 @@
       {
         "url": "/images/process/step-01-booking-640.webp",
         "width": 640
+      },
+      {
+        "url": "/images/process/step-01-booking-1280.webp",
+        "width": 1280
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
@@ -204,6 +262,10 @@
       {
         "url": "/images/process/step-02-checkin-640.webp",
         "width": 640
+      },
+      {
+        "url": "/images/process/step-02-checkin-1280.webp",
+        "width": 1280
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
@@ -213,6 +275,10 @@
       {
         "url": "/images/process/step-03-diagnosis-640.webp",
         "width": 640
+      },
+      {
+        "url": "/images/process/step-03-diagnosis-1280.webp",
+        "width": 1280
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
@@ -239,6 +305,55 @@
     "webp": [
       {
         "url": "/images/process/step-06-followup-640.webp",
+        "width": 640
+      },
+      {
+        "url": "/images/process/step-06-followup-1280.webp",
+        "width": 1280
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/seals/hou-zhen-yi-shi.png": {
+    "webp": [
+      {
+        "url": "/images/seals/hou-zhen-yi-shi-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/seals/yi-an-ben-cao.png": {
+    "webp": [
+      {
+        "url": "/images/seals/yi-an-ben-cao-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/seals/yi-zhe-ren-xin.png": {
+    "webp": [
+      {
+        "url": "/images/seals/yi-zhe-ren-xin-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/seals/yu-yue-deng-ji.png": {
+    "webp": [
+      {
+        "url": "/images/seals/yu-yue-deng-ji-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/seals/zhen-jin-gu-suan.png": {
+    "webp": [
+      {
+        "url": "/images/seals/zhen-jin-gu-suan-640.webp",
         "width": 640
       }
     ],

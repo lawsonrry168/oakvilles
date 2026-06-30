@@ -5,6 +5,7 @@ stickyCta: true
 homeJs: true
 title: "Dr. Ng Hau Chun | Central Hong Kong TCM | Oakville Wellness"
 description: "Oakville Wellness · Dr. Ng Hau Chun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532."
+keywords: "Central Hong Kong TCM,Oakville Wellness,acne eczema TCM,Dr Ng Hau Chun,Chinese medicine clinic Hong Kong,skin wellness,herbal medicine"
 canonical: "https://oakvilles.com/en/"
 ogTitle: "Dr. Ng Hau Chun | Central Hong Kong TCM | Oakville Wellness"
 ogDescription: "Oakville Wellness · Dr. Ng Hau Chun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532."
@@ -73,14 +74,21 @@ schema: |
     "medicalSpecialty": ["Traditional Chinese Medicine","Acupuncture","Dermatology","Gynecology"]
   }
 ---
+<main id="main-content">
 <!-- ───────────────────────── HERO ───────────────────────── -->
 <section id="top" class="df-home-hero paper-grain">
   <div class="df-home-hero__wash-a" aria-hidden="true"></div>
   <div class="df-home-hero__wash-b" aria-hidden="true"></div>
 
-  <!-- Background typographic art · side / rear labels -->
+  <!-- Background typographic art · OAKVILLE / WELLNESS -->
   <div class="df-home-hero__type" aria-hidden="true">
     <p class="df-home-hero__type-en df-home-hero__type-en--side">OAKVILLE WELLNESS</p>
+    <div class="df-home-hero__type-stack">
+      <div class="df-home-hero__type-en-brand df-home-hero__type-en-brand--stack" lang="en" aria-hidden="true">
+        <span class="df-home-hero__type-en-brand__line">OAKVILLE</span>
+        <span class="df-home-hero__type-en-brand__line df-home-hero__type-en-brand__line--accent">WELLNESS</span>
+      </div>
+    </div>
     <p class="df-home-hero__type-en df-home-hero__type-en--rear">OAKVILLE WELLNESS</p>
   </div>
 
@@ -94,12 +102,9 @@ schema: |
           <span class="df-home-hero__vline df-home-hero__vline--cin">Premium TCM</span>
         </div>
         <div class="df-home-hero__main">
-          <div class="df-home-hero__type-en-brand df-home-hero__type-en-brand--in-main" lang="en" aria-hidden="true">
-            <span class="df-home-hero__type-en-brand__line">OAKVILLE</span>
-            <span class="df-home-hero__type-en-brand__line df-home-hero__type-en-brand__line--accent">WELLNESS</span>
-          </div>
           <p class="reveal df-home-hero__eyebrow">Honouring tradition · Rooted in herbs</p>
           <h1 class="reveal df-home-hero__title" data-d="1">Modern knowledge<br>meets <span class="text-cin">classical</span> healing</h1>
+          <p class="reveal df-home-hero__tagline" data-d="1"><a href="/en/conditions/acne-eczema-central.html" class="df-home-hero__tagline-link">Oakville Wellness · Specialist care for acne &amp; eczema constitutions — your path to skin wellness.</a></p>
           <p class="reveal df-home-hero__trust" data-d="2">
             <span class="df-home-hero__trust-star" aria-hidden="true">★</span>
             <span>5.0 Google rating</span>
@@ -109,7 +114,7 @@ schema: |
           <p class="reveal df-home-hero__lead" data-d="2">Oakville Wellness · Dr. Ng Hau Chun. Precision care for busy Hong Kong professionals — a serene private clinic in Central where 25 years of clinical experience meets unhurried, one-to-one consultation and bespoke herbal formulas.</p>
           <div class="reveal df-home-hero__actions" data-d="3">
             <a href="#booking" class="btn-cin df-home-hero__cta" data-cta-id="hero-booking">Book online <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
-            <a href="https://wa.me/85267349532?text=" target="_blank" rel="noopener" class="ink-link df-home-hero__wa" data-cta-id="hero-wa"><span class="df-home-hero__wa-dot"></span>WhatsApp us</a>
+            <a href="https://wa.me/{{ site.whatsapp }}?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="ink-link df-home-hero__wa" data-cta-id="hero-wa"><span class="df-home-hero__wa-dot"></span>WhatsApp us</a>
           </div>
         </div>
       </div>
@@ -397,9 +402,9 @@ schema: |
         </div>
         <div class="df-home-news-list reveal" data-d="1">
           <a href="/en/news/saturday-hours-2026.html" class="df-home-news-card">
-            <time class="df-home-news-card__date" datetime="2026-06-01">1 June 2026</time>
-            <h3 class="df-home-news-card__title">Saturday clinic hours update</h3>
-            <p class="df-home-news-card__excerpt">Saturday hours are 10:30–17:30. Afternoon sessions continue as usual — bookings welcome.</p>
+            <time class="df-home-news-card__date" datetime="2026-01-05">5 January 2026</time>
+            <h3 class="df-home-news-card__title">Saturday clinic hours notice</h3>
+            <p class="df-home-news-card__excerpt">From 2026, Saturday hours remain 10:30–17:30 — ideal for weekend bookings.</p>
           </a>
           <a href="/en/blog/fertility-stress.html" class="df-home-news-card">
             <time class="df-home-news-card__date" datetime="2026-01-20">20 January 2026</time>
@@ -481,10 +486,8 @@ schema: |
     </div>
     <div class="df-ig-grid reveal">
       <a href="https://www.instagram.com/oakville.wellness/" target="_blank" rel="noopener noreferrer" class="df-ig-item"><img alt="Wellness ingredients" width="800" height="800" loading="lazy" decoding="async" src="/images/blog-eczema.png"></a>
-      <a href="https://www.instagram.com/oakville.wellness/" target="_blank" rel="noopener noreferrer" class="df-ig-item"><img alt="Acupuncture treatment room" width="800" height="800" loading="lazy" decoding="async" src="/images/shop-9.jpeg"></a>
       <a href="https://www.instagram.com/oakville.wellness/" target="_blank" rel="noopener noreferrer" class="df-ig-item"><img alt="Wellness tea" width="800" height="800" loading="lazy" decoding="async" src="/images/blog-insomnia.png"></a>
       <a href="https://www.instagram.com/oakville.wellness/" target="_blank" rel="noopener noreferrer" class="df-ig-item"><img alt="Pre-conception wellness" width="800" height="800" loading="lazy" decoding="async" src="/images/blog-fertility.png"></a>
-      <a href="https://www.instagram.com/oakville.wellness/" target="_blank" rel="noopener noreferrer" class="df-ig-item"><img alt="Clinic reception and herbal dispensary" width="800" height="800" loading="lazy" decoding="async" src="/images/shop-1.jpeg"></a>
       <a href="https://www.instagram.com/oakville.wellness/" target="_blank" rel="noopener noreferrer" class="df-ig-item"><img alt="Skin care" width="800" height="800" loading="lazy" decoding="async" src="/images/blog-acne.png"></a>
     </div>
   </div>
@@ -500,7 +503,7 @@ schema: |
         <h2 class="df-home-title">Opening hours</h2>
         <div class="rule-fade"></div>
         <p>Room 602, 6/F, Kam On Building<br>176A–176F Queen's Road Central</p>
-        <a href="https://wa.me/85267349532" target="_blank" rel="noopener" class="ink-link df-home-schedule-link">WhatsApp&nbsp;+852&nbsp;6734&nbsp;9532</a>
+        <a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" class="ink-link df-home-schedule-link">WhatsApp&nbsp;+852&nbsp;6734&nbsp;9532</a>
         <a href="tel:+85228818182" class="ink-link df-home-schedule-link df-home-schedule-link--tel">Phone&nbsp;+852&nbsp;2881&nbsp;8182</a>
       </div>
 
@@ -516,8 +519,7 @@ schema: |
           </div>
           <div class="df-home-hours__row">
             <span class="df-home-hours__day">Sat</span>
-            <span class="df-home-hours__cell">Open</span>
-            <span class="df-home-hours__cell df-home-hours__cell--muted">Closed</span>
+            <span class="df-home-hours__cell df-home-hours__cell--span">10:30–17:30 open</span>
           </div>
           <div class="df-home-hours__row">
             <span class="df-home-hours__day df-home-hours__day--muted">Sun · Public holidays</span>
@@ -546,27 +548,44 @@ schema: |
         <h3>Standard fees</h3>
         <ul>
           <li>
-            <span><span class="df-home-price-list__name">Consultation &amp; pulse diagnosis</span><span class="df-home-price-list__note">Initial &amp; follow-up · includes meridian assessment</span></span>
-            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>150</span>
+            <span><span class="df-home-price-list__name">Consultation</span><span class="df-home-price-list__note">Initial &amp; follow-up</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>120</span>
           </li>
           <li>
-            <span><span class="df-home-price-list__name">Granule herbal extract</span><span class="df-home-price-list__note">One dose per day</span></span>
-            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>100</span>
+            <span><span class="df-home-price-list__name">Granule herbal prescription</span><span class="df-home-price-list__note">32g per day</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>110</span>
           </li>
           <li>
-            <span><span class="df-home-price-list__name">Acupuncture</span><span class="df-home-price-list__note">Includes point assessment</span></span>
-            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>280</span>
+            <span><span class="df-home-price-list__name">Acupuncture</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>450</span>
           </li>
           <li>
-            <span><span class="df-home-price-list__name">Tuina · manual therapy</span><span class="df-home-price-list__note">30-minute session</span></span>
-            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>380</span>
+            <span><span class="df-home-price-list__name">Cupping</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>350</span>
+          </li>
+          <li>
+            <span><span class="df-home-price-list__name">TCM manual pain therapy</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>498</span>
+          </li>
+          <li>
+            <span><span class="df-home-price-list__name">Integrated treatment (acupuncture + manual)</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>650</span>
+          </li>
+          <li>
+            <span><span class="df-home-price-list__name">Acne facial steam therapy</span><span class="df-home-price-list__note">Mask HK$290 · In-clinic from HK$350</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>290</span>
+          </li>
+          <li>
+            <span><span class="df-home-price-list__name">Ear acupuncture</span></span>
+            <span class="df-home-price-list__amt"><span class="df-home-price-list__cur">HK$</span>350</span>
           </li>
         </ul>
+        <p class="df-home-price-list__fine">Over 32g: HK$2 per gram extra; premium herbs (lingzhi, ginseng, gastrodia, ejiao, cicada slough, notoginseng, etc.) charged separately (HK$10–20 per day).</p>
       </div>
 
       <div class="reveal df-home-calc" data-d="1">
         <div class="df-home-calc__head">
-          <span class="seal df-home-calc__seal"><span>診</span><span>金</span><span>估</span><span>算</span></span>
+          <span class="seal df-home-calc__seal" data-seal="zhen-jin-gu-suan" role="img" aria-label="Fee estimate"></span>
           <h3 class="df-home-calc__title">Estimate your visit</h3>
         </div>
         <div class="df-home-calc__fields">
@@ -574,27 +593,67 @@ schema: |
             <span>Primary treatment</span>
             <select id="calc-treatment">
               <option value="0">Consultation only</option>
-              <option value="280">Acupuncture (+280)</option>
-              <option value="380">Tuina / manual therapy (+380)</option>
+              <option value="450">Acupuncture (+450)</option>
+              <option value="350">Cupping (+350)</option>
+              <option value="498">Manual pain therapy (+498)</option>
+              <option value="650">Integrated treatment (+650)</option>
+              <option value="290">Facial steam therapy (+290)</option>
+              <option value="351">Ear acupuncture (+350)</option>
             </select>
           </label>
           <label>
             <span>Herbal course (days)</span>
             <select id="calc-meds">
               <option value="0">No herbs needed</option>
-              <option value="3">3-day course (+300)</option>
-              <option value="6">6-day course (+600)</option>
+              <option value="3">3 days (+330)</option>
+              <option value="6">6 days (+660)</option>
             </select>
           </label>
           <div class="df-home-calc__total">
             <span class="df-home-calc__total-label">Estimated total</span>
-            <span class="df-home-calc__total-amt"><span class="df-home-price-list__cur">HK$</span><span id="total-price">150</span></span>
+            <span class="df-home-calc__total-amt"><span class="df-home-price-list__cur">HK$</span><span id="total-price">120</span></span>
           </div>
-          <p class="df-home-calc__note">Final fees depend on clinical assessment</p>
+          <p class="df-home-calc__note">Final fees depend on clinical assessment; premium herbs and excess dosage charged separately</p>
           <button type="button" id="calc-to-booking" class="btn-cin df-home-calc__submit" data-cta-id="calc-to-booking">Book with this plan</button>
         </div>
       </div>
 
+    </div>
+
+    <div class="reveal df-home-membership" data-d="2">
+      <h3 class="df-home-membership__title">Herbal wellness stored-value plans</h3>
+      <div class="df-home-membership__grid">
+        <article class="df-home-membership__card">
+          <h4>Essential Wellness</h4>
+          <p class="df-home-membership__en">基礎養生</p>
+          <dl>
+            <div><dt>Top-up</dt><dd>HK$4,500</dd></div>
+            <div><dt>Total value</dt><dd>HK$5,000</dd></div>
+            <div><dt>Bonus</dt><dd>HK$500</dd></div>
+          </dl>
+          <p class="df-home-membership__valid">Valid 6 months</p>
+        </article>
+        <article class="df-home-membership__card">
+          <h4>Enhanced Wellness</h4>
+          <p class="df-home-membership__en">進階調理</p>
+          <dl>
+            <div><dt>Top-up</dt><dd>HK$9,000</dd></div>
+            <div><dt>Total value</dt><dd>HK$10,300</dd></div>
+            <div><dt>Bonus</dt><dd>HK$1,300</dd></div>
+          </dl>
+          <p class="df-home-membership__valid">Valid 12 months</p>
+        </article>
+        <article class="df-home-membership__card">
+          <h4>Elite Wellness</h4>
+          <p class="df-home-membership__en">卓越護理</p>
+          <dl>
+            <div><dt>Top-up</dt><dd>HK$18,000</dd></div>
+            <div><dt>Total value</dt><dd>HK$21,200</dd></div>
+            <div><dt>Bonus</dt><dd>HK$3,200</dd></div>
+          </dl>
+          <p class="df-home-membership__valid">Valid 24 months</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -665,6 +724,8 @@ schema: |
     </form>
   </div>
 </section>
+
+</main>
 
 <!-- mobile sticky conversion bar -->
 <!-- floating WhatsApp -->

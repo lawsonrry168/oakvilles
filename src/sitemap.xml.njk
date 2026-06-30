@@ -7,11 +7,12 @@ eleventyExcludeFromCollections: true
 {%- for page in collections.all %}
 {%- if page.data.layout != "layouts/redirect.njk" %}
 {%- if page.data.noindex != true %}
+{%- set lastModified = page.data.lastmod or page.date %}
   <url>
     <loc>{{ page.data.canonical }}</loc>
-    {%- if page.data.lastmod %}<lastmod>{{ page.data.lastmod }}</lastmod>{%- endif %}
+    {%- if lastModified %}<lastmod>{{ lastModified | isoDate }}</lastmod>{%- endif %}
     <changefreq>{{ page.data.changefreq | default("monthly") }}</changefreq>
-    <priority>{{ page.data.priority | default("0.7") }}</priority>
+    <priority>{{ page | sitemapPriority }}</priority>
   </url>
 {%- endif %}
 {%- endif %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_slide-base.css">
+<style>
+.checklist { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px; align-content: start; margin-top: 12px; }
+.item { display: flex; gap: 16px; align-items: flex-start; }
+.pri { flex-shrink: 0; font-size: 14px; font-weight: 700; letter-spacing: .1em; padding: 6px 10px; border-radius: 4px; }
+.p0 { background: var(--cinnabar); color: #fff; }
+.p1 { background: var(--pine); color: #fff; }
+.p2 { background: rgba(174,138,71,.25); color: var(--pine); }
+.item p { font-size: 21px; color: var(--ink-soft); line-height: 1.45; padding-top: 4px; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <span class="brand-mark">Oakville Wellness</span>
+  <p class="eyebrow">Next Steps · 下一步</p>
+  <h2>廣告正式開跑前清單</h2>
+  <div class="checklist">
+    <div class="item"><span class="pri p0">P0</span><p>填入 SITE_GA4_ID 並部署</p></div>
+    <div class="item"><span class="pri p0">P0</span><p>Search Console 驗證 + 提交 sitemap</p></div>
+    <div class="item"><span class="pri p0">P0</span><p>Google Business Profile 優化</p></div>
+    <div class="item"><span class="pri p1">P1</span><p>GTM 容器：GA4 + Meta Pixel</p></div>
+    <div class="item"><span class="pri p1">P1</span><p>GA4 轉化 → 匯入 Google Ads</p></div>
+    <div class="item"><span class="pri p1">P1</span><p>Meta 自訂轉換 whatsapp_click</p></div>
+    <div class="item"><span class="pri p2">P2</span><p>按症狀分 campaign + 著陸頁 A/B</p></div>
+    <div class="item"><span class="pri p2">P2</span><p>IG 有機 + 付費再營銷</p></div>
+  </div>
+  <div class="footer-bar"></div>
+</section>
+</body>
+</html>

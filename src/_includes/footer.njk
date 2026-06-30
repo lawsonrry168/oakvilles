@@ -1,4 +1,4 @@
-{% set p = t.urlPrefix %}
+﻿{% set p = t.urlPrefix %}
 
 <footer class="df-footer paper-grain">
 
@@ -41,6 +41,8 @@
         <h5>{{ t.footer.conditionsTitle }}</h5>
 
         <nav>
+
+          <a href="{{ p }}/conditions/acne-eczema-central.html">{{ t.nav.acneEczemaCentral }}</a>
 
           <a href="{{ p }}/conditions/eczema.html">{{ t.nav.eczema }}</a>
 
@@ -114,7 +116,7 @@
 
         <div class="df-footer__brand">
 
-          <span class="seal"><span>頤</span><span>安</span><span>本</span><span>草</span></span>
+          <span class="seal seal--brand" data-seal="yi-an-ben-cao" role="img" aria-label="{{ t.sealAriaLabel }}"></span>
 
           <span><span class="df-footer__brand-name">{{ t.brandName }}</span><span class="df-footer__brand-sub">OAKVILLE WELLNESS</span></span>
 
@@ -136,6 +138,10 @@
           <a href="{{ p }}/about.html" class="df-footer__link">{{ t.nav.aboutDr }}</a>
 
           <a href="{{ p }}/services.html" class="df-footer__link">{{ t.nav.services }}</a>
+
+          <a href="{{ p }}/process.html" class="df-footer__link">{{ t.nav.process }}</a>
+
+          <a href="{{ p }}/faq.html" class="df-footer__link">{{ t.nav.faq }}</a>
 
           <a href="{{ p }}/blog/" class="df-footer__link">{{ t.nav.blog }}</a>
 

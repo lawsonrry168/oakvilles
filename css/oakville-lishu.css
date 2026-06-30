@@ -1,0 +1,7 @@
+/* Oakville-Lishu · subset from SIMLI 隶书 — matches seal PNG pipeline */
+@font-face{
+  font-family:"Oakville-Lishu";
+  src:local("LiSu"),local("隶书"),local("STLiti"),
+      url("../fonts/oakville-lishu.woff2") format("woff2");
+  font-weight:400; font-style:normal; font-display:swap;
+}

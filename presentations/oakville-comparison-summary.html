@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>頤安本草 · 多維度比較總結</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf7f2;--pine:#2a463c;--cinnabar:#a23a2e;--ochre:#ae8a47;--ink:#1a1712;--muted:#5a5346;--line:rgba(42,70,60,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Serif TC",serif;background:var(--paper);color:var(--ink);line-height:1.65}
+.wrap{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
+.hero{padding:56px 0 40px;border-bottom:1px solid var(--line);margin-bottom:48px}
+.eyebrow{font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.24em;text-transform:uppercase;color:var(--ochre);font-size:14px;margin-bottom:12px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,5vw,2.75rem);color:var(--pine);font-weight:600;line-height:1.2;margin-bottom:16px}
+.hero p{color:var(--muted);font-size:17px;max-width:52em}
+.legend{display:flex;flex-wrap:wrap;gap:12px 24px;margin:32px 0 0;font-size:14px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:2px}
+.dot--bench{background:#6b8f7a}
+.dot--old{background:#9a9088}
+.dot--new{background:var(--pine)}
+section{margin-bottom:56px}
+h2{font-size:1.35rem;color:var(--pine);margin-bottom:8px;letter-spacing:.06em}
+h2+p.section-lead{color:var(--muted);font-size:15px;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:rgba(42,70,60,.08);color:var(--pine);font-weight:700;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+.col-dim{width:16%;font-weight:600;color:var(--pine);background:rgba(250,247,242,.6)}
+.col-bench{background:rgba(107,143,122,.06)}
+.col-old{background:rgba(154,144,136,.08)}
+.col-new{background:rgba(42,70,60,.04)}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;margin-top:4px}
+.tag--good{background:rgba(42,70,60,.12);color:var(--pine)}
+.tag--warn{background:rgba(162,58,46,.12);color:var(--cinnabar)}
+.tag--neutral{background:rgba(174,138,71,.15);color:#7a5f28}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}
+.card{border:1px solid var(--line);border-radius:6px;padding:20px;background:#fff;border-top:3px solid var(--pine)}
+.card h3{font-size:15px;color:var(--pine);margin-bottom:10px}
+.card ul{padding-left:1.1em;font-size:14px;color:var(--muted)}
+.card li+li{margin-top:6px}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.score-item{text-align:center;padding:16px 8px;background:#fff;border:1px solid var(--line);border-radius:6px}
+.score-item strong{display:block;font-size:1.5rem;color:var(--pine);font-family:"Cormorant Garamond",serif}
+.score-item span{font-size:12px;color:var(--muted)}
+.footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media print{body{background:#fff}.wrap{padding:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Oakville Wellness · Strategy Matrix</p>
+    <h1>頤安本草官網重建<br>多維度比較總結</h1>
+    <p>整合《Oakville-Website-Proposal》方案書與簡報內容，並對照<strong>2026 年 6 月已部署新站</strong>之實際狀態。三方對比：行業標竿（養康）、舊站（重建前）、新站（現況）。</p>
+    <div class="legend">
+      <span><i class="dot dot--bench"></i>養康中醫館（對標）</span>
+      <span><i class="dot dot--old"></i>舊站 oakvilles.com</span>
+      <span><i class="dot dot--new"></i>新站（已上線）</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>一、一句話結論</h2>
+    <p class="section-lead">借鑑養康的「內容厚度 + WhatsApp 轉化」，補足舊站 SEO／信任／量度缺口；新站以中環高端、合規克制定位與其促銷密集型策略區隔。</p>
+    <div class="score">
+      <div class="score-item"><strong>1→62</strong><span>頁面規模（含雙語）</span></div>
+      <div class="score-item"><strong>0→6</strong><span>可追蹤轉化事件</span></div>
+      <div class="score-item"><strong>7</strong><span>症狀 SEO 著陸頁</span></div>
+      <div class="score-item"><strong>5.0</strong><span>Google 評價展示</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>二、核心維度對照表</h2>
+    <p class="section-lead">橫向比較最影響獲客與品牌的三個版本。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>維度</th>
+          <th class="col-bench">養康（honscmc.com）</th>
+          <th class="col-old">舊站</th>
+          <th class="col-new">新站（現況）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-dim">定位</td>
+          <td class="col-bench">尖沙咀 · 皮膚／美容塑形 · 促銷導向</td>
+          <td class="col-old">個人醫師名義 · 訊息分散</td>
+          <td class="col-new">中環高端 · 頤安本草品牌 · 循本溯源<br><span class="tag tag--good">合規克制</span></td>
+        </tr>
+        <tr>
+          <td class="col-dim">頁面規模</td>
+          <td class="col-bench">WordPress 多頁 · 四層下拉導航</td>
+          <td class="col-old">實質 1 頁 · 導航 5 項</td>
+          <td class="col-new"><strong>62 頁</strong>（中+英）· 30+ 核心內容頁<br><span class="tag tag--good">已部署 Vercel</span></td>
+        </tr>
+        <tr>
+          <td class="col-dim">SEO 入口</td>
+          <td class="col-bench">每症狀獨立頁 · title 含地區+症狀</td>
+          <td class="col-old">無症狀頁 · 無 sitemap／Schema</td>
+          <td class="col-new">7 症狀頁 + central-hk · sitemap · JSON-LD · OG<br><span class="tag tag--good">hreflang 雙語</span></td>
+        </tr>
+        <tr>
+          <td class="col-dim">轉化動線</td>
+          <td class="col-bench">Joinchat WA · 全站立即預約 · 首診優惠</td>
+          <td class="col-old">僅 WA 浮窗 · 無分步預約</td>
+          <td class="col-new">2 步 funnel · 計算器預填 · sticky CTA · 多層 data-cta-id<br><span class="tag tag--good">WA 6734 9532 統一</span></td>
+        </tr>
+        <tr>
+          <td class="col-dim">信任元件</td>
+          <td class="col-bench">13 年 · 8000+ 診量 · FAQ 10+ · IG 用家留言</td>
+          <td class="col-old">缺評價 · 缺環境圖 · 缺 FAQ</td>
+          <td class="col-new">Google 5.0 三則 · 診所 gallery · 流程收費 · FAQ<br><span class="tag tag--good">明碼價目</span></td>
+        </tr>
+        <tr>
+          <td class="col-dim">視覺風格</td>
+          <td class="col-bench">綠色臨床 · 資訊密度高</td>
+          <td class="col-old">通用 SPA 風 · Hero 輪播</td>
+          <td class="col-new">paper／pine／cinnabar 禪意 · Mobile-first<br><span class="tag tag--neutral">50 張品牌圖規劃中</span></td>
+        </tr>
+        <tr>
+          <td class="col-dim">量度能力</td>
+          <td class="col-bench">（未公開 GA 細節）</td>
+          <td class="col-old">無 GA4 · 無 CTA 追蹤</td>
+          <td class="col-new">dataLayer 6 事件就緒 · 待填 GA4 ID<br><span class="tag tag--warn">GTM／Pixel 待接</span></td>
+        </tr>
+        <tr>
+          <td class="col-dim">合規風險</td>
+          <td class="col-bench">部分 efficacy 表述較進取</td>
+          <td class="col-old">「數週見效」· 文案筆誤</td>
+          <td class="col-new">設計指南禁止誇大 · 評價加免責<br><span class="tag tag--good">低風險</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>三、從對標「借鑑 vs 不照搬」</h2>
+    <div class="cards">
+      <div class="card" style="border-top-color:#6b8f7a">
+        <h3>✓ 借鑑養康</h3>
+        <ul>
+          <li>以「症狀」而非抽象科別作 SEO 入口</li>
+          <li>FAQ 結構化（地點、資歷、收費、預約）</li>
+          <li>WhatsApp 全站一致預約動線</li>
+          <li>Blog 持續內容 + 內部連結</li>
+          <li>首屏展示地點、時間、專科範圍</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top-color:var(--cinnabar)">
+        <h3>✗ 不照搬</h3>
+        <ul>
+          <li>美容塑形促銷語（豐胸、減肥主入口）</li>
+          <li>首診免診金等高折扣（與高端定位不符）</li>
+          <li>efficacy 進取表述 · 論壇軟文大量佈局</li>
+          <li>資訊過密、視覺擁擠的臨床促銷感</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>頤安差異化</h3>
+        <ul>
+          <li>養康：流量 + 轉化優先</li>
+          <li>頤安：信任 + 合規 + 高端體驗優先</li>
+          <li>架構可借鑑，品牌調性刻意區隔</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>四、舊站 → 新站：12 項具體改善</h2>
+    <table>
+      <thead><tr><th>類別</th><th>舊站</th><th>新站</th></tr></thead>
+      <tbody>
+        <tr><td>頁面</td><td>1 頁為主</td><td>62 頁（含 /en/ 雙語）</td></tr>
+        <tr><td>品牌</td><td>伍厚臻個人名義</td><td>頤安本草 + 印章識別</td></tr>
+        <tr><td>SEO</td><td>基本 title</td><td>sitemap · JSON-LD · canonical · OG 1200×630</td></tr>
+        <tr><td>本地</td><td>無中環專頁</td><td>about/central-hk · GEO · llms.txt</td></tr>
+        <tr><td>預約</td><td>WA 連結</td><td>2 步 funnel + sessionStorage 串接</td></tr>
+        <tr><td>收費</td><td>未展示</td><td>明碼價 + 即時計算器</td></tr>
+        <tr><td>評價</td><td>無</td><td>Google 5.0 + Review Schema</td></tr>
+        <tr><td>量度</td><td>無</td><td>whatsapp_click 等 6 事件</td></tr>
+        <tr><td>內容</td><td>2 專科卡片</td><td>4 專科 + 7 症狀 + Blog + FAQ</td></tr>
+        <tr><td>合規</td><td>有效能承諾</td><td>禁止誇大表述</td></tr>
+        <tr><td>手機</td><td>基本 RWD</td><td>sticky CTA · WA 浮動避障</td></tr>
+        <tr><td>部署</td><td>舊 hosting</td><td>GitHub → Vercel 自動部署</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>五、行銷與廣告策略（提案 + 現站就緒度）</h2>
+    <table>
+      <thead><tr><th>策略</th><th>養康做法</th><th>頤安建議</th><th>新站準備度</th></tr></thead>
+      <tbody>
+        <tr><td>SEO 長尾</td><td>症狀+地區著陸頁</td><td>持續補 FAQ／症狀頁</td><td><span class="tag tag--good">7 頁已上線</span></td></tr>
+        <tr><td>WhatsApp</td><td>24h · Joinchat</td><td>統一 WA + 全站追蹤</td><td><span class="tag tag--good">funnel 已就緒</span></td></tr>
+        <tr><td>Google 本地</td><td>—</td><td>GBP 優化 + 評價邀請</td><td><span class="tag tag--warn">待執行</span></td></tr>
+        <tr><td>Meta 廣告</td><td>療程銷售頁</td><td>症狀頁著陸 · Pixel 追蹤 WA 點擊</td><td><span class="tag tag--warn">Pixel 待接</span></td></tr>
+        <tr><td>Google Ads</td><td>—</td><td>Search：品牌+症狀+中環 · GA4 轉化匯入</td><td><span class="tag tag--warn">GA4 ID 待填</span></td></tr>
+        <tr><td>IG 種草</td><td>KOL 素人化 · 用家留言</td><td>@oakville.wellness 非硬銷 · 可選 micro-KOL</td><td><span class="tag tag--neutral">官網互導已接</span></td></tr>
+        <tr><td>首診優惠</td><td>皮膚科免診金</td><td>不建議（高端定位）</td><td>—</td></tr>
+        <tr><td>內容節奏</td><td>Blog 持續更新</td><td>每月 1–2 篇（濕疹、暗瘡、失眠、備孕）</td><td><span class="tag tag--neutral">4 篇已上線</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>六、廣告著陸頁對應（Meta / Google 共用）</h2>
+    <table>
+      <thead><tr><th>廣告主題</th><th>建議著陸頁</th><th>主要 KPI</th></tr></thead>
+      <tbody>
+        <tr><td>濕疹 / 暗瘡</td><td>/conditions/eczema.html · /conditions/acne.html</td><td>whatsapp_click</td></tr>
+        <tr><td>備孕 / 婦科</td><td>/conditions/fertility.html</td><td>whatsapp_click</td></tr>
+        <tr><td>頸痛 / 痛症</td><td>/conditions/neck-pain.html · /services/pain.html</td><td>whatsapp_click</td></tr>
+        <tr><td>中環中醫</td><td>/about/central-hk.html</td><td>cta_click · booking_submit</td></tr>
+        <tr><td>外籍客群</td><td>/en/ · /en/services/skin.html</td><td>whatsapp_click</td></tr>
+        <tr><td>品牌詞</td><td>/ · /about.html</td><td>cta_click</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>七、交付路線圖（提案 vs 現況）</h2>
+    <table>
+      <thead><tr><th>階段</th><th>提案內容</th><th>2026.06 現況</th></tr></thead>
+      <tbody>
+        <tr><td>第一階段</td><td>30 頁 · SEO · funnel · GA4 就緒</td><td><span class="tag tag--good">✓ 已完成並超越（62 頁雙語）</span></td></tr>
+        <tr><td>第二階段</td><td>50 張品牌視覺資產全站接入</td><td><span class="tag tag--neutral">規劃完成 · 部分已接入</span></td></tr>
+        <tr><td>第三階段</td><td>Production 上線 oakvilles.com</td><td><span class="tag tag--good">✓ 已部署 Vercel</span></td></tr>
+        <tr><td>持續</td><td>月度行銷 HKD 10,000（SEO+內容+月報）</td><td><span class="tag tag--warn">可選 · 待啟動</span></td></tr>
+        <tr><td>廣告開跑前</td><td>—</td><td>GA4 ID · GTM · Meta Pixel · Search Console · GBP</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>八、建議下一步（優先序）</h2>
+    <div class="cards">
+      <div class="card"><h3>P0 · 本週</h3><ul><li>填入 SITE_GA4_ID 並部署</li><li>Search Console + sitemap</li><li>Google Business Profile 優化</li></ul></div>
+      <div class="card"><h3>P1 · 廣告前</h3><ul><li>GTM：GA4 + Meta Pixel</li><li>GA4 轉化 → Google Ads</li><li>Meta 自訂轉換 whatsapp_click</li></ul></div>
+      <div class="card"><h3>P2 · 持續</h3><ul><li>症狀 campaign + 著陸 A/B</li><li>Blog 每月 1–2 篇</li><li>品牌視覺資產批次接入</li></ul></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>資料來源：Oakville-Website-Proposal.docx · Oakville-Website-Proposal.pptx（2026-06-20）· 新站 repo 部署紀錄 · 對標 honscmc.com</p>
+    <p style="margin-top:8px">頤安本草 · 伍厚臻中醫師 ｜ oakvilles.com ｜ WhatsApp 6734 9532</p>
+  </footer>
+</div>
+</body>
+</html>

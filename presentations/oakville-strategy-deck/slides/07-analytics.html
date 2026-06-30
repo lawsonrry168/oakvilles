@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_slide-base.css">
+<style>
+.events { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 40px; flex: 1; align-content: start; margin-top: 8px; }
+.event { display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; border: 1px solid var(--line); border-radius: 6px; background: rgba(255,255,255,.45); }
+.event-name { font-family: ui-monospace, monospace; font-size: 19px; color: var(--cinnabar); min-width: 200px; }
+.event-desc { font-size: 20px; color: var(--ink-soft); line-height: 1.45; }
+.note { margin-top: 28px; padding: 22px 28px; border: 2px dashed var(--ochre); border-radius: 6px; }
+.note p { font-size: 22px; color: var(--pine); line-height: 1.55; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <span class="brand-mark">Oakville Wellness</span>
+  <p class="eyebrow">Analytics · 量測就緒</p>
+  <h2>dataLayer 事件已埋設，待接 GA4 / GTM</h2>
+  <div class="events">
+    <div class="event"><span class="event-name">whatsapp_click</span><span class="event-desc"><strong>主要 KPI</strong> — 任何 WA 連結點擊</span></div>
+    <div class="event"><span class="event-name">booking_submit</span><span class="event-desc">預約表單提交（高意向）</span></div>
+    <div class="event"><span class="event-name">cta_click</span><span class="event-desc">hero-booking · sticky-wa · wa-float 等</span></div>
+    <div class="event"><span class="event-name">funnel_step</span><span class="event-desc">預約 funnel 第 1 / 2 步</span></div>
+    <div class="event"><span class="event-name">calculator_update</span><span class="event-desc">診金計算器調整</span></div>
+    <div class="event"><span class="event-name">calculator_to_booking</span><span class="event-desc">「以此方案預約」中間轉化</span></div>
+  </div>
+  <div class="note">
+    <p>在 <strong>js/site-config.js</strong> 填入 SITE_GA4_ID = 'G-XXXXXXXXXX' 即啟用 GA4；或透過 GTM 讀取 dataLayer，無需改 HTML。</p>
+  </div>
+  <div class="footer-bar"></div>
+</section>
+</body>
+</html>

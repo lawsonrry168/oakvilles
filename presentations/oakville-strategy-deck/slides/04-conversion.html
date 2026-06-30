@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_slide-base.css">
+<style>
+.flow { display: flex; gap: 24px; align-items: stretch; flex: 1; margin-top: 12px; }
+.flow-step {
+  flex: 1; padding: 32px 28px; border: 1px solid var(--line); border-radius: 6px;
+  background: rgba(255,255,255,.5); position: relative;
+}
+.flow-step::after {
+  content: "→"; position: absolute; right: -22px; top: 50%; transform: translateY(-50%);
+  font-size: 28px; color: var(--ochre);
+}
+.flow-step:last-child::after { display: none; }
+.flow-step h3 { font-size: 26px; color: var(--pine); margin-bottom: 16px; }
+.flow-step p { font-size: 20px; line-height: 1.55; color: var(--ink-soft); }
+.highlight { margin-top: 28px; padding: 24px 32px; background: rgba(42,70,60,.08); border-left: 4px solid var(--cinnabar); border-radius: 0 6px 6px 0; }
+.highlight p { font-size: 22px; color: var(--pine); line-height: 1.6; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <span class="brand-mark">Oakville Wellness</span>
+  <p class="eyebrow">Conversion · 轉化動線</p>
+  <h2>WhatsApp 優先，多層 CTA 可追蹤</h2>
+  <div class="flow">
+    <div class="flow-step">
+      <h3>① 多入口 CTA</h3>
+      <p>Hero · Nav · Sticky bar · 浮動 WA · 計算器 — 每個按鈕帶 data-cta-id</p>
+    </div>
+    <div class="flow-step">
+      <h3>② 2 步預約 Funnel</h3>
+      <p>選科別 + 日期 → 填姓名電話 → 自動組 WhatsApp 訊息</p>
+    </div>
+    <div class="flow-step">
+      <h3>③ 診金計算器</h3>
+      <p>明碼價目 + 即時估算，可「以此方案預約」預填 booking</p>
+    </div>
+    <div class="flow-step">
+      <h3>④ 統一通道</h3>
+      <p>WhatsApp <strong>6734 9532</strong> 為主轉化，消除多渠道混亂</p>
+    </div>
+  </div>
+  <div class="highlight">
+    <p>手機版：底部 sticky CTA + WA 浮動鈕自動上移，避免遮擋 · 桌面版：nav 下拉 hover 橋接優化</p>
+  </div>
+  <div class="footer-bar"></div>
+</section>
+</body>
+</html>

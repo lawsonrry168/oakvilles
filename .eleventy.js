@@ -304,6 +304,18 @@ function resolveSchema(data) {
 
   }
 
+  if (stem.startsWith("news/") && stem !== "news/index") {
+
+    return buildArticleSchema(data);
+
+  }
+
+  if (stem.startsWith("en/news/") && stem !== "en/news/index") {
+
+    return buildArticleSchema(data);
+
+  }
+
   if (stem.startsWith("conditions/") && stem !== "conditions/central-hk") {
 
     return buildMedicalWebPageSchema(data, conditionSpecialty(stem));
@@ -442,6 +454,7 @@ function buildLangAlternate(data) {
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("fonts");
 
   eleventyConfig.addPassthroughCopy("js");
 
@@ -484,6 +497,30 @@ module.exports = function (eleventyConfig) {
 
 
   eleventyConfig.addFilter("urlencode", (str) => encodeURIComponent(str || ""));
+
+  eleventyConfig.addFilter("isoDate", (value) => {
+    if (!value) return "";
+    const d = value instanceof Date ? value : new Date(value);
+    if (Number.isNaN(d.getTime())) return String(value).slice(0, 10);
+    return d.toISOString().slice(0, 10);
+  });
+
+  eleventyConfig.addFilter("sitemapPriority", (page) => {
+    const canonical = page.data.canonical || "";
+    const stem = page.data.page && page.data.page.filePathStem
+      ? String(page.data.page.filePathStem).replace(/\\/g, "/").replace(/^\/+/, "")
+      : "";
+    if (page.data.priority) return page.data.priority;
+    if (canonical.endsWith("oakvilles.com/") || canonical.endsWith("/en/")) return "1.0";
+    if (stem === "about/central-hk" || stem === "en/about/central-hk") return "0.9";
+    if (stem === "conditions/acne-eczema-central" || stem === "en/conditions/acne-eczema-central") return "0.9";
+    if (stem === "about" || stem === "en/about" || stem === "process" || stem === "en/process") return "0.85";
+    if (stem.startsWith("blog/") || stem.startsWith("en/blog/") || stem.startsWith("news/") || stem.startsWith("en/news/")) {
+      if (stem.endsWith("/index")) return "0.75";
+      return "0.65";
+    }
+    return "0.7";
+  });
 
   eleventyConfig.addFilter("absoluteUrl", (url, base) => rewriteToSiteUrl(url, base || SITE_BASE_URL));
 

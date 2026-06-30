@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 /**
- * Generate favicon PNG/ICO assets from the brand seal (頤安本草).
- * Uses Puppeteer so Chinese glyphs render with Noto Serif TC.
+ * Generate favicon PNG/ICO assets from the brand seal reference (頤安本草).
  */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import puppeteer from "puppeteer";
 import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT = path.join(ROOT, "images");
+const SOURCE = path.join(OUT, "logo-seal.png");
 
 const SIZES = [
   { name: "favicon-16x16.png", size: 16 },
@@ -20,60 +19,6 @@ const SIZES = [
   { name: "android-chrome-192x192.png", size: 192 },
   { name: "android-chrome-512x512.png", size: 512 },
 ];
-
-const SEAL_HTML = `<!DOCTYPE html>
-<html lang="zh-HK">
-<head>
-<meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    width: 512px; height: 512px;
-    display: grid; place-items: center;
-    background: transparent;
-  }
-  .seal {
-    width: 480px; height: 480px;
-    background: #A23A2E; color: #F3E6CF;
-    display: grid; grid-template-columns: 1fr 1fr;
-    place-items: center;
-    border-radius: 36px;
-    transform: rotate(-2deg);
-    font-family: "Noto Serif TC", "Songti TC", serif;
-    font-weight: 700;
-    font-size: 168px;
-    line-height: 1;
-    position: relative;
-    box-shadow: inset 0 0 0 12px rgba(243, 230, 207, 0.38);
-  }
-  .seal::after {
-    content: "";
-    position: absolute; inset: 24px;
-    border-radius: 24px;
-    border: 1px solid rgba(243, 230, 207, 0.2);
-    pointer-events: none;
-  }
-  .seal span { padding: 8px; }
-</style>
-</head>
-<body>
-  <div class="seal" aria-hidden="true">
-    <span>頤</span><span>安</span><span>本</span><span>草</span>
-  </div>
-</body>
-</html>`;
-
-async function renderMasterPng(browser) {
-  const page = await browser.newPage();
-  await page.setViewport({ width: 512, height: 512, deviceScaleFactor: 1 });
-  await page.setContent(SEAL_HTML, { waitUntil: "networkidle0" });
-  await page.evaluate(() => document.fonts.ready);
-  await new Promise((r) => setTimeout(r, 400));
-  const buf = await page.screenshot({ type: "png", omitBackground: true });
-  await page.close();
-  return buf;
-}
 
 async function writeIco(png32Path, icoPath) {
   const png = await sharp(png32Path).png().toBuffer();
@@ -98,24 +43,16 @@ async function writeIco(png32Path, icoPath) {
 }
 
 async function main() {
-  if (!fs.existsSync(OUT)) fs.mkdirSync(OUT, { recursive: true });
-
-  console.log("Rendering seal master PNG (512px)…");
-  const browser = await puppeteer.launch({ headless: true });
-  let master;
-  try {
-    master = await renderMasterPng(browser);
-  } finally {
-    await browser.close();
+  if (!fs.existsSync(SOURCE)) {
+    console.error("Missing images/logo-seal.png — add the brand seal reference first.");
+    process.exit(1);
   }
 
-  const masterPath = path.join(OUT, "_favicon-master.png");
-  fs.writeFileSync(masterPath, master);
-
+  console.log("Resizing logo-seal.png → favicon sizes…");
   for (const { name, size } of SIZES) {
     const outPath = path.join(OUT, name);
-    await sharp(masterPath)
-      .resize(size, size, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    await sharp(SOURCE)
+      .resize(size, size, { fit: "contain", background: { r: 255, g: 255, b: 255, alpha: 0 } })
       .png({ compressionLevel: 9 })
       .toFile(outPath);
     console.log(`  ${name}`);
@@ -124,8 +61,6 @@ async function main() {
   const icoPath = path.join(OUT, "favicon.ico");
   await writeIco(path.join(OUT, "favicon-32x32.png"), icoPath);
   console.log("  favicon.ico");
-
-  fs.unlinkSync(masterPath);
   console.log("Done → images/");
 }
 

@@ -40,6 +40,12 @@
 
   {% set imgH = site.defaultOgImageHeight %}
 
+{% elif 'blog-' in seoImage or '/services/' in seoImage or '/conditions/' in seoImage %}
+
+  {% set imgW = 1200 %}
+
+  {% set imgH = 630 %}
+
 {% elif 'shop-' in seoImage or '.jpeg' in seoImage or '.jpg' in seoImage %}
 
   {% set imgW = 1600 %}
@@ -56,7 +62,9 @@
 
 
 
-{% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+{% set seoKeywords = keywords | default(site.keywords) %}
+
+{% if seoKeywords %}<meta name="keywords" content="{{ seoKeywords }}">{% endif %}
 
 <meta name="author" content="{{ site.author }}">
 

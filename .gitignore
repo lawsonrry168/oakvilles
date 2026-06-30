@@ -3,6 +3,8 @@ _site/
 .vercel/
 .env
 .env.*
+fonts/tiejili/
+css/seal-font.css
 *.webp
 !src/_data/responsive-images.json
 .vercel

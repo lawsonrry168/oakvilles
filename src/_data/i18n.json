@@ -1,4 +1,4 @@
-﻿{
+{
   "zh": {
     "urlPrefix": "",
     "langLabel": "EN",
@@ -19,6 +19,7 @@
     "waFloat": "WhatsApp 即時預約",
     "waGreeting": "您好，我想預約伍醫師診症。",
     "waGreetingLong": "您好，我想預約伍厚臻中醫師診症。請問近期還有檔期嗎？",
+    "sealAriaLabel": "頤安本草",
     "nav": {
       "about": "關於我們",
       "aboutDr": "關於伍醫師",
@@ -35,6 +36,7 @@
       "moxibustion": "艾灸療法",
       "cupping": "拔罐刮痧",
       "conditions": "常見症狀",
+      "acneEczemaCentral": "中環暗瘡濕疹中醫",
       "eczema": "濕疹中醫治療",
       "acne": "暗瘡中醫治療",
       "insomnia": "失眠中醫調理",
@@ -48,6 +50,7 @@
       "blogInsomnia": "失眠中醫分型",
       "blogFertility": "壓力型難孕體質",
       "news": "最新消息",
+      "newsAll": "全部消息",
       "guide": "就診指南",
       "process": "流程與收費",
       "faq": "常見問題",
@@ -90,6 +93,7 @@
     "waFloat": "WhatsApp booking",
     "waGreeting": "Hello, I'd like to book an appointment with Dr. Ng.",
     "waGreetingLong": "Hello, I'd like to book an appointment with Dr. Ng Hau Chun. Are there any available slots soon?",
+    "sealAriaLabel": "Oakville Wellness",
     "nav": {
       "about": "About",
       "aboutDr": "About Dr. Ng",
@@ -106,6 +110,7 @@
       "moxibustion": "Moxibustion",
       "cupping": "Cupping & gua sha",
       "conditions": "Conditions",
+      "acneEczemaCentral": "Central acne & eczema TCM",
       "eczema": "Eczema",
       "acne": "Acne",
       "insomnia": "Insomnia",
@@ -119,6 +124,7 @@
       "blogInsomnia": "Insomnia TCM types",
       "blogFertility": "Stress & fertility",
       "news": "News",
+      "newsAll": "All news",
       "guide": "Patient guide",
       "process": "Process & fees",
       "faq": "FAQ",

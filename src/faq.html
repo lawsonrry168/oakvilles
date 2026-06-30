@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.njk
 title: "常見問題 FAQ · 頤安本草 | 香港中環中醫"
-description: "中醫常見問題：針灸痛不痛？中藥如何服用？要幾多次？伍厚臻解答中環門診就診疑問 · WhatsApp 6734 9532。"
+description: "中醫常見問題：針灸痛不痛？中藥如何服用？要幾多次？收費、保險與就診流程點算？伍厚臻解答中環門診疑問，內容僅供參考不能替代面診 · 頤安本草錦安大廈 · WhatsApp 6734 9532 即時諮詢。 · 頤安本草中環錦安大廈 6 樓 · WhatsApp 6734 9532 預約。"
 canonical: "https://oakvilles.com/faq.html"
 ogTitle: "常見問題 FAQ · 頤安本草 | 香港中環中醫"
-ogDescription: "中醫常見問題：針灸痛不痛？中藥如何服用？要幾多次？伍厚臻解答中環門診就診疑問 · WhatsApp 6734 9532。"
+ogDescription: "中醫常見問題：針灸痛不痛？中藥如何服用？要幾多次？收費、保險與就診流程點算？伍厚臻解答中環門診疑問，內容僅供參考不能替代面診 · 頤安本草錦安大廈 · WhatsApp 6734 9532 即時諮詢。 · 頤安本草中環錦安大廈 6 樓 · WhatsApp 6734 9532 預約。"
 ogUrl: "https://oakvilles.com/faq.html"
 ogImage: "https://oakvilles.com/images/og/og-default.png"
 ogType: "website"
@@ -139,7 +139,7 @@ lang: "zh-HK"
       <div class="df-faq">
         <div class="df-faq-item">
           <button class="df-faq-q" aria-expanded="false">診所位於哪裡？交通方便嗎？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="df-faq-a"><div class="df-faq-a__inner"><p>診所位於香港中環皇后大道中 176A–176F 號錦安大廈 6 樓 602 室，鄰近中環港鐵站及各主要巴士路線，步行約 5–8 分鐘。詳見<a href="/about/central-hk.html">中環中醫診所</a>及<a href="/clinic.html">診所環境</a>頁面。</p></div></div>
+          <div class="df-faq-a"><div class="df-faq-a__inner"><p>診所位於香港中環皇后大道中 176A–176F 號錦安大廈 6 樓 602 室，港鐵上環站 E2 出口（最近）步行約 3–5 分鐘；中環站步行約 8–10 分鐘亦可。詳見<a href="/about/central-hk.html">中環中醫診所</a>及<a href="/clinic.html">診所環境</a>頁面。</p></div></div>
         </div>
         <div class="df-faq-item">
           <button class="df-faq-q" aria-expanded="false">診所環境如何？是否注重私隱？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -241,7 +241,7 @@ lang: "zh-HK"
       <div class="df-faq">
         <div class="df-faq-item">
           <button class="df-faq-q" aria-expanded="false">診金及中藥費用如何計算？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="df-faq-a"><div class="df-faq-a__inner"><p>診金、針灸及中藥分項計算，首診前會說明預計費用。完整價目及流程請見<a href="/process.html">流程與收費</a>，或 WhatsApp 查詢。</p></div></div>
+          <div class="df-faq-a"><div class="df-faq-a__inner"><p>診金 HK$120；中藥濃縮顆粒 HK$110／天（32g）；針灸、拔罐等治療另計。首診前會說明預計費用。完整價目見<a href="/#pricing">首頁價目表</a>，流程說明見<a href="/process.html">診症流程</a>，或 WhatsApp 查詢。</p></div></div>
         </div>
         <div class="df-faq-item">
           <button class="df-faq-q" aria-expanded="false">接受哪些付款方式？<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -266,7 +266,7 @@ lang: "zh-HK"
         <p class="df-cta__text">直接 WhatsApp 我們，伍醫師團隊會親自為您解答，不論大小問題都歡迎查詢。</p>
       </div>
       <div class="df-cta__actions">
-        <a href="https://wa.me/85267349532?text=您好，我有關於中醫診症的問題想查詢。" target="_blank" rel="noopener" class="df-btn df-btn--wa df-btn--lg">
+        <a href="https://wa.me/{{ site.whatsapp }}?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="df-btn df-btn--wa df-btn--lg">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
           WhatsApp 查詢
         </a>

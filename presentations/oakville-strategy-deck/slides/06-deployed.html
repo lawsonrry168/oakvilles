@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_slide-base.css">
+<style>
+.commit { display: grid; grid-template-columns: 140px 1fr; gap: 12px 24px; font-size: 20px; align-content: start; }
+.commit code { font-family: ui-monospace, monospace; font-size: 18px; color: var(--cinnabar); background: rgba(162,58,46,.08); padding: 4px 10px; border-radius: 4px; }
+.commit span { color: var(--ink-soft); line-height: 1.5; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <span class="brand-mark">Oakville Wellness</span>
+  <p class="eyebrow">Deployed · 近期上線</p>
+  <h2>已部署至 production 的關鍵修復</h2>
+  <div class="commit" style="flex:1; margin-top: 20px;">
+    <code>4a48b74</code><span>OG URL 動態改寫 · 手機 NAV drawer · 全站 RWD</span>
+    <code>71db9e4</code><span>內頁 hero banner 手機 aspect-ratio 修復</span>
+    <code>01d0879</code><span>首頁品牌 logo OG 圖 — Telegram / 社交分享縮圖</span>
+    <code>b0bbaec</code><span>英文手機 hero 水印恢復 · WA 浮動鈕避開 sticky bar</span>
+    <code>2418098</code><span>桌面 nav 下拉 hover 橋接 · 關閉延遲 480ms</span>
+  </div>
+  <div class="highlight" style="margin-top: 32px; padding: 24px 32px; background: rgba(42,70,60,.08); border-left: 4px solid var(--pine);">
+    <p style="font-size: 22px; color: var(--pine);">部署路徑：GitHub main → Vercel 自動 build（build:deploy）→ oakvilles.com</p>
+  </div>
+  <div class="footer-bar"></div>
+</section>
+</body>
+</html>

@@ -4,9 +4,31 @@
    ============================================================ */
 
 const HOME_LOCALE = (document.body && document.body.dataset.locale) || 'zh';
+const CONSULT_FEE = 120;
+const HERB_PER_DAY = 110;
+
+const TREATMENT_FEE = {
+  '0': 0,
+  '450': 450,
+  '350': 350,
+  '498': 498,
+  '650': 650,
+  '290': 290,
+  '351': 350
+};
+
+function treatmentFee(val) {
+  return Object.prototype.hasOwnProperty.call(TREATMENT_FEE, val)
+    ? TREATMENT_FEE[val]
+    : (parseInt(val, 10) || 0);
+}
+
 const HOME_UI = {
   zh: {
-    calc: { treatment: { '0': '純把脈諮詢', '280': '針灸療法', '380': '推拿手法' }, meds: { '0': '不需開藥', '3': '三天調理', '6': '六天調理' } },
+    calc: {
+      treatment: { '0': '純診金諮詢', '450': '針灸', '350': '拔罐', '498': '痛症手法', '650': '綜合治療', '290': '面蒸治療', '351': '耳穴' },
+      meds: { '0': '不需開藥', '3': '三天', '6': '六天' }
+    },
     specialty: { pain: '痛症治療', skin: '皮膚調理', gyn: '婦科調理', gynaecology: '婦科調理', internal: '內科調理' },
     prefill: '已帶入診金估算：',
     step1: '步驟 1 / 2 · 選擇科別與日期',
@@ -16,7 +38,10 @@ const HOME_UI = {
     estimate: '估算方案：', fee: '預估診金：HK$'
   },
   en: {
-    calc: { treatment: { '0': 'Consultation only', '280': 'Acupuncture', '380': 'Tuina massage' }, meds: { '0': 'No herbs', '3': '3-day herbs', '6': '6-day herbs' } },
+    calc: {
+      treatment: { '0': 'Consultation only', '450': 'Acupuncture', '350': 'Cupping', '498': 'Manual pain therapy', '650': 'Integrated treatment', '290': 'Facial steam therapy', '351': 'Ear acupuncture' },
+      meds: { '0': 'No herbs', '3': '3 days', '6': '6 days' }
+    },
     specialty: { pain: 'Pain management', skin: 'Dermatology', gyn: 'Gynaecology', gynaecology: 'Gynaecology', internal: 'Internal medicine' },
     prefill: 'Estimate applied: ',
     step1: 'Step 1 / 2 · Service & date',
@@ -43,12 +68,12 @@ function readCalcState() {
   if (!treatment || !meds || !total) return null;
   const tVal = treatment.value;
   const mVal = meds.value;
-  const tNum = parseInt(tVal, 10) || 0;
+  const tNum = treatmentFee(tVal);
   const mNum = parseInt(mVal, 10) || 0;
   return {
     treatment: { value: tVal, label: CALC_LABELS.treatment[tVal] || treatment.options[treatment.selectedIndex].text },
     meds: { value: mVal, label: CALC_LABELS.meds[mVal] || meds.options[meds.selectedIndex].text },
-    total: parseInt(total.textContent, 10) || 150 + tNum + mNum * 100
+    total: parseInt(total.textContent, 10) || CONSULT_FEE + tNum + mNum * HERB_PER_DAY
   };
 }
 
@@ -71,9 +96,9 @@ function initPriceCalculator() {
   if (!treatment || !meds || !total) return;
 
   const update = function () {
-    const t = parseInt(treatment.value, 10) || 0;
-    const m = (parseInt(meds.value, 10) || 0) * 100;
-    total.textContent = String(150 + t + m);
+    const t = treatmentFee(treatment.value);
+    const days = parseInt(meds.value, 10) || 0;
+    total.textContent = String(CONSULT_FEE + t + days * HERB_PER_DAY);
     window.bookingCalcState = readCalcState();
     emitTrack('calculator_update', {
       treatment: window.bookingCalcState.treatment.label,

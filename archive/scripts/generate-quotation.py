@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Generate project quotation docx for 頤安本草 official website."""
+"""Generate restructured quotation docx for 頤安本草."""
 
 from docx import Document
 from docx.shared import Pt, Cm, RGBColor
@@ -11,30 +11,31 @@ import datetime
 import os
 import shutil
 
-OUTPUT_DIR = r"c:\Users\Steriod\Desktop\oakvilles"
-OUTPUT = os.path.join(OUTPUT_DIR, "Oakville-Website-Quotation.docx")
+OUTPUT = os.path.join(r"c:\Users\Steriod\Desktop\oakvilles", "Oakville-Website-Quotation.docx")
 OUTPUT_DESKTOP = r"c:\Users\Steriod\Desktop\Oakville-Website-Quotation.docx"
+OUTPUT_PRESENTATIONS = os.path.join(
+    r"c:\Users\Steriod\Desktop\oakvilles\presentations", "Oakville-Website-Quotation.docx"
+)
 
-# --- Pricing ---
-WEBSITE_SUBTOTAL = 49_000
+PRICE_FACTOR = 0.7  # 全項減價 30%
+
+WEBSITE_SUBTOTAL = int(49_000 * PRICE_FACTOR)
 IMAGE_COUNT = 50
-IMAGE_UNIT = 380          # HKD per image (生成 + 審校 + WebP)
-IMAGE_INTEGRATION = 3_800  # 全站 HTML 接入、alt、lazy-load
-IMAGE_SUBTOTAL = IMAGE_COUNT * IMAGE_UNIT + IMAGE_INTEGRATION  # 22,800
-BUNDLE_DISCOUNT = 3_800
-LIST_TOTAL = WEBSITE_SUBTOTAL + IMAGE_SUBTOTAL - BUNDLE_DISCOUNT  # 68,000
+IMAGE_UNIT = int(380 * PRICE_FACTOR)
+IMAGE_INTEGRATION = int(3_800 * PRICE_FACTOR)
+IMAGE_SUBTOTAL = IMAGE_COUNT * IMAGE_UNIT + IMAGE_INTEGRATION
+BUNDLE_DISCOUNT = int(3_800 * PRICE_FACTOR)
+LIST_TOTAL = WEBSITE_SUBTOTAL + IMAGE_SUBTOTAL - BUNDLE_DISCOUNT
 
-# Gen HK 轉介額外 5 折（即標準價之 50%）
-GEN_HK_REFERRAL = "Gen HK"
-GEN_HK_DISCOUNT_RATE = 0.5
-GEN_HK_DISCOUNT = int(LIST_TOTAL * GEN_HK_DISCOUNT_RATE)
-GEN_HK_TOTAL = LIST_TOTAL - GEN_HK_DISCOUNT  # 34,000
+REFERRAL_DISCOUNT = int(LIST_TOTAL * 0.5)
+REFERRAL_TOTAL = LIST_TOTAL - REFERRAL_DISCOUNT
 
-# 月度服務（另計，不含於一次性項目總額）
-MONTHLY_RETAINER = 10_000
+MONTHLY_RETAINER = 10_000  # 月度服務不適用報價折扣
 MIN_CONTRACT_MONTHS = 3
+HOURLY_DEV = int(650 * PRICE_FACTOR)
+HOURLY_IMAGE = int(380 * PRICE_FACTOR)
 
-today = datetime.date(2026, 6, 20)
+today = datetime.date(2026, 6, 23)
 valid_until = today + datetime.timedelta(days=30)
 
 
@@ -56,400 +57,395 @@ def set_cell_shading(cell, fill: str):
     cell._tc.get_or_add_tcPr().append(shading)
 
 
-def add_heading(doc, text, level=1):
-    p = doc.add_paragraph()
-    run = p.add_run(text)
-    run.bold = True
-    run.font.name = "Arial"
-    run._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft JhengHei")
-    run.font.size = Pt(14 if level == 1 else 12)
-    run.font.color.rgb = RGBColor(0x2A, 0x46, 0x3C)
-    p.paragraph_format.space_before = Pt(12)
-    p.paragraph_format.space_after = Pt(6)
-    return p
-
-
-def add_para(doc, text, bold=False, size=10.5):
-    p = doc.add_paragraph()
-    run = p.add_run(text)
+def style_run(run, size=10.5, bold=False, color=None):
     run.bold = bold
     run.font.name = "Arial"
     run._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft JhengHei")
     run.font.size = Pt(size)
+    if color:
+        run.font.color.rgb = color
+
+
+def h1(doc, text):
+    p = doc.add_paragraph()
+    r = p.add_run(text)
+    style_run(r, 14, True, RGBColor(0x2A, 0x46, 0x3C))
+    p.paragraph_format.space_before = Pt(14)
+    p.paragraph_format.space_after = Pt(6)
+
+
+def h2(doc, text):
+    p = doc.add_paragraph()
+    r = p.add_run(text)
+    style_run(r, 11.5, True)
+    p.paragraph_format.space_before = Pt(10)
     p.paragraph_format.space_after = Pt(4)
-    return p
 
 
-def add_table(doc, headers, rows, col_widths=None):
-    table = doc.add_table(rows=1 + len(rows), cols=len(headers))
-    table.style = "Table Grid"
-    table.alignment = WD_TABLE_ALIGNMENT.CENTER
-    hdr = table.rows[0].cells
+def para(doc, text, bold=False, size=10.5):
+    p = doc.add_paragraph()
+    r = p.add_run(text)
+    style_run(r, size, bold)
+    p.paragraph_format.space_after = Pt(4)
+
+
+def bullets(doc, items, size=10):
+    for item in items:
+        p = doc.add_paragraph(item, style="List Bullet")
+        for r in p.runs:
+            style_run(r, size)
+
+
+def table(doc, headers, rows, col_widths=None, header_fill="D5E8F0"):
+    t = doc.add_table(rows=1 + len(rows), cols=len(headers))
+    t.style = "Table Grid"
+    t.alignment = WD_TABLE_ALIGNMENT.CENTER
     for i, h in enumerate(headers):
-        hdr[i].text = h
-        set_cell_shading(hdr[i], "D5E8F0")
-        for p in hdr[i].paragraphs:
+        t.rows[0].cells[i].text = h
+        set_cell_shading(t.rows[0].cells[i], header_fill)
+        for p in t.rows[0].cells[i].paragraphs:
             for r in p.runs:
-                r.bold = True
-                r.font.size = Pt(9)
-                r.font.name = "Arial"
-                r._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft JhengHei")
+                style_run(r, 9, True)
     for ri, row in enumerate(rows):
-        cells = table.rows[ri + 1].cells
         for ci, val in enumerate(row):
-            cells[ci].text = str(val)
-            for p in cells[ci].paragraphs:
+            t.rows[ri + 1].cells[ci].text = str(val)
+            for p in t.rows[ri + 1].cells[ci].paragraphs:
                 for r in p.runs:
-                    r.font.size = Pt(9)
-                    r.font.name = "Arial"
-                    r._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft JhengHei")
+                    style_run(r, 9)
     if col_widths:
-        for row in table.rows:
+        for row in t.rows:
             for i, w in enumerate(col_widths):
                 row.cells[i].width = Cm(w)
     doc.add_paragraph()
-    return table
+    return t
+
+
+def qa_block(doc, items):
+    """Q&A pairs: list of (question, answer)"""
+    for q, a in items:
+        p = doc.add_paragraph()
+        rq = p.add_run(f"Q：{q}\n")
+        style_run(rq, 10, True)
+        ra = p.add_run(f"A：{a}")
+        style_run(ra, 10)
+        p.paragraph_format.space_after = Pt(8)
 
 
 doc = Document()
+for s in doc.sections:
+    s.top_margin = Cm(2)
+    s.bottom_margin = Cm(2)
+    s.left_margin = Cm(2.5)
+    s.right_margin = Cm(2.5)
 
-for section in doc.sections:
-    section.top_margin = Cm(2)
-    section.bottom_margin = Cm(2)
-    section.left_margin = Cm(2.5)
-    section.right_margin = Cm(2.5)
-
+# ── 封面 ──
 title = doc.add_paragraph()
 title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 r1 = title.add_run("報 價 單\n")
-r1.bold = True
-r1.font.size = Pt(22)
-r1.font.name = "Arial"
-r1._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft JhengHei")
+style_run(r1, 22, True, RGBColor(0x2A, 0x46, 0x3C))
 r2 = title.add_run("QUOTATION")
-r2.font.size = Pt(14)
-r2.font.name = "Arial"
+style_run(r2, 14)
 
 doc.add_paragraph()
-
-meta = doc.add_table(rows=5, cols=2)
-meta.style = "Table Grid"
-meta_data = [
-    ("報價編號", "SV-WEB-2026-0620"),
+table(doc, ["欄位", "內容"], [
+    ("報價編號", "SV-WEB-2026-0623"),
     ("報價日期", f"{today.year} 年 {today.month} 月 {today.day} 日"),
     ("有效期限", f"30 日（至 {valid_until.year} 年 {valid_until.month} 月 {valid_until.day} 日）"),
-    ("幣別", "港元（HKD），未含第三方平台及網域費用"),
-    ("轉介優惠", f"{GEN_HK_REFERRAL} 轉介客戶享一次性項目額外 5 折"),
-]
-for i, (k, v) in enumerate(meta_data):
-    meta.rows[i].cells[0].text = k
-    meta.rows[i].cells[1].text = v
-    set_cell_shading(meta.rows[i].cells[0], "F7F2E7")
-    for c in meta.rows[i].cells:
-        for p in c.paragraphs:
-            for r in p.runs:
-                r.font.size = Pt(10)
-                r.font.name = "Arial"
-                r._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft JhengHei")
+    ("幣別", "港元（HKD）；未含第三方平台及網域年費"),
+    ("客戶", "頤安本草 · 伍厚臻中醫師（Oakville Wellness）"),
+    ("專案", "官方診所網站重建、視覺資產及月度網絡行銷"),
+    ("網域", "oakvilles.com"),
+    ("承辦方", "[承辦方名稱]　｜　聯絡：[email] · [電話]"),
+], [4, 12])
 
-doc.add_paragraph()
-
-add_para(doc, "致 To", bold=True)
-add_para(doc, "頤安本草 · 伍厚臻中醫師（Oakville Wellness）")
-add_para(doc, "專案名稱：官方診所網站重建、視覺資產製作與上線")
-add_para(doc, "正式網域：oakvilles.com")
-doc.add_paragraph()
-add_para(doc, "報價方 From", bold=True)
-add_para(doc, "[承辦方名稱]（獨立開發／小型數碼工作室）")
-add_para(doc, "聯絡：[email] · [電話]")
-add_para(doc, "服務地區：香港")
-
-doc.add_paragraph()
-add_heading(doc, "專案摘要 Executive Summary")
-add_para(
+# ── 一、報價摘要 ──
+h1(doc, "一、報價摘要")
+para(
     doc,
-    "本報價涵蓋一套面向香港中環市場、以繁體中文（zh-HK）為主的 B2C 中醫診所官方網站，"
-    "包含首頁、四大診症專科、七類常見症狀著陸頁、養生專欄、最新消息、診所環境、流程收費、"
-    "FAQ 及聯絡頁等共 30 頁靜態網站，並整合 WhatsApp 預約動線、診金計算器、GA4 事件量測、"
-    "結構化資料及 Vercel 正式部署。"
+    "本報價分兩部分：① 一次性項目（網站 + 50 張視覺資產）；② 月度網絡行銷及維護（另簽約、按月計費）。"
+    "以下為重點速覽，細節見後文。",
 )
-add_para(
-    doc,
-    f"另含依《網站設計圖片 prompt》規劃之全站 {IMAGE_COUNT} 張視覺資產製作（AI 生成、人工審校、"
-    "WebP 輸出及 HTML 全站接入），替換現有 Unsplash 佔位圖，統一頤安本草品牌視覺。"
-)
-add_para(
-    doc,
-    f"經 {GEN_HK_REFERRAL} 轉介之客戶，一次性項目享額外 5 折（標準價 HKD {fmt(LIST_TOTAL)} → "
-    f"HKD {fmt(GEN_HK_TOTAL)}）。可另簽月度服務合約（HKD {fmt(MONTHLY_RETAINER)}/月），"
-    "涵蓋網絡行銷策劃及網站維護。"
-)
-add_para(
-    doc,
-    "交付狀態：以下項目按現有專案已實作範圍報價，作為正式商務參考假設；實際合約以雙方確認之工作說明書（SOW）為準。",
-)
+table(doc, ["項目", "報價 HKD", "轉介優惠 HKD", "備註"], [
+    ("一次性：網站 + 50 張圖", fmt(LIST_TOTAL), fmt(REFERRAL_TOTAL), "轉介客戶五折；簽約時確認即可"),
+    ("月度：行銷 + 維護", f"{fmt(MONTHLY_RETAINER)}/月", f"{fmt(MONTHLY_RETAINER)}/月", f"最少 {MIN_CONTRACT_MONTHS} 個月；不含廣告費"),
+    ("Meta / Google 廣告費", "—", "—", "客戶直接支付平台，代操含於月費"),
+], [4.5, 2.8, 2.8, 5.9])
 
-doc.add_paragraph()
-add_heading(doc, "服務範圍 Scope of Work")
+bullets(doc, [
+    "新站現況：62 頁（繁中 + 英文 /en/）、WhatsApp 預約 funnel、GA4 事件就緒、Vercel 已部署",
+    "轉化 KPI：WhatsApp 6734 9532（全站統一）",
+    "本報價按已實作範圍及交付清單報價；正式合約以雙方確認之工作說明書（SOW）為準",
+])
 
-add_para(doc, "A. 策略與設計", bold=True)
-add_table(
+# ── 二、一次性項目 ──
+h1(doc, "二、一次性項目（網站 + 視覺）")
+
+h2(doc, "2.1 網站開發範圍")
+table(doc, ["模組", "交付內容"], [
+    ("資訊架構", "62 頁靜態站（繁中 + /en/）；專科、症狀、Blog、FAQ、流程收費等"),
+    ("轉化動線", "2 步 WhatsApp 預約、診金計算器、sticky CTA、浮動 WA 按鈕"),
+    ("互動功能", "全站搜尋、dataLayer 6 事件、Schema.org 結構化資料"),
+    ("SEO 與部署", "sitemap、OG meta、hreflang、Vercel Production、DNS 指引"),
+    ("驗收", "跨裝置 UAT、預約動線測試、上線確認清單"),
+], [3.5, 12])
+
+h2(doc, "2.2 視覺資產（50 張）")
+table(doc, ["類別", "數量", "說明"], [
+    ("診所實景", "6", "候診區、診症室、針灸區等；替換佔位圖"),
+    ("醫師肖像", "3", "以客戶提供 doctor.jpg 優化（非憑空生成人臉）"),
+    ("專欄 / 社交", "10", "Blog 封面、IG 方圖等"),
+    ("專科 / 症狀 Hero", "14", "專科頁 + 症狀頁主視覺"),
+    ("流程 / OG / 雜項", "17", "流程步驟、FAQ 配圖、各頁 OG 分享圖"),
+    ("後製接入", "—", "WebP + alt + 全站 HTML 替換；含 2 輪修訂"),
+], [3.5, 1.5, 11])
+
+# ── 三、月度網絡行銷（依現行行銷方案）──
+h1(doc, "三、月度網絡行銷及維護")
+para(
     doc,
-    ["#", "項目", "說明"],
-    [
-        ("A1", "需求梳理與資訊架構", "頁面地圖（30 頁）、用戶旅程、預約動線設計"),
-        ("A2", "品牌視覺落地", "《設計指南》色票（paper／pine／cinnabar／ochre）、字體、元件風格"),
-        ("A3", "響應式 UI 實作", "桌面／平板／手機；繁體中文排版；東方美學視覺語言"),
-    ],
-    [1.2, 4.5, 10.8],
+    f"月費 HKD {fmt(MONTHLY_RETAINER)}，最少合約 {MIN_CONTRACT_MONTHS} 個月，按月預付。"
+    "以下按《Oakville-Digital-Marketing-Plan》執行；廣告投放費由客戶直接支付 Meta / Google，不含於月費。",
+    True,
 )
 
-add_para(doc, "B. 前端開發", bold=True)
-add_table(
-    doc,
-    ["#", "項目", "說明"],
-    [
-        ("B1", "首頁與全站框架", "Hero、信任列、四大專科、診所 gallery、Google 評價、Header／Footer、全站搜尋"),
-        ("B2", "診症專科頁", "痛症、皮膚、婦科、內科 + 針灸／中藥／艾灸／拔罐等療法頁（共 8 頁）"),
-        ("B3", "症狀著陸頁", "濕疹、暗瘡、失眠、備孕、頸痛、坐骨神經痛、中環中醫等 SEO 內容頁（7 頁）"),
-        ("B4", "內容與資訊頁", "養生專欄（4 篇 + 列表）、最新消息、關於醫師、診所環境、流程收費、FAQ、聯絡（12 頁）"),
-        ("B5", "轉化優化 UI", "兩步驟預約卡片 funnel、診金計算器串接、行動版 sticky CTA、WhatsApp 浮動按鈕"),
-        ("B6", "圖片占位接入", "預留 img 結構、alt 文案、lazy-load；配合 E 區批次替換"),
-    ],
-    [1.2, 4.5, 10.8],
-)
+h2(doc, "3.1 每月固定產出")
+table(doc, ["渠道", "頻率", "每月產出", "說明"], [
+    ("Instagram", "每週 1 篇", "4 post", "症狀科普、診所信任、季節養生、預約 CTA 四大支柱輪替"),
+    ("Facebook", "每週 1 篇", "4 post", "可與 IG 共用素材，依平台微調文案與 CTA"),
+    ("官網養生專欄", "每兩週 1 篇", "2 篇文章", "800–1200 字；SEO 長尾 + 內部連結症狀頁"),
+], [2.5, 2, 2, 9])
 
-add_para(doc, "C. 互動功能與整合", bold=True)
-add_table(
-    doc,
-    ["#", "項目", "說明"],
-    [
-        ("C1", "全站搜尋", "search-index.js 離線索引、導航列搜尋 UI"),
-        ("C2", "WhatsApp 預約流程", "表單 → WhatsApp 訊息、計算器方案預填、sessionStorage 串接"),
-        ("C3", "診金計算器", "項目／天數選擇、即時估價、「以此方案預約」捲動至 booking"),
-        ("C4", "Analytics 事件量測", "dataLayer 事件（cta_click、booking_submit、funnel_step 等）、GA4 就緒設定"),
-        ("C5", "Schema.org 結構化資料", "MedicalBusiness、Physician、FAQPage、Article 等 JSON-LD 注入"),
-    ],
-    [1.2, 4.5, 10.8],
-)
+h2(doc, "3.2 廣告代操（不含廣告費）")
+table(doc, ["平台", "服務內容", "著陸頁方向"], [
+    ("Meta（FB + IG）", "活動設定、受眾、素材測試、Pixel 追蹤、月報", "症狀頁（濕疹/暗瘡/備孕/失眠）+ 再行銷"),
+    ("Google Ads", "Search（品牌/中環/症狀）+ PMax 轉化優化、月報", "/conditions/ 及 central-hk"),
+], [3, 7, 6])
 
-add_para(doc, "D. SEO 與上線", bold=True)
-add_table(
-    doc,
-    ["#", "項目", "說明"],
-    [
-        ("D1", "SEO 基礎", "sitemap.xml、robots.txt、OG meta、canonical、內頁 title／description"),
-        ("D2", "Vercel 部署", "靜態站 Production 部署、redirect 規則（vercel.json）"),
-        ("D3", "自訂網域", "DNS 指向設定指引（oakvilles.com）"),
-        ("D4", "GA4／Search Console", "site-config.js 設定支援、轉換事件對照表"),
-        ("D5", "技術文件", "《設計指南》、圖片 prompt 規劃、部署說明"),
-        ("D6", "UAT 與交付", "跨裝置測試、預約動線驗收、上線確認清單"),
-    ],
-    [1.2, 4.5, 10.8],
-)
+h2(doc, "3.3 策略、量度與技術維護")
+table(doc, ["#", "類別", "每月服務"], [
+    ("M1", "本地 SEO", "Google Business Profile 優化建議、Search Console 監測"),
+    ("M2", "轉化分析", "GA4 / GTM 維護、whatsapp_click 月報、漏斗優化建議"),
+    ("M3", "網站維護", "Vercel 監控、SSL/DNS 檢查、小修版式（≤4 張圖替換）"),
+    ("M4", "策略會議", "每月 1 次 60 分鐘線上檢討（數據 + 下月計劃）"),
+], [1, 3, 12])
 
-add_para(doc, "E. 全站視覺資產製作（50 張）", bold=True)
-add_table(
-    doc,
-    ["#", "項目", "數量", "說明"],
-    [
-        ("E1", "診所實景（P0）", "6 張", "候診區、診症室、針灸區、接待處、中藥房、外觀；替換 Unsplash gallery"),
-        ("E2", "醫師肖像優化（P0）", "3 張", "Hero／About／諮詢情境多版本裁切（以 doctor.jpg 為基礎優化）"),
-        ("E3", "專欄與社交（P1）", "10 張", "blog 封面 4 張（已交付 4 張可抵扣）、IG 方圖 6 張"),
-        ("E4", "專科與症狀 Hero（P2）", "14 張", "8 專科頁 + 6 症狀頁內頁主視覺／圖文分欄"),
-        ("E5", "流程／OG／雜項（P3）", "17 張", "流程 6 步、FAQ 配圖、聯絡地圖、各頁 OG 分享圖等"),
-        ("E6", "後製與全站接入", "—", "WebP + JPG fallback、壓縮、alt 文案、全站 HTML 替換、2 輪修訂"),
-    ],
-    [1.0, 4.0, 1.5, 9.0],
-)
-add_para(
-    doc,
-    f"合計 {IMAGE_COUNT} 張（IMG-001–054 規劃清單，扣除已交付 4 張 blog 圖）。"
-    "統一 Global Style Block：cream paper 色調、pine 綠、cinnabar 紅、禪意高端診所美學。",
-    size=9,
-)
+h2(doc, "3.4 合規與不包含")
+bullets(doc, [
+    "文案合規：不採免診金、論壇軟文、豐胸減肥等與品牌定位不符手段；醫療表述由客戶最終確認",
+    "不含：Meta / Google 廣告投放費、KOL 費、醫師現場攝影、法律合規意見",
+    f"超範圍：額外頁面、大量改版、超 2 篇 Blog → 按 HKD {HOURLY_DEV}/hr 或另議",
+])
 
-doc.add_paragraph()
-add_heading(doc, "費用明細 Pricing Breakdown")
-add_table(
-    doc,
-    ["類別", "項目", "工時／數量", "單價", "小計 HKD"],
-    [
-        ("策略與設計", "A1–A3", "16 hr", "$650/hr", "10,400"),
-        ("前端開發", "B1–B6", "40 hr", "$650/hr", "26,000"),
-        ("互動與整合", "C1–C5", "12 hr", "$650/hr", "7,800"),
-        ("SEO 與部署", "D1–D6", "10 hr", "$600/hr", "6,000"),
-        ("", "網站開發小計", "78 hr", "", fmt(WEBSITE_SUBTOTAL)),
-        ("視覺資產", f"E1–E5 圖片製作", f"{IMAGE_COUNT} 張", f"${IMAGE_UNIT}/張", fmt(IMAGE_COUNT * IMAGE_UNIT)),
-        ("視覺資產", "E6 全站接入與後製", "—", "—", fmt(IMAGE_INTEGRATION)),
-        ("", "視覺資產小計", "", "", fmt(IMAGE_SUBTOTAL)),
-        ("", "項目合計", "", "", fmt(WEBSITE_SUBTOTAL + IMAGE_SUBTOTAL)),
-        ("", "網站＋視覺打包優惠", "", "", f"−{fmt(BUNDLE_DISCOUNT)}"),
-        ("", "標準報價總額 List Price", "", "", fmt(LIST_TOTAL)),
-        ("", f"{GEN_HK_REFERRAL} 轉介額外 5 折", "", "", f"−{fmt(GEN_HK_DISCOUNT)}"),
-        ("", "轉介優惠價 Referral Price", "", "", fmt(GEN_HK_TOTAL)),
-    ],
-    [2.8, 3.2, 2.2, 2.0, 2.3],
-)
+# ── 四、費用明細 ──
+h1(doc, "四、費用明細")
 
-add_para(
-    doc,
-    f"定價說明：網站開發按時薪 HKD 600–700 核算；圖片按 HKD {IMAGE_UNIT}/張（含 prompt 執行、"
-    f"審校、格式輸出）。標準打包價 HKD {fmt(LIST_TOTAL)}；"
-    f"經 {GEN_HK_REFERRAL} 轉介之客戶，一次性項目享額外 5 折，實付 HKD {fmt(GEN_HK_TOTAL)}。",
-    size=9,
-)
+h2(doc, "4.1 一次性項目")
+table(doc, ["類別", "小計 HKD"], [
+    ("網站開發（策略、前端、互動、SEO、部署）", fmt(WEBSITE_SUBTOTAL)),
+    (f"視覺資產（{IMAGE_COUNT} 張 + 全站接入）", fmt(IMAGE_SUBTOTAL)),
+    ("打包優惠", f"−{fmt(BUNDLE_DISCOUNT)}"),
+    ("報價總額", fmt(LIST_TOTAL)),
+    ("轉介優惠（五折）", f"−{fmt(REFERRAL_DISCOUNT)}"),
+    ("轉介價", fmt(REFERRAL_TOTAL)),
+], [10, 6])
 
-doc.add_paragraph()
-add_heading(doc, "Gen HK 轉介優惠 Referral Discount")
-add_table(
-    doc,
-    ["項目", "標準價 HKD", "轉介 5 折 HKD", "備註"],
-    [
-        ("網站開發 + 50 張圖片（一次性）", fmt(LIST_TOTAL), fmt(GEN_HK_TOTAL), f"須由 {GEN_HK_REFERRAL} 正式轉介"),
-        ("月度行銷＋維護（每月）", fmt(MONTHLY_RETAINER), fmt(MONTHLY_RETAINER), "月度服務不適用 5 折，按月計費"),
-    ],
-    [5.5, 3, 3, 4],
-)
-add_para(
-    doc,
-    f"轉介資格：客戶須於簽約前提供 {GEN_HK_REFERRAL} 轉介確認（電郵或書面）；"
-    "優惠只適用於本報價一次性項目，不可與其他折扣疊加。",
-    size=9,
-)
+h2(doc, "4.2 月度服務")
+table(doc, ["項目", "費用"], [
+    ("月度行銷 + 維護（M1–M4 + 3.1–3.2）", f"HKD {fmt(MONTHLY_RETAINER)}/月"),
+    ("最少合約期", f"{MIN_CONTRACT_MONTHS} 個月"),
+    ("超時開發 / 設計", f"HKD {HOURLY_DEV}/hr 另計"),
+    ("額外圖片重製（超 2 輪）", f"HKD {HOURLY_IMAGE}/張 另計"),
+], [10, 6])
 
-doc.add_paragraph()
-add_heading(doc, "付款方式 Payment Terms（一次性項目）")
-add_para(doc, "A. 標準價付款（HKD 68,000）", bold=True, size=10)
+# ── 五、付款方式 ──
+h1(doc, "五、付款方式")
+
 dep_std, mid_std, fin_std = payment_split(LIST_TOTAL)
-add_table(
-    doc,
-    ["階段", "比例", "金額 HKD", "觸發條件"],
-    [
-        ("訂金", "40%", fmt(dep_std), "報價確認、合約簽署"),
-        ("中期", "40%", fmt(mid_std), "網站 Staging 驗收 + 首批 20 張圖片交付"),
-        ("尾款", "20%", fmt(fin_std), "Production 上線、50 張圖全站接入、交付文件"),
-        ("合計", "100%", fmt(LIST_TOTAL), ""),
-    ],
-    [2.5, 2, 3, 8],
-)
-add_para(doc, "B. Gen HK 轉介價付款（HKD 34,000）", bold=True, size=10)
-dep_ref, mid_ref, fin_ref = payment_split(GEN_HK_TOTAL)
-add_table(
-    doc,
-    ["階段", "比例", "金額 HKD", "觸發條件"],
-    [
-        ("訂金", "40%", fmt(dep_ref), "報價確認、合約簽署、Gen HK 轉介確認"),
-        ("中期", "40%", fmt(mid_ref), "網站 Staging 驗收 + 首批 20 張圖片交付"),
-        ("尾款", "20%", fmt(fin_ref), "Production 上線、50 張圖全站接入、交付文件"),
-        ("合計", "100%", fmt(GEN_HK_TOTAL), ""),
-    ],
-    [2.5, 2, 3, 8],
-)
-add_para(doc, "付款方式：銀行轉帳／FPS", size=9)
-add_para(doc, "發票：可提供香港商業發票（如適用）", size=9)
-add_para(doc, "逾期：超過 14 日未付中期款，承辦方可暫停工作", size=9)
+dep_ref, mid_ref, fin_ref = payment_split(REFERRAL_TOTAL)
 
-doc.add_paragraph()
-add_heading(doc, "F. 月度服務 Monthly Retainer")
-add_para(
-    doc,
-    f"每月 HKD {fmt(MONTHLY_RETAINER)}（另計，不含於一次性項目）；"
-    f"最少合約期 {MIN_CONTRACT_MONTHS} 個月，按月預付。",
-    bold=True,
-)
-add_table(
-    doc,
-    ["#", "類別", "每月服務內容"],
-    [
-        ("F1", "網絡行銷策劃", "月度內容日曆、SEO 關鍵字追蹤、Google Business Profile 優化建議、IG／社交貼文方向"),
-        ("F2", "本地搜尋優化", "「中環中醫」「濕疹中醫」等本地詞監測、Search Console 月報、競品簡報"),
-        ("F3", "轉化追蹤分析", "GA4 預約／WhatsApp 點擊月報、漏斗優化建議、A/B 測試方向"),
-        ("F4", "網站技術維護", "Vercel 部署監控、SSL／DNS 健康檢查、安全更新、故障排查"),
-        ("F5", "內容與頁面更新", "每月最多 2 篇專欄／消息更新、小修版式、圖片替換（≤4 張）"),
-        ("F6", "策略會議", "每月 1 次 60 分鐘線上檢討（行銷數據 + 下月計劃）"),
-    ],
-    [1.0, 3.5, 11.0],
-)
-add_table(
-    doc,
-    ["項目", "說明", "費用 HKD"],
-    [
-        ("月度服務費", "F1–F6 全包", f"{fmt(MONTHLY_RETAINER)}/月"),
-        ("合約期", f"最少 {MIN_CONTRACT_MONTHS} 個月", "—"),
-        ("超時工作", "超出 F5 範圍之開發或設計", "$650/hr 另計"),
-        ("廣告投放", "Google Ads／Meta 廣告費", "客戶直接支付平台，不含於月費"),
-    ],
-    [4, 8, 3],
-)
-add_para(doc, "月度付款：每月 1 日前預付當月費用；首月於合約簽署時與訂金一併或分開支付。", size=9)
+h2(doc, "5.1 一次性項目")
+table(doc, ["階段", "比例", "報價 HKD", "轉介優惠 HKD", "觸發條件"], [
+    ("訂金", "40%", fmt(dep_std), fmt(dep_ref), "合約簽署"),
+    ("中期", "40%", fmt(mid_std), fmt(mid_ref), "Staging 驗收 + 首批 20 張圖交付"),
+    ("尾款", "20%", fmt(fin_std), fmt(fin_ref), "Production 上線 + 50 張圖全站接入 + 交付文件"),
+    ("合計", "100%", fmt(LIST_TOTAL), fmt(REFERRAL_TOTAL), ""),
+], [2, 1.5, 2.5, 2.5, 7])
 
-doc.add_paragraph()
-add_heading(doc, "不包含項目 Exclusions")
-add_table(
-    doc,
-    ["項目", "參考費用"],
-    [
-        ("Vercel Pro（如需要）", "~USD 20+/月"),
-        ("網域年費（oakvilles.com）", "~HKD 200–400/年"),
-        ("醫師現場專業攝影（非 AI）", "另議；E1 診所實景可改真實拍攝"),
-        ("醫療廣告合規法律意見", "另議"),
-        ("CMS 後台／會員系統", "不包含"),
-        ("多語言（英文／簡中）", "不包含"),
-        ("24/7 駐場支援", "不包含"),
-        ("月度行銷及維護（F 區）", f"HKD {fmt(MONTHLY_RETAINER)}/月，另簽約"),
-        ("Google／Meta 廣告投放費", "客戶直接支付平台"),
-        ("超出 2 輪之圖片重製", "按 HKD 380/張另計"),
-    ],
-    [8, 8],
-)
+h2(doc, "5.2 月度服務")
+bullets(doc, [
+    "每月 1 日前預付當月費用；首月可於簽約時與訂金一併或分開支付",
+    "付款方式：銀行轉帳 / FPS；可提供香港商業發票（如適用）",
+    "逾期：超過 14 日未付當期款項，承辦方可暫停所有服務直至清付",
+])
 
-doc.add_paragraph()
-add_heading(doc, "可選增值服務 Optional Add-ons")
-add_table(
-    doc,
-    ["項目", "說明", "報價 HKD"],
-    [
-        ("GA4 + Search Console 完整設定", "帳戶建立、轉換追蹤、Search Console 提交（若未含於 F 區）", "2,500"),
-        ("新增症狀／專欄頁", "依現有模板擴展一頁（含 1 張配圖）", "1,800/頁"),
-        ("contact.html 預約 funnel", "聯絡頁共用兩步驟預約元件", "3,500"),
-        ("醫師現場攝影半日", "專業攝影師 + 後期（取代 AI 肖像）", "8,000 起"),
-        ("Google Ads 代操", "廣告策略 + 投放管理（不含廣告費）", "3,500/月 起"),
-    ],
-    [4, 8, 3],
-)
+# ── 六、不包含（另計）──
+h1(doc, "六、不包含項目（另計）")
+table(doc, ["項目", "參考"], [
+    ("Meta / Google 廣告投放費", "客戶直接支付平台；代操含於月費"),
+    ("Vercel Pro、網域年費", "各約 USD 20+/月、HKD 200–400/年"),
+    ("醫師現場專業攝影", "另議（可取代 AI 診所圖）"),
+    ("醫療廣告合規法律意見", "另議；文案合規責任見 FAQ"),
+    ("CMS 後台 / 會員系統 / 24×7 駐場", "不包含"),
+    ("超出合約範圍之開發或設計", f"HKD {HOURLY_DEV}/hr 或 HKD {HOURLY_IMAGE}/張"),
+], [8, 8])
 
-doc.add_paragraph()
-add_heading(doc, "交付物 Deliverables")
-for item in [
+# ── 七、交付物 ──
+h1(doc, "七、交付物")
+bullets(doc, [
     "靜態網站原始碼（GitHub 私有倉庫存取權）",
-    "Production 部署（oakvilles.com）",
-    "sitemap.xml、robots.txt、schema-manifest.js",
-    f"全站 {IMAGE_COUNT} 張 WebP／JPG 視覺資產（images/ 目錄結構）",
-    "《設計指南》及《網站設計圖片 prompt》文件",
-    "GA4 事件對照表（site-config.js 設定指引）",
-    "上線驗收清單",
-    "30 日缺陷保固（非需求變更）",
-]:
-    doc.add_paragraph(item, style="List Bullet")
+    "Production 部署（oakvilles.com）及 DNS 設定指引",
+    "sitemap.xml、robots.txt、Schema 設定",
+    f"全站 {IMAGE_COUNT} 張 WebP/JPG 視覺資產",
+    "設計指南、GA4 事件對照表、上線驗收清單",
+    "月度服務：內容產出檔案、廣告月報、會議紀要（如適用）",
+    "一次性項目：上線後 30 日缺陷保固（限原始 SOW 範圍內之程式錯誤，不含需求變更）",
+])
 
-doc.add_paragraph()
-add_heading(doc, "條款與備註 Terms & Notes")
-notes = [
-    "本報價為中醫診所官方網站技術開發及視覺資產製作，不含醫療廣告合規法律意見；文案及圖片需符合香港《中醫藥條例》及相關廣告規範。",
-    "AI 生成圖片不含可識別真實病患；醫師肖像以客戶提供之 doctor.jpg 為基礎優化，非憑空生成人臉。",
-    "第三方平台條款以各平台為準；承辦方協助設定但不對政策變更負責。",
-    "需求變更超出 SOW，按 HKD 650/小時（開發）或 HKD 380/張（圖片）另計，事前書面確認。",
-    "尾款付清後，客戶享有定制程式碼及圖片使用權；開源套件依各自授權。",
-    "本報價單自發出日起 30 日內有效。",
-    f"{GEN_HK_REFERRAL} 轉介 5 折優惠須於簽約時確認，逾期不補；月度服務（F 區）須另簽月度服務協議。",
-    f"月度服務合約最少 {MIN_CONTRACT_MONTHS} 個月；任一方可於合約期滿前 30 日書面通知不續約。",
-]
-for n in notes:
-    add_para(doc, f"• {n}", size=9)
+# ── 八、條款摘要 ──
+h1(doc, "八、條款摘要")
+bullets(doc, [
+    "本報價為技術開發及數碼行銷服務，不含醫療或法律意見；客戶對對外文案、圖片之合規性負最終責任",
+    "AI 生成圖片不含可識別真實病患；醫師肖像以客戶提供素材為基礎",
+    "第三方平台（Vercel、Meta、Google 等）政策變更，承辦方協助適配但不對平台決策負責",
+    "需求變更超出 SOW 須事前書面確認及報價；未確認之工作不構成交付義務",
+    "尾款及月費付清後，客戶享有交付物之約定使用權；開源套件依各自授權",
+    "本報價 30 日內有效；轉介五折於簽約時確認",
+    f"月度合約最少 {MIN_CONTRACT_MONTHS} 個月；期滿前 30 日書面通知可不續約",
+    "爭議解決：雙方先協商；協商不成，以香港法律為準",
+])
 
-doc.add_paragraph()
-add_heading(doc, "確認 Acceptance")
+# ── 九、常見問題 FAQ（保障雙方，詳盡說明）──
+h1(doc, "九、常見問題與條款說明（FAQ）")
+para(doc, "以下條款旨在釐清雙方權責，避免日後爭議。簽約即視為同意。", size=10)
+
+h2(doc, "9.1 付款與合約")
+qa_block(doc, [
+    (
+        "若客戶延遲付款，承辦方有何權利？",
+        f"訂金未付：承辦方不開始工作。中期或月費逾期超過 14 日：承辦方可暫停網站更新、行銷服務及廣告代操，"
+        f"並保留追討權；因暫停導致之廣告空窗、排名波動或數據中斷，承辦方不承擔責任。"
+        "尾款未付清：承辦方可暫緩移交完整源碼或管理權限，直至款項結清。",
+    ),
+    (
+        "已付訂金後，客戶可取消項目嗎？退款如何計算？",
+        "訂金為項目啟動及檔期保留，原則上不可退。若客戶主動取消，已產出之工時、素材及第三方成本按實際進度結算，"
+        "餘額可退還；若進度已超過已收款項，客戶須補付差額。月度合約首月預付後，當月已開始之工作不予退還。",
+    ),
+    (
+        "轉介五折點計？",
+        f"經介紹之客戶，簽約時確認轉介來源，一次性項目享五折（HKD {fmt(REFERRAL_TOTAL)}）。月度服務不適用。",
+    ),
+    (
+        "月度合約可否提早終止？",
+        f"合約最少 {MIN_CONTRACT_MONTHS} 個月。若客戶於最低合約期內單方面終止，須付清剩餘合約期之月費，或按雙方書面協議之提前終止費用（以較高者為準）。"
+        "承辦方因客戶嚴重違約（如長期欠款、要求違法文案）可即時終止，已付費用不予退還。",
+    ),
+])
+
+h2(doc, "9.2 範圍、變更與驗收")
+qa_block(doc, [
+    (
+        "什麼算「需求變更」？如何計費？",
+        "超出本報價及 SOW 之新頁面、新功能、文案方向改動、額外語言版本、設計風格重做均屬變更。"
+        f"變更須事前書面確認報價；開發按 HKD {HOURLY_DEV}/hr、圖片按 HKD {HOURLY_IMAGE}/張計。"
+        "口頭或即時通訊之變更指示，在未書面確認前不構成承辦方義務。",
+    ),
+    (
+        "驗收標準是什麼？客戶可以無限次修改嗎？",
+        "網站以 SOW 功能清單及跨裝置 UAT 為驗收標準。視覺資產含 2 輪修訂；超出部分另計。"
+        "客戶須於 Staging 驗收後 7 個工作天內以書面確認或一次列明修改清單；逾期視為該階段驗收通過。"
+        "零散、反覆之修改若超出合理修訂範圍，承辦方可按工時另計。",
+    ),
+    (
+        "若客戶遲遲不提供素材或反饋，工期如何計算？",
+        "承辦方依客戶提供素材及確認之速度推進。因客戶延遲提供文案、圖片、帳號權限或審批而導致之工期順延，"
+        "不視為承辦方違約；付款里程碑仍按合約執行，除非雙方書面同意調整。",
+    ),
+    (
+        "上線後 30 日保固涵蓋什麼？",
+        "僅涵蓋 SOW 範圍內之程式缺陷（如連結失效、預約表單錯誤、明顯排版崩壞），由承辦方免費修復。"
+        "不含：新功能、內容更新、第三方平台故障、客戶或第三方自行修改程式碼導致之問題、"
+        "瀏覽器外掛或客戶端環境造成之異常。保固期後維護依月度合約或按工時另計。",
+    ),
+])
+
+h2(doc, "9.3 行銷、廣告與成效")
+qa_block(doc, [
+    (
+        "月費是否保證預約量或廣告 ROAS？",
+        "不保證。數碼行銷受競爭、季節、平台演算法及客戶預算影響。"
+        "承辦方義務為按方案產出約定內容（4 IG + 4 FB + 2 Blog）、執行廣告代操及提供數據報告，"
+        "而非保證特定預約數、排名或投資回報。客戶應合理預期並配合提供合規素材與審批。",
+    ),
+    (
+        "廣告費用如何處理？最低預算建議？",
+        "Meta / Google 廣告費由客戶以自身企業帳戶直接支付平台，發票及稅務由平台處理。"
+        f"代操服務含於月費 HKD {fmt(MONTHLY_RETAINER)}，不含廣告 spend。"
+        "建議試跑期各平台 HKD 3,000–8,000/月；實際預算由客戶決定，預算不足可能影響投放效果。",
+    ),
+    (
+        "社交帳號及廣告帳戶歸誰擁有？",
+        "Instagram、Facebook 專頁、Google Ads、GA4、Meta Business 等帳戶應登記於客戶名下。"
+        "承辦方經客戶授權代為操作；合約終止時，承辦方須交還管理權限，不得扣留帳戶。"
+        "承辦方自有之內容模板、內部工具及未交付之草稿不在移交範圍。",
+    ),
+    (
+        "客戶要求違反醫療廣告規範的文案怎麼辦？",
+        "承辦方有權拒絕製作或投放含「保證治癒」「誇大療效」等違規表述之素材。"
+        "客戶堅持使用違規文案，承辦方可終止相關服務且不承擔因此導致之帳戶封禁或法律後果；已付月費不予退還。",
+    ),
+    (
+        "每月 4+4 post 及 2 篇文章，若客戶未按時審批怎麼辦？",
+        "承辦方按月度計劃提交草稿；客戶須於 5 個工作天內審批。"
+        "若因客戶未審批導致無法發布，仍視為承辦方已履行該月產出義務（以交付草稿為準），除非雙方書面同意順延。",
+    ),
+])
+
+h2(doc, "9.4 知識產權、資料與安全")
+qa_block(doc, [
+    (
+        "網站源碼及圖片版權歸誰？",
+        "尾款付清後，客戶享有專案交付之客製程式碼、頁面內容及已交付圖片於本項目範圍內之使用權。"
+        "開源函式庫依各自授權；承辦方通用方法論、未交付之草稿及內部工具仍屬承辦方。"
+        "客戶不可將交付物轉售為白標產品予第三方，除非另簽授權協議。",
+    ),
+    (
+        "客戶自行修改網站後出問題，承辦方是否負責？",
+        "否。客戶或第三方修改程式碼、主機設定或 DNS 後產生之故障，不在保固及月度維護範圍，"
+        f"恢復工作按 HKD {HOURLY_DEV}/hr 另計。建議重大修改前先與承辦方確認。",
+    ),
+    (
+        "客戶資料如何處理？",
+        "承辦方僅在履行合約所需範圍內處理客戶提供之資料（文案、圖片、Analytics 等），"
+        "不主動分享予第三方，合約終止後按客戶要求刪除或交還，法律另有規定除外。",
+    ),
+    (
+        "若 Vercel、Meta、Google 等平台故障或改政策？",
+        "承辦方合理協助適配，但不對平台中斷、帳戶封禁、政策變更導致之損失負責。"
+        "因客戶違反平台政策（含廣告素材）導致之後果由客戶自行承擔。",
+    ),
+])
+
+h2(doc, "9.5 其他")
+qa_block(doc, [
+    (
+        "發票及報稅如何處理？",
+        "承辦方可按香港法例提供商業發票（如適用）。客戶須自行處理其側之會計及稅務申報。"
+        "第三方平台廣告費之發票由平台開立予客戶。",
+    ),
+    (
+        "不可抗力（如疫情、天災）如何處理？",
+        "因不可抗力導致無法履約，履約期限順延；若超過 60 日仍無法恢復，任何一方可書面終止，"
+        "按已完成工作比例結算，互不追究違約責任（已產生之不可退成本除外）。",
+    ),
+    (
+        "本報價與口頭承諾不一致時，以哪份為準？",
+        "以本報價單及雙方簽署之正式合約 / SOW 為準；口頭或即時通訊之承諾，未經書面納入合約者不具約束力。",
+    ),
+])
+
+# ── 十、確認簽署 ──
+h1(doc, "十、確認簽署")
 sig = doc.add_table(rows=5, cols=2)
 sig.style = "Table Grid"
 sig.rows[0].cells[0].text = "客戶 Client"
@@ -466,21 +462,19 @@ for row in sig.rows:
     for c in row.cells:
         for p in c.paragraphs:
             for r in p.runs:
-                r.font.size = Pt(10)
-                r.font.name = "Arial"
-                r._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft JhengHei")
+                style_run(r, 10)
 
 doc.add_paragraph()
-add_para(
+para(
     doc,
-    "本文件為假設性商務報價，供內部評估及對外溝通參考。金額已按香港本地診所數碼項目市場水平調整。",
+    "本文件為商務報價及條款說明，供雙方評估及簽約參考。金額按香港本地診所數碼項目市場水平制定。",
     size=8,
 )
 
 doc.save(OUTPUT)
 shutil.copy2(OUTPUT, OUTPUT_DESKTOP)
+os.makedirs(os.path.dirname(OUTPUT_PRESENTATIONS), exist_ok=True)
+shutil.copy2(OUTPUT, OUTPUT_PRESENTATIONS)
 print(f"Saved: {OUTPUT}")
 print(f"Copied: {OUTPUT_DESKTOP}")
-print(f"List Total: HKD {fmt(LIST_TOTAL)}")
-print(f"Gen HK Referral: HKD {fmt(GEN_HK_TOTAL)}")
-print(f"Monthly Retainer: HKD {fmt(MONTHLY_RETAINER)}/mo")
+print(f"Copied: {OUTPUT_PRESENTATIONS}")

@@ -10,6 +10,7 @@
   { title: "Herbal medicine", url: "/en/services/herbs.html", type: "Therapy", keywords: "herbs prescription formula" },
   { title: "Moxibustion", url: "/en/services/moxibustion.html", type: "Therapy", keywords: "moxibustion warming" },
   { title: "Cupping & gua sha", url: "/en/services/cupping.html", type: "Therapy", keywords: "cupping gua sha" },
+  { title: "Central acne & eczema TCM", url: "/en/conditions/acne-eczema-central.html", type: "Condition", keywords: "central acne eczema skin wellness" },
   { title: "Eczema", url: "/en/conditions/eczema.html", type: "Condition", keywords: "eczema dermatitis itch" },
   { title: "Acne", url: "/en/conditions/acne.html", type: "Condition", keywords: "acne hormonal" },
   { title: "Insomnia", url: "/en/conditions/insomnia.html", type: "Condition", keywords: "insomnia sleep" },

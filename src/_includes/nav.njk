@@ -1,89 +1,96 @@
-{% set p = t.urlPrefix %}
-<header class="df-nav paper-grain">
-  <div class="df-container">
-    <div class="df-nav__inner">
-      <a href="{{ p }}/" class="df-nav__logo">
-        <span class="seal seal--sm"><span>頤</span><span>安</span><span>本</span><span>草</span></span>
-        <span><span class="df-nav__brand">{{ t.brandName }}</span><span class="df-nav__sub">{{ t.brandSub | safe }}</span></span>
-      </a>
-      <button type="button" class="df-burger" aria-expanded="false" aria-controls="df-nav-drawer" aria-label="{{ t.menuOpen }}">
-        <span class="df-burger__bar"></span>
-        <span class="df-burger__bar"></span>
-        <span class="df-burger__bar"></span>
-      </button>
-      <nav class="df-nav__links" id="df-nav-drawer" aria-label="{{ t.navLabel }}">
-        <div class="nav-drop" data-nav="about">
-          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.about }}<span class="nav-drop__caret">▾</span></button>
-          <div class="nav-drop__panel" role="menu">
-            <a href="{{ p }}/about.html" role="menuitem"><strong>{{ t.nav.aboutDr }}</strong></a>
-            <a href="{{ p }}/about/central-hk.html" role="menuitem">{{ t.nav.centralClinic }}</a>
-            <a href="{{ p }}/clinic.html" role="menuitem">{{ t.nav.clinicEnv }}</a>
-          </div>
-        </div>
-        <div class="nav-drop" data-nav="services">
-          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.services }}<span class="nav-drop__caret">▾</span></button>
-          <div class="nav-drop__panel nav-drop__panel--wide" role="menu">
-            <a href="{{ p }}/services.html" role="menuitem"><strong>{{ t.nav.servicesAll }}</strong></a>
-            <a href="{{ p }}/services/pain.html" role="menuitem">{{ t.nav.pain }}</a>
-            <a href="{{ p }}/services/skin.html" role="menuitem">{{ t.nav.skin }}</a>
-            <a href="{{ p }}/services/internal.html" role="menuitem">{{ t.nav.internal }}</a>
-            <a href="{{ p }}/services/gynaecology.html" role="menuitem">{{ t.nav.gyn }}</a>
-            <a href="{{ p }}/services/acupuncture.html" role="menuitem">{{ t.nav.acupuncture }}</a>
-            <hr>
-            <a href="{{ p }}/services/herbs.html" role="menuitem">{{ t.nav.herbs }}</a>
-            <a href="{{ p }}/services/moxibustion.html" role="menuitem">{{ t.nav.moxibustion }}</a>
-            <a href="{{ p }}/services/cupping.html" role="menuitem">{{ t.nav.cupping }}</a>
-          </div>
-        </div>
-        <div class="nav-drop" data-nav="conditions">
-          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.conditions }}<span class="nav-drop__caret">▾</span></button>
-          <div class="nav-drop__panel nav-drop__panel--wide" role="menu">
-            <a href="{{ p }}/conditions/eczema.html" role="menuitem">{{ t.nav.eczema }}</a>
-            <a href="{{ p }}/conditions/acne.html" role="menuitem">{{ t.nav.acne }}</a>
-            <a href="{{ p }}/conditions/insomnia.html" role="menuitem">{{ t.nav.insomnia }}</a>
-            <a href="{{ p }}/conditions/fertility.html" role="menuitem">{{ t.nav.fertility }}</a>
-            <a href="{{ p }}/conditions/neck-pain.html" role="menuitem">{{ t.nav.neckPain }}</a>
-            <a href="{{ p }}/conditions/sciatica.html" role="menuitem">{{ t.nav.sciatica }}</a>
-          </div>
-        </div>
-        <div class="nav-drop" data-nav="blog">
-          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.blog }}<span class="nav-drop__caret">▾</span></button>
-          <div class="nav-drop__panel nav-drop__panel--wide" role="menu">
-            <a href="{{ p }}/blog/" role="menuitem">{{ t.nav.blogAll }}</a>
-            <a href="{{ p }}/blog/eczema-from-within.html" role="menuitem">{{ t.nav.blogEczema }}</a>
-            <a href="{{ p }}/blog/acne-face-zones.html" role="menuitem">{{ t.nav.blogAcne }}</a>
-            <a href="{{ p }}/blog/insomnia-tcm-guide.html" role="menuitem">{{ t.nav.blogInsomnia }}</a>
-            <a href="{{ p }}/blog/fertility-stress.html" role="menuitem">{{ t.nav.blogFertility }}</a>
-          </div>
-        </div>
-        <a href="{{ p }}/news/" class="df-nav__link" data-nav="news">{{ t.nav.news }}</a>
-        <div class="nav-drop" data-nav="guide">
-          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.guide }}<span class="nav-drop__caret">▾</span></button>
-          <div class="nav-drop__panel" role="menu">
-            <a href="{{ p }}/process.html" role="menuitem">{{ t.nav.process }}</a>
-            <a href="{{ p }}/faq.html" role="menuitem">{{ t.nav.faq }}</a>
-            <a href="{{ p }}/contact.html" role="menuitem">{{ t.nav.contact }}</a>
-          </div>
-        </div>
-        {% if homeNav %}
-        <a href="#booking" class="df-nav__drawer-cta df-btn df-btn--cinnabar" data-cta-id="nav-drawer-booking">{{ t.bookOnline }}</a>
-        <a href="https://wa.me/85267349532?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="df-nav__drawer-cta df-btn df-btn--wa" data-cta-id="nav-drawer-wa">{{ t.waBook }}</a>
-        {% else %}
-        <a href="https://wa.me/85267349532?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="df-nav__drawer-cta df-btn df-btn--cinnabar">{{ t.waBook }}</a>
-        {% endif %}
-      </nav>
-      <div class="df-nav__right">
-        {% if langAlternate %}
-        <a href="{{ langAlternate }}" class="df-lang-switch" hreflang="{{ 'zh-HK' if locale == 'en' else 'en' }}" aria-label="{{ t.langSwitchAria }}">{{ t.langLabel }}</a>
-        {% endif %}
-        <button type="button" class="df-search-btn" data-search-open aria-label="{{ t.searchLabel }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-        {% if homeNav %}
-        <a href="#booking" class="df-btn df-btn--pine df-nav__cta" data-cta-id="nav-booking"><span class="df-nav__cta-dot" aria-hidden="true"></span>{{ t.bookVisit }}</a>
-        {% else %}
-        <a href="https://wa.me/85267349532?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="df-btn df-btn--pine df-nav__cta"><span class="df-nav__cta-dot" aria-hidden="true"></span>{{ t.bookVisit }}</a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  <div class="df-nav__backdrop" hidden></div>
-</header>
+{% set p = t.urlPrefix %}
+<header class="df-nav paper-grain">
+  <div class="df-container">
+    <div class="df-nav__inner">
+      <a href="{{ p }}/" class="df-nav__logo">
+        <span class="seal seal--sm seal--brand" data-seal="yi-an-ben-cao" role="img" aria-label="{{ t.sealAriaLabel }}"></span>
+        <span><span class="df-nav__brand">{{ t.brandName }}</span><span class="df-nav__sub">{{ t.brandSub | safe }}</span></span>
+      </a>
+      <button type="button" class="df-burger" aria-expanded="false" aria-controls="df-nav-drawer" aria-label="{{ t.menuOpen }}">
+        <span class="df-burger__bar"></span>
+        <span class="df-burger__bar"></span>
+        <span class="df-burger__bar"></span>
+      </button>
+      <nav class="df-nav__links" id="df-nav-drawer" aria-label="{{ t.navLabel }}">
+        <div class="nav-drop" data-nav="about">
+          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.about }}<span class="nav-drop__caret">▾</span></button>
+          <div class="nav-drop__panel" role="menu">
+            <a href="{{ p }}/about.html" role="menuitem"><strong>{{ t.nav.aboutDr }}</strong></a>
+            <a href="{{ p }}/about/central-hk.html" role="menuitem">{{ t.nav.centralClinic }}</a>
+            <a href="{{ p }}/clinic.html" role="menuitem">{{ t.nav.clinicEnv }}</a>
+          </div>
+        </div>
+        <div class="nav-drop" data-nav="services">
+          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.services }}<span class="nav-drop__caret">▾</span></button>
+          <div class="nav-drop__panel nav-drop__panel--wide" role="menu">
+            <a href="{{ p }}/services.html" role="menuitem"><strong>{{ t.nav.servicesAll }}</strong></a>
+            <a href="{{ p }}/services/pain.html" role="menuitem">{{ t.nav.pain }}</a>
+            <a href="{{ p }}/services/skin.html" role="menuitem">{{ t.nav.skin }}</a>
+            <a href="{{ p }}/services/internal.html" role="menuitem">{{ t.nav.internal }}</a>
+            <a href="{{ p }}/services/gynaecology.html" role="menuitem">{{ t.nav.gyn }}</a>
+            <a href="{{ p }}/services/acupuncture.html" role="menuitem">{{ t.nav.acupuncture }}</a>
+            <hr>
+            <a href="{{ p }}/services/herbs.html" role="menuitem">{{ t.nav.herbs }}</a>
+            <a href="{{ p }}/services/moxibustion.html" role="menuitem">{{ t.nav.moxibustion }}</a>
+            <a href="{{ p }}/services/cupping.html" role="menuitem">{{ t.nav.cupping }}</a>
+          </div>
+        </div>
+        <div class="nav-drop" data-nav="conditions">
+          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.conditions }}<span class="nav-drop__caret">▾</span></button>
+          <div class="nav-drop__panel nav-drop__panel--wide" role="menu">
+            <a href="{{ p }}/conditions/acne-eczema-central.html" role="menuitem">{{ t.nav.acneEczemaCentral }}</a>
+            <a href="{{ p }}/conditions/eczema.html" role="menuitem">{{ t.nav.eczema }}</a>
+            <a href="{{ p }}/conditions/acne.html" role="menuitem">{{ t.nav.acne }}</a>
+            <a href="{{ p }}/conditions/insomnia.html" role="menuitem">{{ t.nav.insomnia }}</a>
+            <a href="{{ p }}/conditions/fertility.html" role="menuitem">{{ t.nav.fertility }}</a>
+            <a href="{{ p }}/conditions/neck-pain.html" role="menuitem">{{ t.nav.neckPain }}</a>
+            <a href="{{ p }}/conditions/sciatica.html" role="menuitem">{{ t.nav.sciatica }}</a>
+          </div>
+        </div>
+        <div class="nav-drop" data-nav="blog">
+          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.blog }}<span class="nav-drop__caret">▾</span></button>
+          <div class="nav-drop__panel nav-drop__panel--wide" role="menu">
+            <a href="{{ p }}/blog/" role="menuitem">{{ t.nav.blogAll }}</a>
+            <a href="{{ p }}/blog/eczema-from-within.html" role="menuitem">{{ t.nav.blogEczema }}</a>
+            <a href="{{ p }}/blog/acne-face-zones.html" role="menuitem">{{ t.nav.blogAcne }}</a>
+            <a href="{{ p }}/blog/insomnia-tcm-guide.html" role="menuitem">{{ t.nav.blogInsomnia }}</a>
+            <a href="{{ p }}/blog/fertility-stress.html" role="menuitem">{{ t.nav.blogFertility }}</a>
+          </div>
+        </div>
+        <div class="nav-drop" data-nav="news">
+          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.news }}<span class="nav-drop__caret">▾</span></button>
+          <div class="nav-drop__panel" role="menu">
+            <a href="{{ p }}/news/" role="menuitem"><strong>{{ t.nav.newsAll }}</strong></a>
+            <a href="{{ p }}/news/saturday-hours-2026.html" role="menuitem">{{ t.footer.saturdayHoursLink }}</a>
+          </div>
+        </div>
+        <div class="nav-drop" data-nav="guide">
+          <button type="button" class="nav-drop__trigger" aria-expanded="false" aria-haspopup="true">{{ t.nav.guide }}<span class="nav-drop__caret">▾</span></button>
+          <div class="nav-drop__panel" role="menu">
+            <a href="{{ p }}/process.html" role="menuitem">{{ t.nav.process }}</a>
+            <a href="{{ p }}/faq.html" role="menuitem">{{ t.nav.faq }}</a>
+            <a href="{{ p }}/contact.html" role="menuitem">{{ t.nav.contact }}</a>
+          </div>
+        </div>
+        {% if homeNav %}
+        <a href="#booking" class="df-nav__drawer-cta df-btn df-btn--cinnabar" data-cta-id="nav-drawer-booking">{{ t.bookOnline }}</a>
+        <a href="https://wa.me/{{ site.whatsapp }}?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="df-nav__drawer-cta df-btn df-btn--wa" data-cta-id="nav-drawer-wa">{{ t.waBook }}</a>
+        {% else %}
+        <a href="https://wa.me/{{ site.whatsapp }}?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="df-nav__drawer-cta df-btn df-btn--cinnabar">{{ t.waBook }}</a>
+        {% endif %}
+      </nav>
+      <div class="df-nav__right">
+        {% if langAlternate %}
+        <a href="{{ langAlternate }}" class="df-lang-switch" hreflang="{{ 'zh-HK' if locale == 'en' else 'en' }}" aria-label="{{ t.langSwitchAria }}">{{ t.langLabel }}</a>
+        {% endif %}
+        <button type="button" class="df-search-btn" data-search-open aria-label="{{ t.searchLabel }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        {% if homeNav %}
+        <a href="#booking" class="df-btn df-btn--pine df-nav__cta" data-cta-id="nav-booking"><span class="df-nav__cta-dot" aria-hidden="true"></span>{{ t.bookVisit }}</a>
+        {% else %}
+        <a href="https://wa.me/{{ site.whatsapp }}?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="df-btn df-btn--pine df-nav__cta"><span class="df-nav__cta-dot" aria-hidden="true"></span>{{ t.bookVisit }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="df-nav__backdrop" hidden></div>
+</header>

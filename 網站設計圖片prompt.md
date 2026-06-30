@@ -632,18 +632,36 @@ GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
 
 ### G. 流程頁 `/process.html` — 六步圖（P3）
 
-> **頁面現況**：`process.html` 的 `.df-step-list` 目前只有文字（`.df-step__no` + 標題 + 內文），**尚未接入圖片**。以下每張圖對應 **一個 `.df-step` 區塊**，生成後以 `.df-step__media` 插入。
+> **頁面現況**：`process.html` 的 `.df-step-list` 已接入 `.df-step__media`（`images/process/step-01 … step-06.png`）。以下 prompt **對齊 2026 年真實診所實拍風格**（`shop-3`／`shop-8`／`doctor-2`／`shop-9`），取代早期偏「雜誌編輯／米紙色調」方向。
+
+#### 真實診所攝影風格基準（必讀）
+
+| 參考檔 | 場景 | 風格關鍵字 |
+|--------|------|------------|
+| `shop-3.jpeg` | 候診區 | 白牆、掛牆電視、矮木長椅＋白坐墊、綠植、明亮均光 |
+| `shop-8.jpeg` | 接待處 | 弧形白櫃台、直紋木條＋底部暖黃燈帶、綠白濃縮顆粒藥瓶牆 |
+| `doctor-2.jpeg` | 診症室 | 淺色木紋書桌、木製脈枕、灰網布辦公椅、平板支架、白牆 |
+| `shop-9.jpeg` | 針灸室 | 白床單治療床、TDP 紅外燈、米色簾、簡潔醫療空間 |
+
+**舊方向（避免）** → **新方向（採用）**：米紙色重度調色／淺景深 → 白牆＋自然木色、全畫面清晰實拍；居家沙發預約 → 候診區內預約；深色老藥行 → 現代玻璃層架顆粒瓶（同 `shop-8`）。
+
+**流程步驟通用 Style Block**（六張圖末尾必附，取代舊 GLOBAL STYLE）：
+
+```
+REAL CLINIC PHOTO STYLE — Oakville Wellness 頤安本草 (match shop-3, shop-8, doctor-2, shop-9):
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). Slight wide-angle like a real clinic tour photo. No watermarks, no burned-in Chinese text overlays, no readable text on screens, forms, medicine labels, or name badges. No dark traditional apothecary aesthetic. 3:2 horizontal, 1200×800px.
+```
 
 #### 步驟 ↔ 頁面 ↔ 檔案對照總表
 
 | ID | 步驟 | `process.html` 對應 | 頁面標題（`.df-step__title`） | 建議檔名 | 比例 |
 |----|------|---------------------|-------------------------------|----------|------|
-| IMG-034 | ① | 第 1 個 `.df-step`（無 `data-d`） | WhatsApp / 電話預約 | `process/step-01-booking.webp` | **3:2** 1200×800 |
-| IMG-035 | ② | 第 2 個 `.df-step`（`data-d="1"`） | 到達診所 · 登記 | `process/step-02-checkin.webp` | 3:2 |
-| IMG-036 | ③ | 第 3 個 `.df-step`（`data-d="2"`） | 望聞問切 · 詳細問診 | `process/step-03-diagnosis.webp` | 3:2 |
-| IMG-037 | ④ | 第 4 個 `.df-step`（無 `data-d`） | 制定個人化治療方案 | `process/step-04-plan.webp` | 3:2 |
-| IMG-038 | ⑤ | 第 5 個 `.df-step`（`data-d="1"`） | 治療 · 配藥 | `process/step-05-treatment.webp` | 3:2 |
-| IMG-039 | ⑥ | 第 6 個 `.df-step--soft`（`data-d="2"`） | 定期複診 · 調整方案 | `process/step-06-followup.webp` | 3:2 |
+| IMG-034 | ① | 第 1 個 `.df-step` | WhatsApp / 電話預約 | `process/step-01-booking.png` | **3:2** 1200×800 |
+| IMG-035 | ② | 第 2 個 `.df-step` | 到達診所 · 登記 | `process/step-02-checkin.png` | 3:2 |
+| IMG-036 | ③ | 第 3 個 `.df-step` | 望聞問切 · 詳細問診 | `process/step-03-diagnosis.png` | 3:2 |
+| IMG-037 | ④ | 第 4 個 `.df-step` | 制定個人化治療方案 | `process/step-04-plan.png` | 3:2 |
+| IMG-038 | ⑤ | 第 5 個 `.df-step` | 治療 · 配藥 | `process/step-05-treatment.png` | 3:2 |
+| IMG-039 | ⑥ | 第 6 個 `.df-step--soft` | 定期複診 · 調整方案 | `process/step-06-followup.png` | 3:2 |
 
 **接入 HTML 範例**（生成圖片後，於每步 `<div>` 內、`.df-step__label` 之前插入）：
 
@@ -653,7 +671,7 @@ GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
   <span class="df-step__no">1</span>
   <div>
     <figure class="df-step__media">
-      <img src="images/process/step-01-booking.webp"
+      <img src="images/process/step-01-booking.png"
            alt="透過 WhatsApp 或電話預約伍厚臻中醫師診症"
            width="1200" height="800" loading="lazy" decoding="async">
     </figure>
@@ -672,18 +690,19 @@ GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
 |------|------|
 | 人物 | 患者 **不露正臉**（背影、手部、剪影）；醫師可露側面或手部，避免與 Hero／About 正臉肖像重複 |
 | 文字 | 畫面內 **不可有清晰可讀** 的電話、姓名、病歷、WhatsApp 對話 |
-| 色調 | 與診所實景一致：cream 牆、pine 點綴、暖色間接光 |
-| 用途 | 偏「說明圖」而非廣告 — 讓首次到訪者預期流程，降低焦慮 |
+| 色調 | 對齊實拍：白牆、淺木色、接待處暖黃底光、藥瓶綠白標籤（模糊） |
+| 用途 | 流程說明 — 與 `clinic.html` 相簿實拍 **同一間診所** |
 
-**現有素材墊圖參考**（可裁 3:2，非最終品質仍可用）
+**現有素材墊圖參考**（img2img 或裁切測構圖）
 
-| 步驟 | 可暫用現有檔 | 備註 |
-|------|-------------|------|
-| ② 登記 | `office-1.jpg` / `shop-8.jpeg` | 接待處填表情境 |
-| ③ 四診 | `doctor-2.jpeg` | 裁切脈枕＋手部，去掉臉部 |
-| ④ 方案 | `doctor-3.jpeg` | 裁切側坐交談構圖 |
-| ⑤ 治療 | `shop-10.jpeg` + `shop-6.jpeg` | 針灸床／中藥房各一，或合成 |
-| ①⑥ | 無合適現有圖 | 需新拍或 AI 生成 |
+| 步驟 | 對齊實拍 | 備註 |
+|------|----------|------|
+| ① 預約 | `shop-3.jpeg` | 候診區長椅＋手機 |
+| ② 登記 | `shop-8.jpeg` | 接待櫃台＋填表手部 |
+| ③ 四診 | `doctor-2.jpeg` | 脈枕＋書桌＋醫師雙手 |
+| ④ 方案 | `doctor-2.jpeg` | 書桌對坐／平板說明 |
+| ⑤ 治療 | `shop-9.jpeg` + `shop-8.jpeg` | 針灸床；配藥可虛化藥瓶牆 |
+| ⑥ 複診 | `doctor-2.jpeg` / `shop-3.jpeg` | 再次把脈或候診區 |
 
 ---
 
@@ -693,16 +712,17 @@ GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
 |------|------|
 | **頁面文案** | 「傳送 WhatsApp 訊息或致電，告知希望診症的問題及偏好日期時間。我們會在一個工作日內確認預約…」 |
 | **畫面核心** | 患者 **手持手機** 正在聯絡診所；螢幕為 WhatsApp 綠色界面但 **內容完全模糊／馬賽克** |
-| **場景** | 候診區或家中沙發一角；旁可放一杯暖茶、診所名片（文字不可讀） |
-| **情緒** | 輕鬆、方便、無壓力 — 「預約只需一則訊息」 |
-| **避免** | 清晰對話截圖、真實電話號碼、過度商業化「立即預約」大字 |
+| **場景** | **候診區**（對齊 `shop-3.jpeg`）：白牆、木長椅白坐墊、掛牆電視、綠植；患者坐候診椅用手機 |
+| **情緒** | 輕鬆、方便 — 「在診所候診時也能預約／確認」 |
+| **避免** | 居家沙發、米紙色調、清晰對話截圖、真實電話號碼 |
+| **墊圖** | `shop-3.jpeg`（img2img 或構圖參考） |
 
 **Prompt：**
 ```
-Editorial lifestyle photo for TCM clinic patient journey STEP 1 — online booking. Close-up of adult hands holding a smartphone showing a blurred green messaging app interface (WhatsApp-like, NO readable text, NO phone numbers). Setting: premium clinic waiting lounge corner OR calm home sofa with cream linen, ceramic tea cup on wooden side table. Soft window light, shallow depth of field, phone screen intentionally out of focus. Conveys ease of booking via message or call. 3:2 horizontal, instructional but premium.
+Photorealistic clinic interior photo, patient journey STEP 1 — booking via WhatsApp or phone. Modern TCM clinic waiting area matching shop-3 reference: white walls, low wooden bench with white seat cushions, wall-mounted TV blurred in background, small potted plant, bright even ceiling lighting. Adult patient seated on waiting bench, hands holding smartphone with blurred green messaging app (WhatsApp-like, NO readable text, NO phone numbers). Casual business attire, relaxed posture. Wide-angle clinic tour composition, sharp focus throughout. NOT home sofa, NOT editorial cream paper grading.
 
-GLOBAL STYLE — Oakville Wellness 頤安本草:
-Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7), deep pine green accents (#2A463C), subtle cinnabar red (#A23A2E) and muted ochre gold (#AE8A47). Zen-like, private, calm, high-end editorial photography — NOT generic hospital stock. Soft natural window light, gentle shadows, shallow depth of field. Clean composition with negative space suitable for Chinese serif typography overlay. Subtle rice-paper texture in highlights. No harsh flash, no cluttered props, no watermarks, no text in image. Color grading: warm, desaturated greens, ivory highlights. Mood: 禪意、私密、專業、中環高端商務人士適配. Photorealistic, 8K detail.
+REAL CLINIC PHOTO STYLE — Oakville Wellness 頤安本草 (match shop-3, shop-8, doctor-2, shop-9):
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). Slight wide-angle like a real clinic tour photo. No watermarks, no burned-in Chinese text overlays, no readable text on screens, forms, medicine labels, or name badges. No dark traditional apothecary aesthetic. 3:2 horizontal, 1200×800px.
 ```
 
 ---
@@ -713,16 +733,17 @@ Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7),
 |------|------|
 | **頁面文案** | 「請提早 5 分鐘到達填寫基本健康資料表。如有西醫報告、用藥紀錄或化驗結果，請一併攜帶…」 |
 | **畫面核心** | **接待處** — 患者背影或手部正在填寫健康表格；桌上可有 clipboard、筆 |
-| **場景** | 頤安本草背光接待台（參考 `shop-8.jpeg`）；背景可見藥櫃一角但虛化 |
-| **情緒** | 整潔、專業、有條理 — 「到了就知道怎麼做」 |
-| **避免** | 表格上可辨識個人資料、排隊擁擠、其他患者正臉 |
+| **場景** | 接待處（對齊 `shop-8.jpeg`）：弧形白櫃台、直紋木條＋底部暖黃燈帶、背景綠白濃縮顆粒藥瓶玻璃牆 |
+| **情緒** | 整潔、專業 — 「到了就知道怎麼做」 |
+| **避免** | 深色老藥櫃、表格可辨識個人資料、患者正臉 |
+| **墊圖** | `shop-8.jpeg` |
 
 **Prompt：**
 ```
-Editorial interior photo for TCM clinic patient journey STEP 2 — arrival and check-in. Premium reception desk with backlit clinic sign blurred in background, wooden medicine drawer wall softly out of focus. Foreground: patient seen from behind (no face), hands filling a health intake form on clipboard with pen. Optional: folder with medical reports edge visible but text illegible. Clean, organized, welcoming. Central Hong Kong clinic atmosphere. 3:2 horizontal.
+Photorealistic clinic interior photo, patient journey STEP 2 — arrival and check-in. Reception area matching shop-8 reference: curved white reception counter with vertical light wood slat front panel and warm yellow LED strip along base, glass shelving wall of green-and-white concentrated herbal granule bottles softly blurred behind desk. Foreground: patient seen from behind (no face), hands filling health intake form on clipboard with pen. Optional closed folder for medical reports (text illegible). Bright even lighting, wide-angle real clinic photo. NOT dark wooden apothecary drawers, NOT cream paper editorial grading.
 
-GLOBAL STYLE — Oakville Wellness 頤安本草:
-Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7), deep pine green accents (#2A463C), subtle cinnabar red (#A23A2E) and muted ochre gold (#AE8A47). Zen-like, private, calm, high-end editorial photography — NOT generic hospital stock. Soft natural window light, gentle shadows, shallow depth of field. Clean composition with negative space suitable for Chinese serif typography overlay. Subtle rice-paper texture in highlights. No harsh flash, no cluttered props, no watermarks, no text in image. Color grading: warm, desaturated greens, ivory highlights. Mood: 禪意、私密、專業、中環高端商務人士適配. Photorealistic, 8K detail.
+REAL CLINIC PHOTO STYLE — Oakville Wellness 頤安本草 (match shop-3, shop-8, doctor-2, shop-9):
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). Slight wide-angle like a real clinic tour photo. No watermarks, no burned-in Chinese text overlays, no readable text on screens, forms, medicine labels, or name badges. No dark traditional apothecary aesthetic. 3:2 horizontal, 1200×800px.
 ```
 
 ---
@@ -734,16 +755,17 @@ Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7),
 | **頁面文案** | 「伍醫師以傳統四診法（望、聞、問、切）進行全面評估：觀察面色舌苔、聆聽聲音氣息、詳細詢問症狀病史、把脈…」 |
 | **畫面核心** | **四診元素同框**：脈枕上的手腕、舌診燈（舌未露出／僅見燈具）、診桌、經典醫書 |
 | **人物** | 醫師 **只見雙手** 把脈；患者手腕入鏡，**不露臉** |
-| **場景** | 診症室（參考 `doctor-2.jpeg` 構圖）；光線柔和，偏學者氣質 |
-| **情緒** | 專注、細緻、有時間 — 「首診問診時間充足」 |
-| **避免** | 誇張舌頭特寫、患者痛苦表情、西醫聽診器搶戲 |
+| **場景** | 診症室（對齊 `doctor-2.jpeg`）：淺色木紋書桌、木製脈枕、灰網布椅、平板支架、白牆 |
+| **情緒** | 專注、細緻 — 「首診問診時間充足」 |
+| **避免** | 誇張舌頭特寫、米紙色調、西醫聽診器 |
+| **墊圖** | `doctor-2.jpeg` |
 
 **Prompt：**
 ```
-Editorial close-up for TCM clinic patient journey STEP 3 — four diagnostic methods (look, listen, ask, pulse). Consultation desk: wooden pulse pillow with patient wrist, physician hands taking pulse (face out of frame), tongue diagnosis light device on desk (light on, tongue NOT shown), stacked classic TCM books, single ceramic cup. Scholarly, unhurried, private consultation room with cream walls and pine accents. Soft daylight through sheer curtain. 3:2 horizontal, focus on hands and diagnostic tools.
+Photorealistic consultation room photo, patient journey STEP 3 — four diagnostic methods (look, listen, ask, pulse). Desk scene matching doctor-2 reference: light natural wood grain desk, wooden pulse pillow with patient wrist, physician hands taking pulse (faces out of frame), grey mesh ergonomic office chair edge visible, tablet on stand on desk, white walls, bright even lighting. Optional tongue diagnosis lamp on desk (light on, tongue NOT shown). Sharp focus, real clinic documentation style. NOT scholarly cream-toned editorial, NOT stacked antique TCM books as main prop.
 
-GLOBAL STYLE — Oakville Wellness 頤安本草:
-Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7), deep pine green accents (#2A463C), subtle cinnabar red (#A23A2E) and muted ochre gold (#AE8A47). Zen-like, private, calm, high-end editorial photography — NOT generic hospital stock. Soft natural window light, gentle shadows, shallow depth of field. Clean composition with negative space suitable for Chinese serif typography overlay. Subtle rice-paper texture in highlights. No harsh flash, no cluttered props, no watermarks, no text in image. Color grading: warm, desaturated greens, ivory highlights. Mood: 禪意、私密、專業、中環高端商務人士適配. Photorealistic, 8K detail.
+REAL CLINIC PHOTO STYLE — Oakville Wellness 頤安本草 (match shop-3, shop-8, doctor-2, shop-9):
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). Slight wide-angle like a real clinic tour photo. No watermarks, no burned-in Chinese text overlays, no readable text on screens, forms, medicine labels, or name badges. No dark traditional apothecary aesthetic. 3:2 horizontal, 1200×800px.
 ```
 
 ---
@@ -754,16 +776,17 @@ Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7),
 |------|------|
 | **頁面文案** | 「根據辨證結果，伍醫師清晰說明您的體質問題及治療方向，選擇最合適的治療方式（針灸、中藥、推拿或組合），並告知預期療程次數…」 |
 | **畫面核心** | 醫師與患者 **對坐交談** — 側面或過肩構圖，醫師手勢說明，患者聽講（**側臉或剪影**） |
-| **場景** | 診間兩張椅、小茶几；可見空白紙張或處方箋（文字不可讀） |
-| **情緒** | 溝通、透明、被理解 — 「方案會先講清楚」 |
-| **避免** | 醫師指點患者像訓話、複雜流程圖、保證療效手勢 |
+| **場景** | 同一診症室（`doctor-2.jpeg`）：醫師與患者對坐於木桌兩側，可見平板或空白紙張 |
+| **情緒** | 溝通、透明 — 「方案會先講清楚」 |
+| **避免** | 醫師正臉（與 Hero 重複）、可讀處方文字 |
+| **墊圖** | `doctor-2.jpeg`（拉遠構圖） |
 
 **Prompt：**
 ```
-Editorial photo for TCM clinic patient journey STEP 4 — personalized treatment plan discussion. Two chairs facing each other in serene consultation room, physician and patient in side profile or over-shoulder silhouette (patient face partially hidden, physician may show profile only, avoid duplicate hero portrait). Physician gesturing calmly while explaining, blank prescription pad on low table (no readable text). Atmosphere: collaborative, transparent, unhurried. Pine green accents, cream walls, soft warm light. 3:2 horizontal.
+Photorealistic consultation room photo, patient journey STEP 4 — personalized treatment plan discussion. Same room as doctor-2 reference: light wood desk, grey mesh chairs, white walls, bright even lighting. Physician and patient seated across desk in side profile or over-shoulder view (patient face hidden, physician profile only, no front-facing portrait). Physician gesturing calmly toward tablet or blank paper on desk (no readable text). Collaborative, transparent atmosphere. Wide-angle real clinic photo, sharp focus. NOT cream editorial mood lighting.
 
-GLOBAL STYLE — Oakville Wellness 頤安本草:
-Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7), deep pine green accents (#2A463C), subtle cinnabar red (#A23A2E) and muted ochre gold (#AE8A47). Zen-like, private, calm, high-end editorial photography — NOT generic hospital stock. Soft natural window light, gentle shadows, shallow depth of field. Clean composition with negative space suitable for Chinese serif typography overlay. Subtle rice-paper texture in highlights. No harsh flash, no cluttered props, no watermarks, no text in image. Color grading: warm, desaturated greens, ivory highlights. Mood: 禪意、私密、專業、中環高端商務人士適配. Photorealistic, 8K detail.
+REAL CLINIC PHOTO STYLE — Oakville Wellness 頤安本草 (match shop-3, shop-8, doctor-2, shop-9):
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). Slight wide-angle like a real clinic tour photo. No watermarks, no burned-in Chinese text overlays, no readable text on screens, forms, medicine labels, or name badges. No dark traditional apothecary aesthetic. 3:2 horizontal, 1200×800px.
 ```
 
 ---
@@ -775,16 +798,17 @@ Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7),
 | **頁面文案** | 「進行針灸或推拿治療（約 20–40 分鐘），並按需開立中藥處方。醫師會詳細說明中藥的煎煮方法、服用時間及注意事項。」 |
 | **畫面核心** | **雙元素構圖**（左／右或前／後景）：① 針灸治療床 + 毫針托盤 ② 中藥房配藥／免煎顆粒包裝袋 |
 | **人物** | 患者蓋毛巾躺臥，**只見肩頸以上被覆蓋**；或完全無人，純空間 |
-| **場景** | 治療室（參考 `shop-10.jpeg`）＋ 藥房（參考 `shop-6.jpeg`） |
-| **情緒** | 專業、衛生、一條龍 — 「診完即治療、即取藥」 |
-| **避免** | 裸露皮膚特寫、血痕、誇大針具、藥袋上可讀藥名 |
+| **場景** | 針灸室（`shop-9.jpeg`）＋ 接待處藥瓶牆（`shop-8.jpeg` 背景虛化） |
+| **情緒** | 專業、衛生 — 「診完即治療、即取藥」 |
+| **避免** | 深色木藥櫃、裸露皮膚、可讀藥名 |
+| **墊圖** | `shop-9.jpeg` + `shop-8.jpeg` |
 
 **Prompt：**
 ```
-Editorial split-scene photo for TCM clinic patient journey STEP 5 — treatment and herbal dispensing. Left or foreground: clean acupuncture treatment bed with privacy curtain, sterile needle tray, patient covered with white towel (only shoulder visible, no exposed skin). Right or background: herbal dispensary counter with wooden drawers, staff hands placing granule medicine packets into paper bag (labels blurred, no readable text). Conveys acupuncture plus custom herbal prescription in one visit. Hygienic, calm, professional. 3:2 horizontal.
+Photorealistic clinic photo, patient journey STEP 5 — treatment and herbal dispensing. Primary scene matching shop-9 reference: white-sheeted treatment bed, beige privacy curtain, TDP infrared lamp on stand, sterile acupuncture needle tray on side table, patient covered with white towel (shoulder only, no exposed skin). Secondary element: blurred background of shop-8 style glass shelving with green-white granule bottles, staff hands placing medicine packet into paper bag (labels unreadable). Bright even medical lighting, wide-angle real clinic tour. NOT dark wooden drawer apothecary, NOT cream editorial split collage.
 
-GLOBAL STYLE — Oakville Wellness 頤安本草:
-Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7), deep pine green accents (#2A463C), subtle cinnabar red (#A23A2E) and muted ochre gold (#AE8A47). Zen-like, private, calm, high-end editorial photography — NOT generic hospital stock. Soft natural window light, gentle shadows, shallow depth of field. Clean composition with negative space suitable for Chinese serif typography overlay. Subtle rice-paper texture in highlights. No harsh flash, no cluttered props, no watermarks, no text in image. Color grading: warm, desaturated greens, ivory highlights. Mood: 禪意、私密、專業、中環高端商務人士適配. Photorealistic, 8K detail.
+REAL CLINIC PHOTO STYLE — Oakville Wellness 頤安本草 (match shop-3, shop-8, doctor-2, shop-9):
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). Slight wide-angle like a real clinic tour photo. No watermarks, no burned-in Chinese text overlays, no readable text on screens, forms, medicine labels, or name badges. No dark traditional apothecary aesthetic. 3:2 horizontal, 1200×800px.
 ```
 
 ---
@@ -795,36 +819,35 @@ Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7),
 |------|------|
 | **頁面文案** | 「複診時伍醫師評估治療進展，按需調整針灸穴位或藥方配比，直至健康問題根本改善。複診頻率因病情而異，一般建議每週 1–2 次。」 |
 | **畫面核心** | **複診預約** 意象：桌曆／月曆上標記日期（日期不可讀或抽象）、手機再次預約（模糊）、或診間 **第二次把脈** 的延續感 |
-| **場景** | 候診區或診間；可選：牆上掛曆 + 茶杯，象徵「持續調理、循序漸進」 |
-| **情緒** | 安心、有計劃、長期陪伴 — 呼應 `.df-step--soft` 的「持續跟進」 |
-| **避免** | 「已治癒」宣傳、Before/After、過度頻繁就診暗示 |
+| **場景** | 診症室再次把脈（`doctor-2.jpeg`）或候診區（`shop-3.jpeg`） |
+| **情緒** | 安心、持續跟進 — 呼應 `.df-step--soft` |
+| **避免** | Before/After、「已治癒」宣傳、可讀日曆日期 |
+| **墊圖** | `doctor-2.jpeg` 或 `shop-3.jpeg` |
 
 **Prompt：**
 ```
-Editorial photo for TCM clinic patient journey STEP 6 — follow-up and plan adjustment. Calm consultation corner: wall calendar or desk planner with abstract marked dates (no readable numbers), hands scheduling next appointment on blurred smartphone, OR physician hands re-taking pulse on return visit (continuity of care). Optional: second cup of tea, patient chart folder closed. Mood: ongoing support, gentle progress, not aggressive marketing. Soft ochre and pine accents, cream paper tones. 3:2 horizontal.
+Photorealistic clinic photo, patient journey STEP 6 — follow-up and plan adjustment. Continuity of care scene: same doctor-2 consultation desk, physician hands re-taking pulse on return visit (faces out of frame), OR patient seated in shop-3 style waiting area with blurred smartphone scheduling next appointment. Closed patient chart folder on desk optional. Ongoing support mood, not cure marketing. Bright white walls, light wood furniture, even clinic lighting. NOT wall calendar with readable dates, NOT cream ochre editorial tones.
 
-GLOBAL STYLE — Oakville Wellness 頤安本草:
-Premium Hong Kong Central TCM clinic aesthetic. Warm cream paper tone (#F7F2E7), deep pine green accents (#2A463C), subtle cinnabar red (#A23A2E) and muted ochre gold (#AE8A47). Zen-like, private, calm, high-end editorial photography — NOT generic hospital stock. Soft natural window light, gentle shadows, shallow depth of field. Clean composition with negative space suitable for Chinese serif typography overlay. Subtle rice-paper texture in highlights. No harsh flash, no cluttered props, no watermarks, no text in image. Color grading: warm, desaturated greens, ivory highlights. Mood: 禪意、私密、專業、中環高端商務人士適配. Photorealistic, 8K detail.
+REAL CLINIC PHOTO STYLE — Oakville Wellness 頤安本草 (match shop-3, shop-8, doctor-2, shop-9):
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). Slight wide-angle like a real clinic tour photo. No watermarks, no burned-in Chinese text overlays, no readable text on screens, forms, medicine labels, or name badges. No dark traditional apothecary aesthetic. 3:2 horizontal, 1200×800px.
 ```
 
 ---
 
-**批次生成快速參考**（複製到 AI 工具時，替換 `[STEP]` 與場景一句）：
+**批次生成快速參考**（複製到 AI 工具時，替換 `[N]` 與 `[STEP SCENE]`）：
 
-| 步驟 | 英文場景一句（貼入 `[STEP SCENE]`） |
-|------|-------------------------------------|
-| 1 | hands holding phone with blurred WhatsApp-style chat, tea cup nearby |
-| 2 | reception desk check-in, patient filling health form from behind |
-| 3 | pulse diagnosis hands, tongue light, TCM books on desk |
-| 4 | physician and patient side-profile discussion, treatment plan |
-| 5 | acupuncture bed with needle tray plus herbal dispensary packing |
-| 6 | calendar follow-up booking, ongoing pulse check continuity |
+| 步驟 | 英文場景一句（貼入 `[STEP SCENE]`） | 墊圖 |
+|------|-------------------------------------|------|
+| 1 | waiting bench in white-wall clinic, hands holding blurred WhatsApp phone | `shop-3.jpeg` |
+| 2 | curved white reception counter, wood slat + yellow LED base, granule bottle wall, patient filling form from behind | `shop-8.jpeg` |
+| 3 | light wood desk, pulse pillow, physician hands, tablet stand, white walls | `doctor-2.jpeg` |
+| 4 | same consultation desk, side-profile discussion with tablet | `doctor-2.jpeg` |
+| 5 | white treatment bed, TDP lamp, needle tray, blurred granule bottle wall packing | `shop-9.jpeg` + `shop-8.jpeg` |
+| 6 | return pulse check at same desk OR waiting area re-booking on phone | `doctor-2.jpeg` / `shop-3.jpeg` |
 
-**流程步驟通用 Prompt 模板**（精簡版，適合 Midjourney / DALL·E 單句）：
+**流程步驟通用 Prompt 模板**（精簡版）：
 ```
-Illustrative photo for TCM clinic patient journey step [N]: [STEP SCENE]. Clean, instructional but premium, 3:2 horizontal. No readable text on screens, forms, or medicine labels. No patient faces.
-
-GLOBAL STYLE — Oakville Wellness 頤安本草: Premium Hong Kong Central TCM clinic aesthetic. Warm cream (#F7F2E7), pine green (#2A463C), cinnabar (#A23A2E), ochre gold (#AE8A47). Zen, private, editorial photography. Soft window light, shallow DOF. Photorealistic.
+Photorealistic TCM clinic patient journey step [N]: [STEP SCENE]. Match real Oakville clinic photos (shop-3, shop-8, doctor-2, shop-9): white walls, light wood, bright even lighting, sharp focus, wide-angle clinic tour. No readable text. No patient faces. No cream editorial grading. 3:2 horizontal 1200×800.
 ```
 
 ---
@@ -917,9 +940,10 @@ GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
 | **IMG-062** | `og/og-about.jpg` | `about.html` | 同 IMG-002 醫師側像 |
 | **IMG-063** | `og/og-central.jpg` | `about/central-hk.html` | 同 IMG-042 中環街景 |
 | **IMG-064** | `og/og-blog.jpg` | `blog/index.html` | 四格專欄矇太奇 |
-| **IMG-065** | `og/og-process.jpg` | `process.html` | 六步流程矇太奇 |
+| **IMG-065** | `og/og-process.jpg` | `process.html` | 六步流程實拍風格矇太奇（對齊 IMG-034–039／`shop-3` `shop-8` `doctor-2` `shop-9`） |
 
-> **製作捷徑**：若已生成 IMG-020–033 的 3:2 或 21:9 主圖，可在 Figma 將右 45% 裁入主視覺、左 55% 填 cream 底，加底欄與 logo，比從零生成更快且一致。
+> **製作捷徑**：若已生成 IMG-020–033 的 3:2 或 21:9 主圖，可在 Figma 將右 45% 裁入主視覺、左 55% 填 cream 底，加底欄與 logo，比從零生成更快且一致。  
+> **流程頁專用**：若已依 § G 生成 `process/step-01 … step-06.png`，可將六張 **3:2 圖縮為 2×3 格** 拼入右區 540×630，再套 OG 左區 cream + 底欄，風格最一致。
 
 ---
 
@@ -1197,12 +1221,45 @@ GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
 
 #### IMG-065 · 流程與收費 → `og/og-process.jpg`
 
-**適用**：`process.html`  
+| 項目 | 內容 |
+|------|------|
+| **適用** | `process.html` |
+| **右區主視覺** | **2×3 六格矇太奇**（或 3 格精簡版），每格對應 § G 一步，場景須與實拍一致 |
+| **六格內容** | ① 候診區手機預約 ② 接待櫃台填表 ③ 診症桌把脈 ④ 對坐說明方案 ⑤ 針灸床＋藥瓶牆 ⑥ 複診把脈／候診再預約 |
+| **後期標題建議** | 「診症流程與收費」／「六步了解中醫診症」 |
+| **墊圖** | `shop-3.jpeg`、`shop-8.jpeg`、`doctor-2.jpeg`、`shop-9.jpeg`；或已生成的 `process/step-01 … 06.png` |
+| **避免** | 米紙色編輯調、居家沙發、深色老藥櫃、可讀文字、患者正臉 |
+
+**右區六格對照**（由上至下、左至右 2×3）：
+
+| 格 | 步驟 | 場景關鍵字 |
+|----|------|------------|
+| 1 | 預約 | 白牆候診長椅、模糊 WhatsApp 手機 |
+| 2 | 登記 | 弧形白櫃台、木條暖黃底光、填表手部 |
+| 3 | 四診 | 淺木桌、脈枕、醫師雙手 |
+| 4 | 方案 | 同診症室對坐、平板側影 |
+| 5 | 治療 | 白床單針灸床、TDP 燈、針盤 |
+| 6 | 複診 | 再次把脈或候診區手機 |
+
 **Prompt：**
 ```
-Open Graph banner 1200x630. Left 55% empty cream paper. Right 45%: horizontal triptych of patient journey — blurred phone booking, reception check-in hands, pulse diagnosis — three small scenes in one frame, instructional premium mood. Bottom pine bar, red seal logo. NO text.
+Open Graph banner, exact 1200x630 pixels, 1.91:1 landscape.
+Layout: left 55% flat warm cream paper (#F7F2E7) completely empty for post-production Chinese title. Right 45%: 2×3 photo grid collage of TCM clinic patient journey — six small panels, each photorealistic matching real Oakville clinic interiors (shop-3, shop-8, doctor-2, shop-9 references):
+(1) waiting area white walls, wooden bench, blurred WhatsApp phone in hands;
+(2) curved white reception counter with wood slat and yellow LED base, hands filling form from behind;
+(3) light wood desk, pulse pillow, physician hands only;
+(4) consultation side-profile discussion at same desk with tablet;
+(5) white treatment bed, TDP lamp, needle tray;
+(6) return pulse check or waiting area re-booking.
+Unified bright even clinic lighting, white walls, light wood, sharp focus — NOT cream editorial grading, NOT dark apothecary drawers, NOT home sofa. Thin cream gutters between panels optional. Bottom full-width bar 50px pine green (#2A463C). Small red square seal logo at bottom-right of visual area. NO readable text, NO watermarks, NO URLs, NO patient faces.
 
-GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
+REAL CLINIC PHOTO STYLE (right 45% panels only) — Oakville Wellness 頤安本草:
+Photorealistic interior photo of a modern Hong Kong Central TCM clinic. Bright, clean, evenly lit (ceiling track lights + soft window fill), NOT moody editorial stock. White and off-white walls, light natural wood grain furniture, grey mesh ergonomic chairs. Minimal clutter, professional medical environment. Sharp focus across scene (minimal bokeh). No readable text on screens, forms, or medicine labels.
+```
+
+**三格精簡版 Prompt**（右區空間不足或生成失敗時，取 ②③⑤）：
+```
+Open Graph banner 1200x630. Left 55% empty cream #F7F2E7. Right 45%: vertical triptych of real clinic patient journey — top: shop-8 style reception check-in hands; middle: doctor-2 desk pulse diagnosis hands; bottom: shop-9 acupuncture bed with TDP lamp. Bright white walls, light wood, even lighting, sharp focus. Bottom pine bar #2A463C, red seal logo bottom-right. NO text, NO patient faces, NOT editorial cream grading.
 ```
 
 ---
@@ -1231,7 +1288,7 @@ GLOBAL STYLE — Oakville Wellness 頤安本草: [paste global block]
 | 062 | og-about | physician side profile in consultation room |
 | 063 | og-central | Queen's Road Central street pedestrian view |
 | 064 | og-blog | four-panel wellness collage grid |
-| 065 | og-process | booking phone, check-in, pulse triptych |
+| 065 | og-process | 2×3 grid: waiting phone, reception check-in, pulse desk, plan discussion, acupuncture bed, follow-up pulse |
 
 ---
 

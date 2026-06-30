@@ -518,7 +518,7 @@ function initNavActive() {
     services: [prefix + '/services.html', prefix + '/services/'],
     conditions: [prefix + '/conditions/'],
     blog: [prefix + '/blog/', prefix + '/blog/index.html'],
-    news: [prefix + '/news/', prefix + '/news/index.html'],
+    news: [prefix + '/news/', prefix + '/news/index.html', prefix + '/news/saturday-hours-2026.html'],
     guide: [prefix + '/process.html', prefix + '/faq.html', prefix + '/contact.html']
   };
 

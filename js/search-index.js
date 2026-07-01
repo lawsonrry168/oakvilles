@@ -3,7 +3,7 @@
   { title: "關於伍厚臻醫師", url: "/about.html", type: "頁面", keywords: "醫師 資歷 25年 註冊 003769" },
   { title: "診症專科總覽", url: "/services.html", type: "專科", keywords: "服務 專科 痛症 皮膚 婦科" },
   { title: "痛症治療", url: "/services/pain.html", type: "專科", keywords: "頸痛 腰痛 坐骨神經 關節 肩周炎" },
-  { title: "皮膚科", url: "/services/skin.html", type: "專科", keywords: "暗瘡 濕疹 敏感 脫髮" },
+  { title: "皮膚科", url: "/services/skin.html", type: "專科", keywords: "暗瘡 濕疹 敏感" },
   { title: "內科調理", url: "/services/internal.html", type: "專科", keywords: "失眠 腸胃 疲勞 免疫" },
   { title: "婦科調理", url: "/services/gynaecology.html", type: "專科", keywords: "月經 痛經 不孕 PCOS 備孕" },
   { title: "針灸療法", url: "/services/acupuncture.html", type: "專科", keywords: "針灸 美顏針 減肥針" },

@@ -78,7 +78,7 @@
     },
     {
       "q": "是否可以使用醫療保險索償？",
-      "a": "本診所為註冊中醫師門診，可發出正式收據。部分公司團體醫療保險計劃接受中醫診症索償，請預約時告知，並向您的保險公司確認保障範圍。"
+      "a": "本診所為政府醫療券特約機構，合資格人士可於診所直接使用醫療券。本診所亦可發出正式收據，適用於各大商業保險索償 — 包括多間主流公司團體及個人醫療保險計劃。預約時請告知需索償，並向您的保險公司確認保障範圍。"
     },
     {
       "q": "中藥是否安全？",
@@ -117,8 +117,12 @@
       "a": "診金 HK$120；中藥濃縮顆粒 HK$110／天（32g）；針灸、拔罐等治療另計。首診前會說明預計費用。完整價目見首頁價目表，流程說明見診症流程，或 WhatsApp 查詢。"
     },
     {
+      "q": "是否可以使用政府醫療券？",
+      "a": "可以。本診所為政府醫療券特約機構，合資格人士可於診所直接使用醫療券繳付適用之註冊中醫服務。請攜帶香港身份證，並於預約時告知使用醫療券。"
+    },
+    {
       "q": "接受哪些付款方式？",
-      "a": "接受現金、轉數快（FPS）、八達通及信用卡（請查詢）。診畢即付，中藥費另計。"
+      "a": "接受政府醫療券、現金、轉數快（FPS）、八達通及信用卡（請查詢）。本診所可發出正式收據，適用各大商業保險索償。診畢即付，中藥費另計。"
     },
     {
       "q": "首次到診有優惠嗎？",
@@ -200,11 +204,11 @@
     },
     {
       "q": "What are Dr. Ng's qualifications?",
-      "a": "Dr. Ng Hau Chun is a Registered Chinese Medicine Practitioner (003769), graduate of Guangzhou University of Chinese Medicine and Xiamen University (acupuncture), with twenty-five years of practice in Hong Kong and a Google Maps rating of 5.0 / 5 (3 verified reviews). See About Dr. Ng."
+      "a": "Dr. Ng Hau Jun is a Registered Chinese Medicine Practitioner (003769), graduate of Guangzhou University of Chinese Medicine and Xiamen University (acupuncture), with twenty-five years of practice in Hong Kong and a Google Maps rating of 5.0 / 5 (3 verified reviews). See About Dr. Ng."
     },
     {
       "q": "Can I claim medical insurance?",
-      "a": "We issue official receipts for registered CMP consultations. Some corporate medical plans cover TCM — please confirm with your insurer and let us know when booking."
+      "a": "We are a participating Health Care Voucher provider — eligible patients may use vouchers at the clinic. We also issue official receipts widely accepted by major corporate and individual medical insurance plans. Please tell us when booking and confirm coverage with your insurer."
     },
     {
       "q": "Can TCM support eczema?",
@@ -239,8 +243,12 @@
       "a": "Consultation, acupuncture and herbs are itemised separately; estimated costs are explained before treatment. Full details on our process & fees page, or WhatsApp for a quote."
     },
     {
+      "q": "Can I use the Government Health Care Voucher?",
+      "a": "Yes. We are a participating Health Care Voucher provider. Eligible patients may use vouchers at the clinic for applicable registered TCM services. Please bring your HKID and let us know when booking."
+    },
+    {
       "q": "What payment methods do you accept?",
-      "a": "Cash, FPS, Octopus and credit card (please enquire). Payment is due after each visit; herbal fees are additional."
+      "a": "Government Health Care Voucher, cash, FPS, Octopus and credit card (please enquire). Official receipts are available for major commercial insurance claims. Payment is due after each visit; herbal fees are additional."
     }
   ]
 }

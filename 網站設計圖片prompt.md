@@ -338,7 +338,7 @@ no text, no watermark, no logo, no patient face, no skin disease close-up, no ho
 | ID | 頁面 | H1 關鍵 | 檔名 | alt | 狀態 |
 |----|------|---------|------|-----|------|
 | IMG-020 | `/services/pain.html` | 針灸推拿治療**痛症** | `pain-hero.png` | 中醫針灸治療肩頸痛症 | 待重生成 |
-| IMG-021 | `/services/skin.html` | 暗瘡·濕疹·**脫髮** | `skin-hero.png` | 中醫皮膚調理與草本內調 | ✅ 已核准 |
+| IMG-021 | `/services/skin.html` | 暗瘡·濕疹·皮膚敏感 | `skin-hero.png` | 中醫皮膚調理與草本內調 | ✅ 已核准 |
 | IMG-022 | `/services/internal.html` | 失眠·腸胃·**免疫** | `internal-hero.png` | 中醫內科把脈與臟腑調理 | 待重生成 |
 | IMG-023 | `/services/gynaecology.html` | 月經·痛經·**PCOS** | `gynaecology-hero.png` | 中醫婦科溫養調理 | 待重生成 |
 | IMG-024 | `/services/acupuncture.html` | 針灸**療法** | `acupuncture-hero.png` | 毫針針灸與經絡調和 | 待重生成 |

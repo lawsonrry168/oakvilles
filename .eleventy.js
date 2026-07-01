@@ -348,7 +348,7 @@ function buildArticleSchema(data) {
 
   const locale = data.locale === "en" ? "en" : "zh-HK";
 
-  const authorName = locale === "en" ? "Dr Ng Hau Chun" : "伍厚臻";
+  const authorName = locale === "en" ? "Dr. Ng Hau Jun" : "伍厚臻";
 
   return JSON.stringify(
 

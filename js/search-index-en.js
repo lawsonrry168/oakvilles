@@ -3,7 +3,7 @@
   { title: "About Dr. Ng", url: "/en/about.html", type: "Page", keywords: "physician credentials 25 years 003769" },
   { title: "All services", url: "/en/services.html", type: "Service", keywords: "pain skin gynaecology internal" },
   { title: "Pain management", url: "/en/services/pain.html", type: "Service", keywords: "neck back sciatica joint" },
-  { title: "Dermatology", url: "/en/services/skin.html", type: "Service", keywords: "acne eczema sensitive hair loss" },
+  { title: "Dermatology", url: "/en/services/skin.html", type: "Service", keywords: "acne eczema sensitive skin" },
   { title: "Internal medicine", url: "/en/services/internal.html", type: "Service", keywords: "insomnia digestion fatigue immunity" },
   { title: "Gynaecology", url: "/en/services/gynaecology.html", type: "Service", keywords: "period pain fertility PCOS" },
   { title: "Acupuncture", url: "/en/services/acupuncture.html", type: "Service", keywords: "acupuncture facial wellness metabolic" },

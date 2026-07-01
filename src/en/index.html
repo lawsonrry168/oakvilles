@@ -3,12 +3,12 @@ layout: layouts/base.njk
 homeNav: true
 stickyCta: true
 homeJs: true
-title: "Dr. Ng Hau Chun | Central Hong Kong TCM | Oakville Wellness"
-description: "Oakville Wellness · Dr. Ng Hau Chun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532."
-keywords: "Central Hong Kong TCM,Oakville Wellness,acne eczema TCM,Dr Ng Hau Chun,Chinese medicine clinic Hong Kong,skin wellness,herbal medicine"
+title: "Dr. Ng Hau Jun | Central Hong Kong TCM | Oakville Wellness"
+description: "Oakville Wellness · Dr. Ng Hau Jun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532."
+keywords: "Central Hong Kong TCM,Oakville Wellness,acne eczema TCM,Dr. Ng Hau Jun,Chinese medicine clinic Hong Kong,skin wellness,herbal medicine"
 canonical: "https://oakvilles.com/en/"
-ogTitle: "Dr. Ng Hau Chun | Central Hong Kong TCM | Oakville Wellness"
-ogDescription: "Oakville Wellness · Dr. Ng Hau Chun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532."
+ogTitle: "Dr. Ng Hau Jun | Central Hong Kong TCM | Oakville Wellness"
+ogDescription: "Oakville Wellness · Dr. Ng Hau Jun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532."
 ogUrl: "https://oakvilles.com/en/"
 ogImage: "/images/og/og-home-1200.jpg"
 ogImageWidth: 1200
@@ -22,7 +22,7 @@ schema: |
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "@id": "https://oakvilles.com/en/#organization",
-    "name": "Oakville Wellness · Dr. Ng Hau Chun",
+    "name": "Oakville Wellness · Dr. Ng Hau Jun",
     "alternateName": "頤安本草",
     "url": "https://oakvilles.com/en/",
     "telephone": "+852-2881-8182",
@@ -111,7 +111,12 @@ schema: |
             <span class="df-home-hero__trust-sep" aria-hidden="true">·</span>
             <span>Registered TCM practitioner 003769</span>
           </p>
-          <p class="reveal df-home-hero__lead" data-d="2">Oakville Wellness · Dr. Ng Hau Chun. Precision care for busy Hong Kong professionals — a serene private clinic in Central where 25 years of clinical experience meets unhurried, one-to-one consultation and bespoke herbal formulas.</p>
+          <p class="reveal df-home-hero__trust df-home-hero__trust--pay" data-d="2">
+            <span>Government Health Care Voucher accepted</span>
+            <span class="df-home-hero__trust-sep" aria-hidden="true">·</span>
+            <span>Major commercial insurance</span>
+          </p>
+          <p class="reveal df-home-hero__lead" data-d="2">Oakville Wellness · Dr. Ng Hau Jun. Precision care for busy Hong Kong professionals — a serene private clinic in Central where 25 years of clinical experience meets unhurried, one-to-one consultation and bespoke herbal formulas.</p>
           <div class="reveal df-home-hero__actions" data-d="3">
             <a href="#booking" class="btn-cin df-home-hero__cta" data-cta-id="hero-booking">Book online <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
             <a href="https://wa.me/{{ site.whatsapp }}?text={{ t.waGreeting | urlencode }}" target="_blank" rel="noopener" class="ink-link df-home-hero__wa" data-cta-id="hero-wa"><span class="df-home-hero__wa-dot"></span>WhatsApp us</a>
@@ -146,11 +151,12 @@ schema: |
       <div class="df-home-trust-strip__items">
         <span class="df-home-trust-strip__item"><span class="df-home-trust-strip__dot"></span>Registered TCM practitioner 003769</span>
         <span class="df-home-trust-strip__sep"></span>
-        <span class="df-home-trust-strip__item"><span class="df-home-trust-strip__dot"></span>Government Health Care Voucher accepted</span>
+        <span class="df-home-trust-strip__item df-home-trust-strip__item--pay"><span class="df-home-trust-strip__dot"></span>Government Health Care Voucher accepted</span>
         <span class="df-home-trust-strip__sep"></span>
-        <span class="df-home-trust-strip__item"><span class="df-home-trust-strip__dot"></span>Major commercial insurance receipts available</span>
+        <span class="df-home-trust-strip__item df-home-trust-strip__item--pay"><span class="df-home-trust-strip__dot"></span>Major commercial insurance accepted</span>
       </div>
     </div>
+    {% include "pay-coverage.njk" %}
     <div class="df-trust-grid reveal" data-d="1">
       <div class="df-trust">
         <div class="df-trust__num">25<span class="df-trust__unit">+ yrs</span></div>
@@ -174,8 +180,8 @@ schema: |
       </div>
     </div>
     <div class="df-home-chips reveal" data-d="1">
-      <span class="df-home-chip">Health Care Voucher accepted</span>
-      <span class="df-home-chip">Insurance receipts</span>
+      <span class="df-home-chip df-home-chip--pay">Health Care Voucher accepted</span>
+      <span class="df-home-chip df-home-chip--pay">Major commercial insurance</span>
       <span class="df-home-chip">Central location</span>
       <span class="df-home-chip">Private consultation rooms</span>
       <span class="df-home-chip">Granule herbal extracts</span>
@@ -193,11 +199,11 @@ schema: |
         <figure class="df-photo-card df-photo-card--about df-photo-card--physician">
           <span class="df-photo-card__deco df-photo-card__deco--tr" aria-hidden="true"></span>
           <div class="cnr-frame df-photo-card__frame">
-            <img alt="Dr. Ng Hau Chun taking a pulse in the consultation room" class="df-photo-card__img" width="800" height="880" loading="lazy" decoding="async" src="/images/doctor-3.jpeg">
+            <img alt="Dr. Ng Hau Jun taking a pulse in the consultation room" class="df-photo-card__img" width="800" height="880" loading="lazy" decoding="async" src="/images/doctor-3.jpeg">
             <div class="df-photo-card__shade" aria-hidden="true"></div>
             <figcaption class="df-photo-card__cap">
               <span class="seal seal--cap"><span>厚</span><span>臻</span><span>醫</span><span>師</span></span>
-              <span class="df-photo-card__name">Dr. Ng Hau Chun</span>
+              <span class="df-photo-card__name">Dr. Ng Hau Jun</span>
             </figcaption>
           </div>
         </figure>
@@ -262,7 +268,7 @@ schema: |
           </svg>
         </div>
         <h3 class="df-home-spec-card__title">Skin care</h3>
-        <p class="df-home-spec-card__desc">Acne, eczema, sensitivity, and hair loss. Internal and external TCM approaches to balance damp-heat and support clearer skin from within.</p>
+        <p class="df-home-spec-card__desc">Acne, eczema and sensitivity. Internal and external TCM approaches to balance damp-heat and support clearer skin from within.</p>
         <span class="df-home-spec-card__link">Learn more →</span>
       </a>
 

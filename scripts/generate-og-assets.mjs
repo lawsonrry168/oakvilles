@@ -66,7 +66,7 @@ const VARIANTS = [
   {
     file: "og-default.png",
     line1: "OAKVILLE WELLNESS",
-    line2: "Central Hong Kong · Registered TCM · Dr. Ng Hau Chun",
+    line2: "Central Hong Kong · Registered TCM · Dr. Ng Hau Jun",
   },
   {
     file: "og-blog.png",

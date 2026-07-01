@@ -47,7 +47,7 @@ const footerSvg = `
   <text x="600" y="544" text-anchor="middle" fill="#2A3A44"
     font-family="Georgia, 'Times New Roman', serif" font-size="15" letter-spacing="6">OAKVILLE WELLNESS</text>
   <text x="600" y="574" text-anchor="middle" fill="#5A6E7C"
-    font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="2">Central Hong Kong · Registered TCM · Dr. Ng Hau Chun</text>
+    font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="2">Central Hong Kong · Registered TCM · Dr. Ng Hau Jun</text>
 </svg>`;
 
 async function main() {

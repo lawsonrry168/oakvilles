@@ -124,11 +124,11 @@ const META = {
   // ── English ──
   "en/index.html": {
     description:
-      "Oakville Wellness · Dr. Ng Hau Chun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532.",
+      "Oakville Wellness · Dr. Ng Hau Jun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. WhatsApp 6734 9532.",
   },
   "en/about.html": {
     description:
-      "Dr. Ng Hau Chun (003769), 25 years in Central Hong Kong. Dermatology, gynaecology, pain and internal medicine. WhatsApp 6734 9532.",
+      "Dr. Ng Hau Jun (003769), 25 years in Central Hong Kong. Dermatology, gynaecology, pain and internal medicine. WhatsApp 6734 9532.",
   },
   "en/clinic.html": {
     description:
@@ -161,8 +161,8 @@ const META = {
   "en/services/acupuncture.html": {
     description:
       "Traditional acupuncture and wellness care in Central Hong Kong. May support pain, sleep and digestion. Results vary. WhatsApp 6734 9532.",
-    title: "Acupuncture | Central HK | Dr. Ng Hau Chun",
-    ogTitle: "Acupuncture | Central HK | Dr. Ng Hau Chun",
+    title: "Acupuncture | Central HK | Dr. Ng Hau Jun",
+    ogTitle: "Acupuncture | Central HK | Dr. Ng Hau Jun",
   },
   "en/services/internal.html": {
     description:
@@ -192,7 +192,7 @@ const META = {
   },
   "en/conditions/eczema.html": {
     description:
-      "TCM eczema care in Central — damp-heat and constitutional patterns. Dr. Ng Hau Chun · Results vary.",
+      "TCM eczema care in Central — damp-heat and constitutional patterns. Dr. Ng Hau Jun · Results vary.",
   },
   "en/conditions/acne.html": {
     description:
@@ -204,7 +204,7 @@ const META = {
   },
   "en/conditions/neck-pain.html": {
     description:
-      "Neck pain from desk work and stress: acupuncture, herbs and fascial care. Dr. Ng Hau Chun, Central Hong Kong.",
+      "Neck pain from desk work and stress: acupuncture, herbs and fascial care. Dr. Ng Hau Jun, Central Hong Kong.",
   },
   "en/conditions/sciatica.html": {
     description:
@@ -224,7 +224,7 @@ const META = {
   },
   "en/blog/acne-face-zones.html": {
     description:
-      "Forehead, cheek and chin acne — TCM facial zone theory and care directions. Dr. Ng Hau Chun, Central.",
+      "Forehead, cheek and chin acne — TCM facial zone theory and care directions. Dr. Ng Hau Jun, Central.",
   },
   "en/blog/insomnia-tcm-guide.html": {
     description:

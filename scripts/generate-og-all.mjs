@@ -145,8 +145,8 @@ async function renderHeroCard({ file, heroPath, line1, line2 }) {
 }
 
 const BRAND_CARDS = [
-  { file: "og-default.png", line1: "OAKVILLE WELLNESS", line2: "Central Hong Kong · Registered TCM · Dr. Ng Hau Chun" },
-  { file: "og-home-1200.jpg", line1: "OAKVILLE WELLNESS", line2: "Central Hong Kong · Registered TCM · Dr. Ng Hau Chun", format: "jpeg" },
+  { file: "og-default.png", line1: "OAKVILLE WELLNESS", line2: "Central Hong Kong · Registered TCM · Dr. Ng Hau Jun" },
+  { file: "og-home-1200.jpg", line1: "OAKVILLE WELLNESS", line2: "Central Hong Kong · Registered TCM · Dr. Ng Hau Jun", format: "jpeg" },
   { file: "og-blog.png", line1: "WELLNESS JOURNAL", line2: "TCM Insights · Skin · Sleep · Fertility · Central HK" },
   { file: "og-process.png", line1: "PROCESS & FEES", line2: "Transparent Consultation Pricing · Oakville Wellness" },
   { file: "og-services.png", line1: "TCM SERVICES", line2: "Acupuncture · Dermatology · Pain · Internal Medicine" },

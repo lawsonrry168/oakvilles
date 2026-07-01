@@ -37,7 +37,7 @@ const SEO = {
     description: `伍厚臻中醫師提供痛症、皮膚科、婦科、內科及針灸等全面中醫服務。中環門診，一人一方。${TRUST_ZH} ${CTA_ZH}`,
   },
   "src/services/skin.html": {
-    title: "中醫皮膚科｜暗瘡·濕疹·脫髮｜香港中環｜伍厚臻中醫師",
+    title: "中醫皮膚科｜暗瘡·濕疹·皮膚敏感｜香港中環｜伍厚臻中醫師",
     description: `伍厚臻中醫師於香港中環提供中醫皮膚科，以體質調理改善暗瘡、濕疹及皮膚敏感，減少對類固醇依賴。${TRUST_ZH} ${CTA_ZH}`,
   },
   "src/services/pain.html": {
@@ -127,112 +127,112 @@ const SEO = {
 
   // English
   "src/en/index.html": {
-    title: "Dr Ng Hau Chun | Central Hong Kong TCM | Oakville Wellness",
-    description: `Oakville Wellness · Dr Ng Hau Chun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. ${CTA_EN}`,
+    title: "Dr. Ng Hau Jun | Central Hong Kong TCM | Oakville Wellness",
+    description: `Oakville Wellness · Dr. Ng Hau Jun, registered TCM in Central Hong Kong. Pain, skin, gynaecology and internal medicine. ${CTA_EN}`,
   },
   "src/en/about.html": {
-    title: "About Dr Ng Hau Chun | Oakville Wellness · Central HK",
-    description: `Registered TCM Dr Ng Hau Chun (003769), 25 years in Central Hong Kong. Specialising in eczema, acne, gynaecology and pain. ${CTA_EN}`,
+    title: "About Dr. Ng Hau Jun | Oakville Wellness · Central HK",
+    description: `Registered TCM Dr. Ng Hau Jun (003769), 25 years in Central Hong Kong. Specialising in eczema, acne, gynaecology and pain. ${CTA_EN}`,
   },
   "src/en/contact.html": {
     title: "Contact & Booking | Oakville Wellness · Central HK",
-    description: `Book Dr Ng Hau Chun via WhatsApp or phone at Kam On Building, Central. Mon–Sat clinic hours. ${CTA_EN}`,
+    description: `Book Dr. Ng Hau Jun via WhatsApp or phone at Kam On Building, Central. Mon–Sat clinic hours. ${CTA_EN}`,
   },
   "src/en/faq.html": {
-    title: "FAQ | Oakville Wellness TCM · Dr Ng Hau Chun",
-    description: `Common TCM questions answered: Does acupuncture hurt? Herbal medicine notes? How many sessions? Dr Ng Hau Chun, Central Hong Kong. ${CTA_EN}`,
+    title: "FAQ | Oakville Wellness TCM · Dr. Ng Hau Jun",
+    description: `Common TCM questions answered: Does acupuncture hurt? Herbal medicine notes? How many sessions? Dr. Ng Hau Jun, Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/process.html": {
-    title: "Consultation Process & Fees | Dr Ng Hau Chun · Central HK",
-    description: `Dr Ng Hau Chun's consultation flow, fees and booking policy in Central Hong Kong. Thorough first visit, transparent pricing. ${CTA_EN}`,
+    title: "Consultation Process & Fees | Dr. Ng Hau Jun · Central HK",
+    description: `Dr. Ng Hau Jun's consultation flow, fees and booking policy in Central Hong Kong. Thorough first visit, transparent pricing. ${CTA_EN}`,
   },
   "src/en/clinic.html": {
     title: "Clinic Environment | Oakville Wellness · Central Hong Kong",
     description: `View Oakville Wellness in Central: waiting area, consultation rooms, herbal dispensary and acupuncture space. Private, serene setting. ${CTA_EN}`,
   },
   "src/en/services.html": {
-    title: "TCM Services | Pain · Skin · Gynaecology | Dr Ng Hau Chun",
-    description: `Dr Ng Hau Chun offers pain, dermatology, gynaecology, internal medicine and acupuncture at Oakville Wellness, Central Hong Kong. ${CTA_EN}`,
+    title: "TCM Services | Pain · Skin · Gynaecology | Dr. Ng Hau Jun",
+    description: `Dr. Ng Hau Jun offers pain, dermatology, gynaecology, internal medicine and acupuncture at Oakville Wellness, Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/services/skin.html": {
-    title: "TCM Dermatology | Acne, Eczema & Hair Loss | Dr Ng Hau Chun",
-    description: `TCM dermatology for acne, eczema and sensitive skin in Central Hong Kong. Constitutional herbal care by Dr Ng Hau Chun. Results vary. ${CTA_EN}`,
+    title: "TCM Dermatology | Acne & Eczema | Dr. Ng Hau Jun",
+    description: `TCM dermatology for acne, eczema and sensitive skin in Central Hong Kong. Constitutional herbal care by Dr. Ng Hau Jun. Results vary. ${CTA_EN}`,
   },
   "src/en/services/pain.html": {
-    title: "TCM Pain Management | Neck, Back & Joints | Dr Ng Hau Chun",
+    title: "TCM Pain Management | Neck, Back & Joints | Dr. Ng Hau Jun",
     description: `Acupuncture and tuina for neck pain, back pain, sciatica and frozen shoulder in Central Hong Kong. Supportive pattern-based care. ${CTA_EN}`,
   },
   "src/en/services/gynaecology.html": {
-    title: "TCM Gynaecology | Menstrual & Fertility | Dr Ng Hau Chun",
+    title: "TCM Gynaecology | Menstrual & Fertility | Dr. Ng Hau Jun",
     description: `TCM gynaecology for menstrual irregularity, dysmenorrhoea, fertility support and PCOS in Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/services/internal.html": {
-    title: "TCM Internal Medicine | Insomnia & Digestion | Dr Ng Hau Chun",
+    title: "TCM Internal Medicine | Insomnia & Digestion | Dr. Ng Hau Jun",
     description: `Herbal support for insomnia, digestive discomfort, chronic fatigue and low immunity at Oakville Wellness, Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/services/acupuncture.html": {
-    title: "Acupuncture | Cosmetic & Clinical | Dr Ng Hau Chun",
+    title: "Acupuncture | Cosmetic & Clinical | Dr. Ng Hau Jun",
     description: `Traditional, cosmetic and weight-management acupuncture in Central Hong Kong — pain relief, wellness and beauty support. ${CTA_EN}`,
   },
   "src/en/services/cupping.html": {
-    title: "Cupping & Gua Sha | Central Hong Kong TCM | Dr Ng Hau Chun",
+    title: "Cupping & Gua Sha | Central Hong Kong TCM | Dr. Ng Hau Jun",
     description: `Cupping and gua sha to support circulation and fascial release for neck, shoulder and back discomfort. Central Hong Kong clinic. ${CTA_EN}`,
   },
   "src/en/services/herbs.html": {
-    title: "Personalised Herbs | Dr Ng Hau Chun · Central HK",
+    title: "Personalised Herbs | Dr. Ng Hau Jun · Central HK",
     description: `Individualised herbal formulas based on four-diagnosis assessment, adjusted at follow-up visits. Central Hong Kong TCM clinic. ${CTA_EN}`,
   },
   "src/en/services/moxibustion.html": {
-    title: "Moxibustion Therapy | Central Hong Kong | Dr Ng Hau Chun",
+    title: "Moxibustion Therapy | Central Hong Kong | Dr. Ng Hau Jun",
     description: `Moxibustion warms meridians and supports yang — suited to cold-deficiency patterns, fatigue and gynaecological cold. ${CTA_EN}`,
   },
   "src/en/conditions/eczema.html": {
-    title: "Eczema TCM Treatment | Central Hong Kong | Dr Ng",
-    description: `Dr Ng Hau Chun offers TCM eczema care in Central Hong Kong — damp-heat and constitutional patterns. ${CTA_EN}`,
+    title: "Eczema TCM Treatment | Central Hong Kong | Dr. Ng",
+    description: `Dr. Ng Hau Jun offers TCM eczema care in Central Hong Kong — damp-heat and constitutional patterns. ${CTA_EN}`,
   },
   "src/en/conditions/acne.html": {
-    title: "Acne TCM Treatment | Central Hong Kong | Dr Ng Hau Chun",
+    title: "Acne TCM Treatment | Central Hong Kong | Dr. Ng Hau Jun",
     description: `Pattern-based TCM for acne — lung-stomach heat, liver stagnation and spleen dampness. In-person consultations in Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/conditions/fertility.html": {
-    title: "Fertility TCM Support | Central Hong Kong | Dr Ng Hau Chun",
-    description: `Phased TCM support for pre-conception care based on menstrual cycle and kidney qi. Dr Ng Hau Chun, Central Hong Kong. ${CTA_EN}`,
+    title: "Fertility TCM Support | Central Hong Kong | Dr. Ng Hau Jun",
+    description: `Phased TCM support for pre-conception care based on menstrual cycle and kidney qi. Dr. Ng Hau Jun, Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/conditions/insomnia.html": {
-    title: "Insomnia TCM Care | Central Hong Kong | Dr Ng Hau Chun",
+    title: "Insomnia TCM Care | Central Hong Kong | Dr. Ng Hau Jun",
     description: `Herbs and acupuncture to harmonise heart, liver, spleen and kidney for sleep difficulties. Central Hong Kong clinic. ${CTA_EN}`,
   },
   "src/en/conditions/neck-pain.html": {
-    title: "Neck Pain TCM | Central Hong Kong | Dr Ng Hau Chun",
-    description: `Acupuncture, herbs and fascial care for neck pain from prolonged sitting and stress. Dr Ng Hau Chun, Central Hong Kong. ${CTA_EN}`,
+    title: "Neck Pain TCM | Central Hong Kong | Dr. Ng Hau Jun",
+    description: `Acupuncture, herbs and fascial care for neck pain from prolonged sitting and stress. Dr. Ng Hau Jun, Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/conditions/sciatica.html": {
-    title: "Sciatica TCM | Central Hong Kong | Dr Ng Hau Chun",
+    title: "Sciatica TCM | Central Hong Kong | Dr. Ng Hau Jun",
     description: `Pattern-based TCM for radiating leg pain linked to meridian blockage and musculoskeletal imbalance. Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/about/central-hk.html": {
-    title: "Central Hong Kong TCM Clinic | Oakville Wellness | Dr Ng",
+    title: "Central Hong Kong TCM Clinic | Oakville Wellness | Dr. Ng",
     description: `Oakville Wellness TCM in Central Hong Kong — skin, pain, internal medicine, gynaecology and acupuncture. Easy MTR access. ${CTA_EN}`,
   },
   "src/en/blog/index.html": {
-    title: "Wellness Journal | TCM Insights | Dr Ng Hau Chun",
-    description: `Dr Ng Hau Chun shares TCM insights on eczema, acne, insomnia and pre-conception in Central Hong Kong. ${CTA_EN}`,
+    title: "Wellness Journal | TCM Insights | Dr. Ng Hau Jun",
+    description: `Dr. Ng Hau Jun shares TCM insights on eczema, acne, insomnia and pre-conception in Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/blog/eczema-from-within.html": {
-    title: "Why Eczema Needs Internal Care | TCM Guide | Dr Ng Hau Chun",
-    description: `TCM views eczema as rooted in spleen-stomach damp-heat. Dr Ng explains inside-out constitutional care in Central Hong Kong. ${CTA_EN}`,
+    title: "Why Eczema Needs Internal Care | TCM Guide | Dr. Ng Hau Jun",
+    description: `TCM views eczema as rooted in spleen-stomach damp-heat. Dr. Ng explains inside-out constitutional care in Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/blog/acne-face-zones.html": {
-    title: "Acne Zones & Organ Balance | TCM Facial Mapping | Dr Ng",
-    description: `Forehead, cheek and chin acne may reflect internal patterns. Dr Ng on TCM facial zone theory and care directions. ${CTA_EN}`,
+    title: "Acne Zones & Organ Balance | TCM Facial Mapping | Dr. Ng",
+    description: `Forehead, cheek and chin acne may reflect internal patterns. Dr. Ng on TCM facial zone theory and care directions. ${CTA_EN}`,
   },
   "src/en/blog/fertility-stress.html": {
-    title: "Stress-Related Fertility Patterns | TCM Pre-Conception | Dr Ng",
-    description: `Chronic stress may affect liver qi in pre-conception care. Dr Ng on cycle-based herbs and acupuncture in Central Hong Kong. ${CTA_EN}`,
+    title: "Stress-Related Fertility Patterns | TCM Pre-Conception | Dr. Ng",
+    description: `Chronic stress may affect liver qi in pre-conception care. Dr. Ng on cycle-based herbs and acupuncture in Central Hong Kong. ${CTA_EN}`,
   },
   "src/en/blog/insomnia-tcm-guide.html": {
-    title: "Insomnia TCM Patterns | Heart-Kidney & Liver | Dr Ng Hau Chun",
-    description: `Sleep difficulties reflect different TCM patterns. Dr Ng on heart-kidney disharmony and liver qi stagnation. ${CTA_EN}`,
+    title: "Insomnia TCM Patterns | Heart-Kidney & Liver | Dr. Ng Hau Jun",
+    description: `Sleep difficulties reflect different TCM patterns. Dr. Ng on heart-kidney disharmony and liver qi stagnation. ${CTA_EN}`,
   },
   "src/en/news/index.html": {
     title: "Latest News | Oakville Wellness Clinic · Central Hong Kong",
@@ -240,7 +240,7 @@ const SEO = {
   },
   "src/en/news/saturday-hours-2026.html": {
     title: "Saturday Clinic Hours 2026 | Oakville Wellness · Central HK",
-    description: `Saturday hours 10:30–17:30 in 2026. Dr Ng Hau Chun's Central Hong Kong TCM clinic — book Saturday appointments via WhatsApp. ${CTA_EN}`,
+    description: `Saturday hours 10:30–17:30 in 2026. Dr. Ng Hau Jun's Central Hong Kong TCM clinic — book Saturday appointments via WhatsApp. ${CTA_EN}`,
   },
 };
 

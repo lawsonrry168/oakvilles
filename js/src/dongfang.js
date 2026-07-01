@@ -26,8 +26,8 @@ const UI_STR = {
     notes: '備註'
   },
   en: {
-    waGreetingLong: "Hello, I'd like to book an appointment with Dr. Ng Hau Chun. Are there any available slots soon?",
-    waLegacy: ["Hello, I'd like to book an appointment with Dr. Ng.", "Hello, I'd like to book an appointment with Dr. Ng Hau Chun."],
+    waGreetingLong: "Hello, I'd like to book an appointment with Dr. Ng Hau Jun. Are there any available slots soon?",
+    waLegacy: ["Hello, I'd like to book an appointment with Dr. Ng.", "Hello, I'd like to book an appointment with Dr. Ng Hau Jun."],
     waFallbackTitle: 'Could not open WhatsApp',
     waFallbackText: 'Tap below to open the chat, or copy your message and send it manually to <strong>6734 9532</strong>.',
     waOpen: 'Open WhatsApp',

@@ -278,10 +278,10 @@
     {
       "file": "src/en/about.html",
       "url": "/en/about.html",
-      "title": "About Dr. Ng Hau Chun | Oakville Wellness · Central HK",
+      "title": "About Dr. Ng Hau Jun | Oakville Wellness · Central HK",
       "titleLen": 54,
       "metaLen": 130,
-      "h1": "Dr. Ng Hau Chun",
+      "h1": "Dr. Ng Hau Jun",
       "h2": 5,
       "links": 3,
       "words": 4182,
@@ -306,7 +306,7 @@
     {
       "file": "src/en/blog/eczema-from-within.html",
       "url": "/en/blog/eczema-from-within.html",
-      "title": "Why Eczema Needs Internal Care | TCM Guide | Dr. Ng Hau Chun",
+      "title": "Why Eczema Needs Internal Care | TCM Guide | Dr. Ng Hau Jun",
       "titleLen": 60,
       "metaLen": 154,
       "h1": "Why eczema needs internal care",
@@ -336,7 +336,7 @@
     {
       "file": "src/en/blog/index.html",
       "url": "/en/blog/",
-      "title": "Wellness Journal | TCM Insights | Dr. Ng Hau Chun",
+      "title": "Wellness Journal | TCM Insights | Dr. Ng Hau Jun",
       "titleLen": 49,
       "metaLen": 148,
       "h1": "Wellness journal",
@@ -392,7 +392,7 @@
     {
       "file": "src/en/conditions/acne.html",
       "url": "/en/conditions/acne.html",
-      "title": "Acne TCM Treatment | Central Hong Kong | Dr. Ng Hau Chun",
+      "title": "Acne TCM Treatment | Central Hong Kong | Dr. Ng Hau Jun",
       "titleLen": 56,
       "metaLen": 114,
       "h1": "Acne TCM Treatment",
@@ -420,7 +420,7 @@
     {
       "file": "src/en/conditions/fertility.html",
       "url": "/en/conditions/fertility.html",
-      "title": "Fertility TCM Support | Central Hong Kong | Dr. Ng Hau Chun",
+      "title": "Fertility TCM Support | Central Hong Kong | Dr. Ng Hau Jun",
       "titleLen": 59,
       "metaLen": 162,
       "h1": "Fertility & Pre-Conception TCM Support",
@@ -434,7 +434,7 @@
     {
       "file": "src/en/conditions/insomnia.html",
       "url": "/en/conditions/insomnia.html",
-      "title": "Insomnia TCM Care | Central Hong Kong | Dr. Ng Hau Chun",
+      "title": "Insomnia TCM Care | Central Hong Kong | Dr. Ng Hau Jun",
       "titleLen": 55,
       "metaLen": 114,
       "h1": "Insomnia TCM Care",
@@ -448,7 +448,7 @@
     {
       "file": "src/en/conditions/neck-pain.html",
       "url": "/en/conditions/neck-pain.html",
-      "title": "Neck Pain TCM | Central Hong Kong | Dr. Ng Hau Chun",
+      "title": "Neck Pain TCM | Central Hong Kong | Dr. Ng Hau Jun",
       "titleLen": 51,
       "metaLen": 153,
       "h1": "Neck Pain & Cervical TCM",
@@ -462,7 +462,7 @@
     {
       "file": "src/en/conditions/sciatica.html",
       "url": "/en/conditions/sciatica.html",
-      "title": "Sciatica TCM | Central Hong Kong | Dr. Ng Hau Chun",
+      "title": "Sciatica TCM | Central Hong Kong | Dr. Ng Hau Jun",
       "titleLen": 50,
       "metaLen": 153,
       "h1": "Sciatica TCM",
@@ -490,7 +490,7 @@
     {
       "file": "src/en/faq.html",
       "url": "/en/faq.html",
-      "title": "FAQ | Oakville Wellness TCM · Dr. Ng Hau Chun",
+      "title": "FAQ | Oakville Wellness TCM · Dr. Ng Hau Jun",
       "titleLen": 45,
       "metaLen": 122,
       "h1": "Frequently Asked Questions",
@@ -504,7 +504,7 @@
     {
       "file": "src/en/index.html",
       "url": "/en/",
-      "title": "Dr. Ng Hau Chun | Central Hong Kong TCM | Oakville Wellness",
+      "title": "Dr. Ng Hau Jun | Central Hong Kong TCM | Oakville Wellness",
       "titleLen": 59,
       "metaLen": 140,
       "h1": "Modern knowledgemeets classical healing",
@@ -548,7 +548,7 @@
     {
       "file": "src/en/process.html",
       "url": "/en/process.html",
-      "title": "Consultation Process &amp; Fees | Dr. Ng Hau Chun · Central HK",
+      "title": "Consultation Process &amp; Fees | Dr. Ng Hau Jun · Central HK",
       "titleLen": 62,
       "metaLen": 118,
       "h1": "Consultation Process & Fees",
@@ -562,7 +562,7 @@
     {
       "file": "src/en/services/acupuncture.html",
       "url": "/en/services/acupuncture.html",
-      "title": "Acupuncture | Central HK | Dr. Ng Hau Chun",
+      "title": "Acupuncture | Central HK | Dr. Ng Hau Jun",
       "titleLen": 42,
       "metaLen": 136,
       "h1": "Acupuncture Therapy",
@@ -576,7 +576,7 @@
     {
       "file": "src/en/services/cupping.html",
       "url": "/en/services/cupping.html",
-      "title": "Cupping &amp; Gua Sha | Central Hong Kong TCM | Dr. Ng Hau Chun",
+      "title": "Cupping &amp; Gua Sha | Central Hong Kong TCM | Dr. Ng Hau Jun",
       "titleLen": 63,
       "metaLen": 153,
       "h1": "Cupping & Gua Sha",
@@ -592,7 +592,7 @@
     {
       "file": "src/en/services/gynaecology.html",
       "url": "/en/services/gynaecology.html",
-      "title": "TCM Gynaecology | Menstrual &amp; Fertility | Dr. Ng Hau Chun",
+      "title": "TCM Gynaecology | Menstrual &amp; Fertility | Dr. Ng Hau Jun",
       "titleLen": 61,
       "metaLen": 110,
       "h1": "Menstrual Health · Dysmenorrhoea · Fertility · PCOS",
@@ -606,7 +606,7 @@
     {
       "file": "src/en/services/herbs.html",
       "url": "/en/services/herbs.html",
-      "title": "Personalised Herbs | Dr. Ng Hau Chun · Central HK",
+      "title": "Personalised Herbs | Dr. Ng Hau Jun · Central HK",
       "titleLen": 49,
       "metaLen": 116,
       "h1": "Personalised Herbal Prescriptions",
@@ -634,7 +634,7 @@
     {
       "file": "src/en/services/moxibustion.html",
       "url": "/en/services/moxibustion.html",
-      "title": "Moxibustion Therapy | Central Hong Kong | Dr. Ng Hau Chun",
+      "title": "Moxibustion Therapy | Central Hong Kong | Dr. Ng Hau Jun",
       "titleLen": 57,
       "metaLen": 117,
       "h1": "Moxibustion Therapy",
@@ -648,7 +648,7 @@
     {
       "file": "src/en/services/pain.html",
       "url": "/en/services/pain.html",
-      "title": "TCM Pain Management | Neck, Back &amp; Joints | Dr. Ng Hau Chun",
+      "title": "TCM Pain Management | Neck, Back &amp; Joints | Dr. Ng Hau Jun",
       "titleLen": 63,
       "metaLen": 115,
       "h1": "Acupuncture & Tuina for Pain",
@@ -664,10 +664,10 @@
     {
       "file": "src/en/services/skin.html",
       "url": "/en/services/skin.html",
-      "title": "TCM Dermatology | Acne, Eczema &amp; Hair Loss | Dr. Ng Hau Chun",
-      "titleLen": 64,
+      "title": "TCM Dermatology | Acne &amp; Eczema | Dr. Ng Hau Jun",
+      "titleLen": 52,
       "metaLen": 157,
-      "h1": "Acne · Eczema · Sensitive Skin · Hair Loss",
+      "h1": "Acne · Eczema · Sensitive Skin",
       "h2": 4,
       "links": 8,
       "words": 2599,
@@ -680,7 +680,7 @@
     {
       "file": "src/en/services.html",
       "url": "/en/services.html",
-      "title": "TCM Services | Pain · Skin · Gynaecology | Dr. Ng Hau Chun",
+      "title": "TCM Services | Pain · Skin · Gynaecology | Dr. Ng Hau Jun",
       "titleLen": 58,
       "metaLen": 122,
       "h1": "TCM Services",
@@ -890,7 +890,7 @@
       "title": "中醫皮膚科養康｜暗瘡·濕疹·體質調理｜中環｜伍厚臻",
       "titleLen": 25,
       "metaLen": 147,
-      "h1": "暗瘡·濕疹·皮膚敏感·脫髮",
+      "h1": "暗瘡·濕疹·皮膚敏感",
       "h2": 4,
       "links": 8,
       "words": 862,

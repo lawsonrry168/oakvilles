@@ -114,6 +114,11 @@ schema: |
             <span class="df-home-hero__trust-sep" aria-hidden="true">·</span>
             <span>香港註冊中醫 003769</span>
           </p>
+          <p class="reveal df-home-hero__trust df-home-hero__trust--pay" data-d="2">
+            <span>政府醫療券特約</span>
+            <span class="df-home-hero__trust-sep" aria-hidden="true">·</span>
+            <span>各大商業保險適用</span>
+          </p>
           <p class="reveal df-home-hero__lead" data-d="2">頤安本草 · 伍厚臻中醫師。專為繁忙香港人而設的精準調理 — 於中環一隅闢一方禪意診室，以二十五載臨證之功循本溯源，每診細審四診、量身擬方，不趕時間、不流水作業。</p>
           <div class="reveal df-home-hero__actions" data-d="3">
             <a href="#booking" class="btn-cin df-home-hero__cta" data-cta-id="hero-booking">網上預約應診 <svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
@@ -149,11 +154,12 @@ schema: |
       <div class="df-home-trust-strip__items">
         <span class="df-home-trust-strip__item"><span class="df-home-trust-strip__dot"></span>香港註冊中醫 003769</span>
         <span class="df-home-trust-strip__sep"></span>
-        <span class="df-home-trust-strip__item"><span class="df-home-trust-strip__dot"></span>政府醫療券特約</span>
+        <span class="df-home-trust-strip__item df-home-trust-strip__item--pay"><span class="df-home-trust-strip__dot"></span>政府醫療券特約</span>
         <span class="df-home-trust-strip__sep"></span>
-        <span class="df-home-trust-strip__item"><span class="df-home-trust-strip__dot"></span>各大商業保險適用</span>
+        <span class="df-home-trust-strip__item df-home-trust-strip__item--pay"><span class="df-home-trust-strip__dot"></span>各大商業保險適用</span>
       </div>
     </div>
+    {% include "pay-coverage.njk" %}
     <div class="df-trust-grid reveal" data-d="1">
       <div class="df-trust">
         <div class="df-trust__num">25<span class="df-trust__unit">年+</span></div>
@@ -177,8 +183,8 @@ schema: |
       </div>
     </div>
     <div class="df-home-chips reveal" data-d="1">
-      <span class="df-home-chip">政府醫療券特約</span>
-      <span class="df-home-chip">商業保險收據</span>
+      <span class="df-home-chip df-home-chip--pay">政府醫療券特約</span>
+      <span class="df-home-chip df-home-chip--pay">各大商業保險適用</span>
       <span class="df-home-chip">中環核心地段</span>
       <span class="df-home-chip">獨立診症空間</span>
       <span class="df-home-chip">免煎中藥沖劑</span>
@@ -252,7 +258,7 @@ schema: |
           </svg>
         </div>
         <h3 class="df-home-spec-card__title">皮膚調理</h3>
-        <p class="df-home-spec-card__desc">暗瘡、濕疹、敏感、脫髮。內服外調，平其濕熱，由內而外，使膚自淨。</p>
+        <p class="df-home-spec-card__desc">暗瘡、濕疹、敏感。內服外調，平其濕熱，由內而外，使膚自淨。</p>
         <span class="df-home-spec-card__link">了解專科 →</span>
       </a>
 

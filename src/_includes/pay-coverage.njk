@@ -1,0 +1,12 @@
+<div class="df-pay-banner{% if payBannerClass %} {{ payBannerClass }}{% endif %}">
+  <div class="df-pay-banner__card">
+    <span class="df-pay-banner__badge">{% if locale == 'en' %}Participating provider{% else %}政府認可{% endif %}</span>
+    <h3 class="df-pay-banner__title">{% if locale == 'en' %}Government Health Care Voucher{% else %}政府醫療券特約{% endif %}</h3>
+    <p class="df-pay-banner__desc">{% if locale == 'en' %}Eligible patients may use Health Care Voucher at the clinic for applicable registered TCM services — please bring your HKID.{% else %}本診所為政府醫療券特約機構，合資格人士可於診所直接使用醫療券繳付適用之註冊中醫服務，請攜帶香港身份證。{% endif %}</p>
+  </div>
+  <div class="df-pay-banner__card">
+    <span class="df-pay-banner__badge">{% if locale == 'en' %}Receipts available{% else %}正式收據{% endif %}</span>
+    <h3 class="df-pay-banner__title">{% if locale == 'en' %}Major Commercial Insurance{% else %}各大商業保險適用{% endif %}</h3>
+    <p class="df-pay-banner__desc">{% if locale == 'en' %}We issue official receipts for registered CMP consultations. Widely accepted by major corporate and individual medical insurance plans — please confirm coverage with your insurer when booking.{% else %}本診所可發出正式收據，適用於多間主流公司團體及個人商業醫療保險索償。預約時請告知需索償，並向保險公司確認保障範圍。{% endif %}</p>
+  </div>
+</div>

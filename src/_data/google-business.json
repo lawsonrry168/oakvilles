@@ -1,11 +1,11 @@
 {
   "profileUrl": "https://maps.app.goo.gl/wZBH8ogRaecemHoe7",
   "businessName": "頤安本草 · 伍厚臻中醫師",
-  "businessNameEn": "Oakville Wellness · Dr. Ng Hau Chun",
+  "businessNameEn": "Oakville Wellness · Dr. Ng Hau Jun",
   "category": "中醫診所 / Traditional Chinese medicine clinic",
   "shortDescription": "中環本草養康中醫診所，專注暗瘡、濕疹體質調理，守護肌膚養康之路。伍厚臻註冊中醫 003769，25 年臨床。",
-  "description": "頤安本草位於中環皇后大道中錦安大廈 6 樓，港鐵上環站 E2 出口步行約 3–5 分鐘。由香港註冊中醫師伍厚臻（003769）主理，秉持本草養康理念，專注暗瘡、濕疹等皮膚疾患的體質調理，內服中藥、針灸及外用配合，一人一方、辨證論治。\n\n診症範圍：皮膚養康（暗瘡、濕疹、敏感）、內科、婦科、痛症、針灸、拔罐。設本草養生儲值計劃。政府醫療券特約，提供商業保險收據。\n\n應診時間：一至五 10:30–19:30；週六 10:30–17:30。WhatsApp 6734 9532 預約。本診所內容僅供健康資訊，療效因人而異。",
-  "descriptionEn": "Oakville Wellness is a Central Hong Kong TCM clinic on Queen's Road Central. Dr. Ng Hau Chun (registered TCM 003769) offers constitutional care for acne, eczema and skin wellness, plus internal medicine, gynaecology and pain management. WhatsApp 6734 9532.",
+  "description": "頤安本草位於中環皇后大道中錦安大廈 6 樓，港鐵上環站 E2 出口步行約 3–5 分鐘。由香港註冊中醫師伍厚臻（003769）主理，秉持本草養康理念，專注暗瘡、濕疹等皮膚疾患的體質調理，內服中藥、針灸及外用配合，一人一方、辨證論治。\n\n診症範圍：皮膚養康（暗瘡、濕疹、敏感）、內科、婦科、痛症、針灸、拔罐。設本草養生儲值計劃。政府醫療券特約，各大商業保險適用。\n\n應診時間：一至五 10:30–19:30；週六 10:30–17:30。WhatsApp 6734 9532 預約。本診所內容僅供健康資訊，療效因人而異。",
+  "descriptionEn": "Oakville Wellness is a Central Hong Kong TCM clinic on Queen's Road Central. Dr. Ng Hau Jun (registered TCM 003769) offers constitutional care for acne, eczema and skin wellness, plus internal medicine, gynaecology and pain management. WhatsApp 6734 9532.",
   "services": [
     "暗瘡中醫養康",
     "濕疹中醫養康",
@@ -18,8 +18,8 @@
     "內科調理"
   ],
   "attributes": [
-    "政府醫療券",
-    "商業保險收據",
+    "政府醫療券特約",
+    "各大商業保險適用",
     "WhatsApp 預約",
     "中環地段"
   ],

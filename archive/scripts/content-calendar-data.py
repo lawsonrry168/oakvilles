@@ -593,57 +593,6 @@ MONTHS = [
                     "想了解是否適合您，請先面診評估。\n\n"
                     f"{CTA}"
                 ),
-                "blog": {
-                    "title": "脫髮與頭油增多：血熱風燥還是肝腎不足？",
-                    "slug": "hair-loss-oily-scalp-tcm",
-                    "landing": "/blog/hair-loss-oily-scalp-tcm.html",
-                    "category": "皮膚調理",
-                    "img_scene": (
-                        "Hair wellness editorial: wooden comb, black sesame in bowl, gentle scalp massage hands "
-                        "with cream gloves, no hair loss clumps. 16:10."
-                    ),
-                    "sections": [
-                        {
-                            "h2": "引言",
-                            "paragraphs": [
-                                "洗頭時排水口一把把頭髮，額角漸漸後移，是許多都市人的焦慮。脫髮成因複雜：遺傳、壓力、內分泌、營養、藥物皆可涉及。中醫則常從血熱生風、濕熱浸淫、肝腎不足、氣血兩虛等論治，強調「頭為諸陽之會」，與睡眠、情緒、飲食密切相關。",
-                            ],
-                        },
-                        {
-                            "h2": "年輕人頭油多、髮易落",
-                            "paragraphs": [
-                                "此多屬血熱濕熱：熬夜、辛辣、壓力大 → 血熱生風，風動則髮落；頭皮出油快、瘙癢。治則宜清熱涼血、祛濕止癢，而非急於「補腎」，否則可能加重出油。",
-                            ],
-                        },
-                        {
-                            "h2": "產後或圍絕期大量脫髮",
-                            "paragraphs": [
-                                "產後氣血大虛，或更年期肝腎陰血不足，頭髮乾枯易斷、成片脫落，常伴腰膝酸軟、失眠。治則偏滋養肝腎、益氣養血，療程較長，需耐心。",
-                            ],
-                        },
-                        {
-                            "h2": "與雄激素脫髮的關係",
-                            "paragraphs": [
-                                "男性型脫髮與 DHT 相關，中醫可輔助調理氣血、改善頭皮循環，但不能取代西醫標準治療。建議必要時同步皮膚科評估。",
-                            ],
-                        },
-                        {
-                            "h2": "日常護理",
-                            "paragraphs": [
-                                "避免過度烫染。洗頭水溫不宜過熱。按摩百會、頭維、太陽以舒緩，力度溫和。保證睡眠，減少深夜工作。",
-                            ],
-                        },
-                        {
-                            "h2": "常見問題",
-                            "paragraphs": [
-                                "問：生薑擦頭有用嗎？答：可能刺激頭皮，不建議自行嘗試。",
-                                "問：黑芝麻可否止脫？答：僅適用部分腎虛體質，血熱者不宜。",
-                                "問：幾時見效？答：頭髮生長週期約數月，需持續調理觀察。",
-                            ],
-                        },
-                    ],
-                    "closing": f"脫髮困擾可加註於預約，安排皮膚／內科綜合評估。{CTA}　{DISCLAIMER}",
-                },
             },
         ],
     },
@@ -696,7 +645,7 @@ MONTHS = [
                 "fb": (
                     "Oakville Wellness welcomes English-speaking patients in Central.\n\n"
                     "Book via website (EN) or WhatsApp 6734 9532.\n"
-                    "Registered TCM practitioner No. 003769 — Dr. Ng Hau Chun.\n\n"
+                    "Registered TCM practitioner No. 003769 — Dr. Ng Hau Jun.\n\n"
                     "oakvilles.com/en/"
                 ),
                 "blog": {

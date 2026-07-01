@@ -3,18 +3,24 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for page in collections.all %}
-{%- if page.data.layout != "layouts/redirect.njk" %}
-{%- if page.data.noindex != true %}
-{%- set lastModified = page.data.lastmod or page.date %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for page in collections.all | sitemapPages %}
+{%- set pageUrl = page.data.canonical | absoluteUrl(site.url) %}
+{%- set alts = page | sitemapAlternates(site.url) %}
   <url>
-    <loc>{{ page.data.canonical }}</loc>
-    {%- if lastModified %}<lastmod>{{ lastModified | isoDate }}</lastmod>{%- endif %}
-    <changefreq>{{ page.data.changefreq | default("monthly") }}</changefreq>
+    <loc>{{ pageUrl }}</loc>
+    {%- if alts.zh and alts.en %}
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="{{ alts.zh }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ alts.en }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ alts.zh }}"/>
+    {%- endif %}
+    {%- set lastModified = page.data.lastmod or page.date %}
+    {%- if lastModified %}
+    <lastmod>{{ lastModified | isoDate }}</lastmod>
+    {%- endif %}
+    <changefreq>{{ page | sitemapChangefreq }}</changefreq>
     <priority>{{ page | sitemapPriority }}</priority>
   </url>
-{%- endif %}
-{%- endif %}
 {%- endfor %}
 </urlset>

@@ -1,0 +1,16 @@
+{# GEO — local discovery meta (centralised from site.geo) #}
+{% set g = site.geo %}
+
+<meta name="geo.region" content="{{ g.region }}">
+<meta name="geo.placename" content="{{ g.placename }}">
+<meta name="geo.position" content="{{ g.latitude }};{{ g.longitude }}">
+<meta name="ICBM" content="{{ g.latitude }}, {{ g.longitude }}">
+<meta name="geo.country" content="{{ g.countryCode | default('HK') }}">
+<meta name="distribution" content="local">
+<meta name="coverage" content="Hong Kong">
+
+<meta property="og:country-name" content="{{ g.country | default('Hong Kong') }}">
+<meta property="place:location:latitude" content="{{ g.latitude }}">
+<meta property="place:location:longitude" content="{{ g.longitude }}">
+
+<link rel="alternate" type="text/plain" href="{{ '/llms.txt' | absoluteUrl(site.url) }}" title="LLM site summary">

@@ -199,6 +199,51 @@
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
   },
+  "/images/og/og-about.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-about-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-article-acne.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-article-acne-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-article-eczema.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-article-eczema-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-article-fertility.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-article-fertility-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-article-insomnia.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-article-insomnia-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
   "/images/og/og-blog.png": {
     "webp": [
       {
@@ -208,10 +253,91 @@
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
   },
+  "/images/og/og-clinic.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-clinic-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-cond-acne.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-cond-acne-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-cond-eczema.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-cond-eczema-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-cond-fertility.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-cond-fertility-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-cond-insomnia.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-cond-insomnia-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-cond-neck-pain.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-cond-neck-pain-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-cond-sciatica.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-cond-sciatica-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-contact.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-contact-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
   "/images/og/og-default.png": {
     "webp": [
       {
         "url": "/images/og/og-default-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-faq.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-faq-640.webp",
         "width": 640
       }
     ],
@@ -235,10 +361,100 @@
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
   },
+  "/images/og/og-news.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-news-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
   "/images/og/og-process.png": {
     "webp": [
       {
         "url": "/images/og/og-process-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-services.png": {
+    "webp": [
+      {
+        "url": "/images/og/og-services-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-acupuncture.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-acupuncture-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-cupping.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-cupping-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-gynaecology.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-gynaecology-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-herbs.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-herbs-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-internal.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-internal-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-moxibustion.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-moxibustion-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-pain.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-pain-640.webp",
+        "width": 640
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+  },
+  "/images/og/og-svc-skin.jpg": {
+    "webp": [
+      {
+        "url": "/images/og/og-svc-skin-640.webp",
         "width": 640
       }
     ],

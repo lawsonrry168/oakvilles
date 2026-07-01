@@ -1,0 +1,5 @@
+{% if geoSchema %}
+<script type="application/ld+json">
+{{ geoSchema | rewriteSchemaUrls(site.url) | safe }}
+</script>
+{% endif %}

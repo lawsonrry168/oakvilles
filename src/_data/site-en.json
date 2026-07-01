@@ -17,7 +17,7 @@
     "longitude": "114.1533411"
   },
   "serviceArea": ["Central", "Admiralty", "Sheung Wan", "Mid-Levels", "Kennedy Town", "Hong Kong Island", "Kowloon", "New Territories"],
-  "defaultOgImage": "https://oakvilles.com/images/og/og-default.png",
+  "defaultOgImage": "/images/og/og-default.png",
   "defaultOgImageWidth": 1200,
   "defaultOgImageHeight": 630,
   "heroOgImageWidth": 1920,

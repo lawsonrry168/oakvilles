@@ -54,6 +54,8 @@
 
 {% endif %}
 
+{% include "geo-schema.njk" %}
+
 </head>
 
 <body{% if bodyClass %} class="{{ bodyClass }}{% if locale == 'en' %} lang-en{% endif %}"{% elif locale == 'en' %} class="lang-en"{% endif %} data-locale="{{ locale | default('zh') }}">

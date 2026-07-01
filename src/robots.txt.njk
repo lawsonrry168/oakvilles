@@ -1,0 +1,40 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }} — {{ site.url }}
+# 香港中環註冊中醫診所 · SEO · GEO · AI 索引
+
+User-agent: *
+Allow: /
+Disallow: /archive/
+Disallow: /conditions/central-hk.html
+
+# 生成式引擎 / AI 檢索（GEO）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# 站點地圖 · LLM 摘要
+Sitemap: {{ site.url }}/sitemap.xml
+# LLM summary: {{ site.url }}/llms.txt

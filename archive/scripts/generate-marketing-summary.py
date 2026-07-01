@@ -14,7 +14,12 @@ import shutil
 BASE = r"c:\Users\Steriod\Desktop\oakvilles"
 OUT = os.path.join(BASE, "Oakville-Marketing-Summary.docx")
 OUT_PRES = os.path.join(BASE, "presentations", "Oakville-Marketing-Summary.docx")
-today = datetime.date(2026, 6, 24)
+today = datetime.date(2026, 7, 1)
+MONTHLY_RETAINER = 8_000
+MONTHLY_RETAINER_PREV = 10_000
+META_FB = 1_000
+META_IG = 1_000
+GOOGLE_AD = 3_000
 
 
 def set_cell_shading(cell, fill: str):
@@ -180,13 +185,38 @@ def build():
 
     # ── 5. Budget ──
     h1(doc, "五、預算參考（每月）")
+    para(
+        doc,
+        f"月度行銷及維護服務費 HKD {MONTHLY_RETAINER:,}（原 {MONTHLY_RETAINER_PREV:,}）；"
+        "內容製作（8 則社交 + 2 文）已含於月費。",
+        10,
+        True,
+    )
+    h2(doc, "月費配置（服務費）")
+    table(doc, ["項目", "HKD", "說明"], [
+        ("Meta Facebook 代操", f"{META_FB:,}", "活動、受眾、素材、Pixel、月報"),
+        ("Meta Instagram 代操", f"{META_IG:,}", "Reels/Stories、IG 受眾優化"),
+        ("Google 搜尋代操", f"{GOOGLE_AD:,}", "品牌+中環+症狀 Search"),
+        ("內容製作（8 則社交 + 2 文）", "月費包含", "不再另收 3,000–6,000"),
+        ("策略·維護·會議", "月費包含", "GBP、GA4 月報、網站小修、月度檢討"),
+        ("月度服務費合計", f"{MONTHLY_RETAINER:,}", "不含平台廣告投放費"),
+    ], [5.5, 2.5, 8])
+    h2(doc, "建議廣告投放（客戶直付平台）")
     table(doc, ["項目", "HKD"], [
-        ("Meta 廣告", "5,000 – 8,000"),
-        ("Google 搜尋", "5,000 – 8,000"),
-        ("內容製作（8 則社交 + 2 文）", "3,000 – 6,000"),
-        ("合計", "約 13,000 – 22,000"),
+        ("Meta Facebook", f"{META_FB:,}"),
+        ("Meta Instagram", f"{META_IG:,}"),
+        ("Google 搜尋", f"{GOOGLE_AD:,}"),
+        ("內容製作", "—（已含月費）"),
+        ("客戶每月合計（服務+廣告）", f"約 {MONTHLY_RETAINER + META_FB + META_IG + GOOGLE_AD:,}"),
     ], [10, 6])
-    para(doc, "建議先各投 3,000 試跑 4–6 週，看單次 WA 點擊成本再調整。", 10)
+    h2(doc, "價格調整前後")
+    table(doc, ["項目", "調整前", "調整後"], [
+        ("月度服務費", f"{MONTHLY_RETAINER_PREV:,}", f"{MONTHLY_RETAINER:,}"),
+        ("內容製作", "另計 3,000–6,000", "月費包含"),
+        ("Meta", "合併 5,000–8,000", f"FB {META_FB:,} + IG {META_IG:,}"),
+        ("Google", "5,000–8,000", f"{GOOGLE_AD:,}"),
+    ], [5, 5, 6])
+    para(doc, "建議試跑 4–6 週，依 whatsapp_click 成本再調整廣告 spend。", 10)
 
     # ── 6. Competitor one-pager ──
     h1(doc, "六、相對養康（精簡對照）")

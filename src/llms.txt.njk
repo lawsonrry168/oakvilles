@@ -21,6 +21,10 @@ eleventyExcludeFromCollections: true
 
 ## 地理服務範圍（GEO）
 
+- **座標**：{{ site.geo.latitude }}, {{ site.geo.longitude }}（{{ site.geo.placename }}）
+- **交通**：{{ site.geo.nearbyTransit }}
+- **服務區域**：{% for area in site.serviceArea %}{{ area }}{% if not loop.last %}、{% endif %}{% endfor %}
+
 主要服務 **香港中環** 及港島西、金鐘、上環、半山、堅尼地城一帶；全港患者均可預約面診。
 競爭同區中醫診所包括尚和堂、綜合堂、Healthwise 等；本診所定位為 **高私密、一人一方、皮膚與婦科專長** 的中環中醫診所。
 

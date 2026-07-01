@@ -1,0 +1,19 @@
+{
+  "region": "HK",
+  "country": "Hong Kong",
+  "countryCode": "HK",
+  "placename": "中環, 香港",
+  "placenameEn": "Central, Hong Kong",
+  "locality": "中環",
+  "localityEn": "Central",
+  "administrativeArea": "香港島",
+  "administrativeAreaEn": "Hong Kong Island",
+  "latitude": "22.2847084",
+  "longitude": "114.1533411",
+  "streetAddress": "皇后大道中 176A–176F 號錦安大廈 6 樓 602 室",
+  "streetAddressEn": "Unit 602, 6/F, Kam On Building, 176A–176F Queen's Road Central",
+  "postalCode": "",
+  "radiusKm": 15,
+  "nearbyTransit": "港鐵上環站 E2 出口步行約 3–5 分鐘",
+  "nearbyTransitEn": "3–5 min walk from MTR Sheung Wan Station Exit E2"
+}

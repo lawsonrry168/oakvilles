@@ -18,7 +18,7 @@
     "longitude": "114.1533411"
   },
   "serviceArea": ["中環", "金鐘", "上環", "半山", "西環", "香港島", "九龍", "新界"],
-  "defaultOgImage": "https://oakvilles.com/images/og/og-default.png",
+  "defaultOgImage": "/images/og/og-default.png",
   "defaultOgImageWidth": 1200,
   "defaultOgImageHeight": 630,
   "heroOgImageWidth": 1920,

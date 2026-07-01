@@ -10,6 +10,8 @@ const SITE_ZH = require("./src/_data/site.json");
 
 const SITE_EN = require("./src/_data/site-en.json");
 
+const GEO = require("./src/_data/geo.json");
+
 
 
 function resolveSiteUrl(fallback = SITE_ZH.url) {
@@ -77,7 +79,27 @@ function rewriteToSiteUrl(url, base = SITE_BASE_URL) {
 
 
 
-function withResolvedSite(site) {
+function withResolvedSite(site, locale = "zh") {
+
+  const geoBase = locale === "en"
+
+    ? {
+
+        ...GEO,
+
+        placename: GEO.placenameEn || GEO.placename,
+
+        locality: GEO.localityEn || GEO.locality,
+
+        administrativeArea: GEO.administrativeAreaEn || GEO.administrativeArea,
+
+        streetAddress: GEO.streetAddressEn || GEO.streetAddress,
+
+        nearbyTransit: GEO.nearbyTransitEn || GEO.nearbyTransit,
+
+      }
+
+    : GEO;
 
   return {
 
@@ -87,7 +109,131 @@ function withResolvedSite(site) {
 
     defaultOgImage: rewriteToSiteUrl(site.defaultOgImage),
 
+    geo: { ...geoBase, ...(site.geo || {}) },
+
   };
+
+}
+
+
+
+function buildPostalAddress(site, locale) {
+
+  const g = site.geo || GEO;
+
+  return {
+
+    "@type": "PostalAddress",
+
+    streetAddress: locale === "en" ? (g.streetAddressEn || g.streetAddress) : g.streetAddress,
+
+    addressLocality: locale === "en" ? (g.localityEn || g.locality) : g.locality,
+
+    addressRegion: locale === "en" ? (g.administrativeAreaEn || g.administrativeArea) : g.administrativeArea,
+
+    addressCountry: g.countryCode || "HK",
+
+    ...(g.postalCode ? { postalCode: g.postalCode } : {}),
+
+  };
+
+}
+
+
+
+function buildGeoSchema(data, site) {
+
+  const locale = resolveLocale(data) === "en" ? "en" : "zh";
+
+  const stem = normalizeStem(data);
+
+  const isHome = stem === "index" || stem === "en";
+
+  const g = site.geo || GEO;
+
+  const place = {
+
+    "@type": "Place",
+
+    "@id": `${SITE_BASE_URL}/#place`,
+
+    name: locale === "en" ? `${site.nameEn || site.name} · Central Clinic` : "頤安本草 · 中環本草養康診所",
+
+    geo: {
+
+      "@type": "GeoCoordinates",
+
+      latitude: parseFloat(g.latitude),
+
+      longitude: parseFloat(g.longitude),
+
+    },
+
+    address: buildPostalAddress(site, locale),
+
+    containedInPlace: {
+
+      "@type": "City",
+
+      name: locale === "en" ? "Hong Kong" : "香港",
+
+    },
+
+    ...(site.googleMaps && site.googleMaps.shortUrl ? { hasMap: site.googleMaps.shortUrl } : {}),
+
+  };
+
+  const graph = [place];
+
+  if (isHome) {
+
+    graph.push({
+
+      "@type": "WebSite",
+
+      "@id": `${SITE_BASE_URL}/#website`,
+
+      url: `${SITE_BASE_URL}/`,
+
+      name: site.name,
+
+      inLanguage: ["zh-HK", "en"],
+
+      publisher: { "@id": ORG_ID },
+
+    });
+
+  } else {
+
+    graph.push({
+
+      "@type": "MedicalBusiness",
+
+      "@id": ORG_ID,
+
+      name: site.name,
+
+      url: `${SITE_BASE_URL}/`,
+
+      telephone: site.telephone,
+
+      geo: place.geo,
+
+      address: place.address,
+
+      areaServed: (site.serviceArea || []).map((name) => ({
+
+        "@type": "AdministrativeArea",
+
+        name,
+
+      })),
+
+    });
+
+  }
+
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2);
 
 }
 
@@ -116,9 +262,9 @@ function buildMedicalWebPageSchema(data, specialty) {
 
       "@type": "MedicalWebPage",
 
-      "@id": data.canonical + "#webpage",
+      "@id": rewriteToSiteUrl(data.canonical) + "#webpage",
 
-      url: data.canonical,
+      url: rewriteToSiteUrl(data.canonical),
 
       name: data.title,
 
@@ -228,7 +374,7 @@ function buildArticleSchema(data) {
 
       publisher: { "@id": ORG_ID },
 
-      image: rewriteToSiteUrl(data.ogImage || "https://oakvilles.com/images/og/og-default.png"),
+      image: rewriteToSiteUrl(data.ogImage || "/images/og/og-default.png"),
 
       inLanguage: locale,
 
@@ -462,8 +608,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "images/favicon.ico": "favicon.ico" });
 
-  eleventyConfig.addPassthroughCopy("robots.txt");
-
   eleventyConfig.addPassthroughCopy("vercel.json");
 
 
@@ -476,11 +620,19 @@ module.exports = function (eleventyConfig) {
 
     site: (data) =>
 
-      withResolvedSite(resolveLocale(data) === "en" ? SITE_EN : SITE_ZH),
+      withResolvedSite(resolveLocale(data) === "en" ? SITE_EN : SITE_ZH, resolveLocale(data)),
 
     langAlternate: buildLangAlternate,
 
     schema: resolveSchema,
+
+    geoSchema: (data) => {
+
+      const site = withResolvedSite(resolveLocale(data) === "en" ? SITE_EN : SITE_ZH, resolveLocale(data));
+
+      return buildGeoSchema(data, site);
+
+    },
 
     t: (data) => {
 
@@ -511,15 +663,57 @@ module.exports = function (eleventyConfig) {
       ? String(page.data.page.filePathStem).replace(/\\/g, "/").replace(/^\/+/, "")
       : "";
     if (page.data.priority) return page.data.priority;
-    if (canonical.endsWith("oakvilles.com/") || canonical.endsWith("/en/")) return "1.0";
+    if (canonical.endsWith("oakvilles.com/") || canonical.endsWith("/en/") || stem === "index" || stem === "en") return "1.0";
     if (stem === "about/central-hk" || stem === "en/about/central-hk") return "0.9";
     if (stem === "conditions/acne-eczema-central" || stem === "en/conditions/acne-eczema-central") return "0.9";
+    if (stem === "contact" || stem === "en/contact" || stem === "clinic" || stem === "en/clinic") return "0.85";
+    if (stem === "services" || stem === "en/services") return "0.85";
     if (stem === "about" || stem === "en/about" || stem === "process" || stem === "en/process") return "0.85";
+    if (stem.startsWith("conditions/") || stem.startsWith("en/conditions/")) return "0.8";
+    if (stem.startsWith("services/") || stem.startsWith("en/services/")) return "0.8";
     if (stem.startsWith("blog/") || stem.startsWith("en/blog/") || stem.startsWith("news/") || stem.startsWith("en/news/")) {
-      if (stem.endsWith("/index")) return "0.75";
+      if (stem.endsWith("/index") || stem === "blog" || stem === "en/blog" || stem === "news" || stem === "en/news") return "0.75";
       return "0.65";
     }
+    if (stem === "faq" || stem === "en/faq") return "0.7";
     return "0.7";
+  });
+
+  eleventyConfig.addFilter("sitemapChangefreq", (page) => {
+    if (page.data.changefreq) return page.data.changefreq;
+    const stem = page.data.page && page.data.page.filePathStem
+      ? String(page.data.page.filePathStem).replace(/\\/g, "/").replace(/^\/+/, "")
+      : "";
+    if (stem === "index" || stem === "en" || stem === "en/index") return "weekly";
+    if (stem.startsWith("news/") || stem.startsWith("en/news/")) return "weekly";
+    return "monthly";
+  });
+
+  eleventyConfig.addFilter("sitemapPages", (collection) => {
+    const skipPermalinks = new Set(["/sitemap.xml", "/robots.txt", "/llms.txt"]);
+    return collection
+      .filter((page) => page.data.layout !== "layouts/redirect.njk")
+      .filter((page) => page.data.noindex !== true)
+      .filter((page) => !skipPermalinks.has(page.data.permalink))
+      .sort((a, b) => {
+        const priority = (p) => parseFloat(eleventyConfig.getFilter("sitemapPriority")(p) || "0");
+        const diff = priority(b) - priority(a);
+        if (diff !== 0) return diff;
+        const locA = String(a.data.canonical || "");
+        const locB = String(b.data.canonical || "");
+        return locA.localeCompare(locB);
+      });
+  });
+
+  eleventyConfig.addFilter("sitemapAlternates", (page, baseUrl) => {
+    const fileStem = page.data.page && page.data.page.filePathStem;
+    if (!fileStem) return {};
+    const origin = String(baseUrl || SITE_BASE_URL).replace(/\/$/, "");
+    const toAbs = (path) => rewriteToSiteUrl(path.startsWith("/") ? path : `/${path}`, origin);
+    return {
+      zh: toAbs(langPathForStem(fileStem, "zh")),
+      en: toAbs(langPathForStem(fileStem, "en")),
+    };
   });
 
   eleventyConfig.addFilter("absoluteUrl", (url, base) => rewriteToSiteUrl(url, base || SITE_BASE_URL));

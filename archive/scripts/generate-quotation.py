@@ -30,12 +30,16 @@ LIST_TOTAL = WEBSITE_SUBTOTAL + IMAGE_SUBTOTAL - BUNDLE_DISCOUNT
 REFERRAL_DISCOUNT = int(LIST_TOTAL * 0.5)
 REFERRAL_TOTAL = LIST_TOTAL - REFERRAL_DISCOUNT
 
-MONTHLY_RETAINER = 10_000  # 月度服務不適用報價折扣
+MONTHLY_RETAINER = 8_000  # 月度服務不適用報價折扣（原 10,000）
+MONTHLY_RETAINER_PREV = 10_000
+META_FB_ALLOC = 1_000
+META_IG_ALLOC = 1_000
+GOOGLE_ALLOC = 3_000
 MIN_CONTRACT_MONTHS = 3
 HOURLY_DEV = int(650 * PRICE_FACTOR)
 HOURLY_IMAGE = int(380 * PRICE_FACTOR)
 
-today = datetime.date(2026, 6, 23)
+today = datetime.date(2026, 7, 1)
 valid_until = today + datetime.timedelta(days=30)
 
 
@@ -167,7 +171,8 @@ para(
 )
 table(doc, ["項目", "報價 HKD", "轉介優惠 HKD", "備註"], [
     ("一次性：網站 + 50 張圖", fmt(LIST_TOTAL), fmt(REFERRAL_TOTAL), "轉介客戶五折；簽約時確認即可"),
-    ("月度：行銷 + 維護", f"{fmt(MONTHLY_RETAINER)}/月", f"{fmt(MONTHLY_RETAINER)}/月", f"最少 {MIN_CONTRACT_MONTHS} 個月；不含廣告費"),
+    ("月度：行銷 + 維護", f"{fmt(MONTHLY_RETAINER)}/月", f"{fmt(MONTHLY_RETAINER)}/月",
+     f"原 {fmt(MONTHLY_RETAINER_PREV)}/月；含 8社交+2文；最少 {MIN_CONTRACT_MONTHS} 個月"),
     ("Meta / Google 廣告費", "—", "—", "客戶直接支付平台，代操含於月費"),
 ], [4.5, 2.8, 2.8, 5.9])
 
@@ -215,13 +220,26 @@ table(doc, ["渠道", "頻率", "每月產出", "說明"], [
     ("官網養生專欄", "每兩週 1 篇", "2 篇文章", "800–1200 字；SEO 長尾 + 內部連結症狀頁"),
 ], [2.5, 2, 2, 9])
 
-h2(doc, "3.2 廣告代操（不含廣告費）")
-table(doc, ["平台", "服務內容", "著陸頁方向"], [
-    ("Meta（FB + IG）", "活動設定、受眾、素材測試、Pixel 追蹤、月報", "症狀頁（濕疹/暗瘡/備孕/失眠）+ 再行銷"),
-    ("Google Ads", "Search（品牌/中環/症狀）+ PMax 轉化優化、月報", "/conditions/ 及 central-hk"),
-], [3, 7, 6])
+h2(doc, "3.2 月費配置明細（HKD 8,000）")
+table(doc, ["項目", "月費配置 HKD", "說明"], [
+    ("Meta Facebook 代操", fmt(META_FB_ALLOC), "活動、受眾、素材、Pixel、月報"),
+    ("Meta Instagram 代操", fmt(META_IG_ALLOC), "Reels/Stories、IG 受眾、與 FB 協同"),
+    ("Google 搜尋代操", fmt(GOOGLE_ALLOC), "品牌+中環+症狀 Search；/conditions/ 及 central-hk"),
+    ("內容製作（8社交+2文）", "月費包含", "不再另收 HKD 3,000–6,000"),
+    ("策略·維護·會議", "月費包含", "GBP、GA4 月報、Vercel 小修、每月 60 分鐘檢討"),
+    ("合計", fmt(MONTHLY_RETAINER), "不含平台廣告投放費（客戶直付）"),
+], [4.5, 2.5, 9])
 
-h2(doc, "3.3 策略、量度與技術維護")
+h2(doc, "3.3 建議廣告投放預算（客戶直付平台）")
+table(doc, ["平台", "建議月投放 HKD"], [
+    ("Meta Facebook", fmt(META_FB_ALLOC)),
+    ("Meta Instagram", fmt(META_IG_ALLOC)),
+    ("Google 搜尋", fmt(GOOGLE_ALLOC)),
+    ("內容製作", "—（已含月費）"),
+    ("客戶每月合計（服務+廣告）", fmt(MONTHLY_RETAINER + META_FB_ALLOC + META_IG_ALLOC + GOOGLE_ALLOC)),
+], [8, 8])
+
+h2(doc, "3.4 策略、量度與技術維護")
 table(doc, ["#", "類別", "每月服務"], [
     ("M1", "本地 SEO", "Google Business Profile 優化建議、Search Console 監測"),
     ("M2", "轉化分析", "GA4 / GTM 維護、whatsapp_click 月報、漏斗優化建議"),
@@ -229,7 +247,15 @@ table(doc, ["#", "類別", "每月服務"], [
     ("M4", "策略會議", "每月 1 次 60 分鐘線上檢討（數據 + 下月計劃）"),
 ], [1, 3, 12])
 
-h2(doc, "3.4 合規與不包含")
+h2(doc, "3.5 價格調整前後對照")
+table(doc, ["項目", "調整前", "調整後"], [
+    ("月度服務費", f"HKD {fmt(MONTHLY_RETAINER_PREV)}/月", f"HKD {fmt(MONTHLY_RETAINER)}/月"),
+    ("內容製作（8社交+2文）", "另計 3,000–6,000", "月費包含"),
+    ("Meta 代操", "合併「Meta 5,000–8,000」", f"FB {fmt(META_FB_ALLOC)} + IG {fmt(META_IG_ALLOC)}"),
+    ("Google 代操", "5,000–8,000（參考）", f"HKD {fmt(GOOGLE_ALLOC)}"),
+], [5, 5, 6])
+
+h2(doc, "3.6 合規與不包含")
 bullets(doc, [
     "文案合規：不採免診金、論壇軟文、豐胸減肥等與品牌定位不符手段；醫療表述由客戶最終確認",
     "不含：Meta / Google 廣告投放費、KOL 費、醫師現場攝影、法律合規意見",
@@ -381,7 +407,8 @@ qa_block(doc, [
         "廣告費用如何處理？最低預算建議？",
         "Meta / Google 廣告費由客戶以自身企業帳戶直接支付平台，發票及稅務由平台處理。"
         f"代操服務含於月費 HKD {fmt(MONTHLY_RETAINER)}，不含廣告 spend。"
-        "建議試跑期各平台 HKD 3,000–8,000/月；實際預算由客戶決定，預算不足可能影響投放效果。",
+        f"建議試跑：Meta FB {fmt(META_FB_ALLOC)} + IG {fmt(META_IG_ALLOC)} + Google {fmt(GOOGLE_ALLOC)}/月（客戶直付）；"
+        "實際預算由客戶決定，預算不足可能影響投放效果。",
     ),
     (
         "社交帳號及廣告帳戶歸誰擁有？",

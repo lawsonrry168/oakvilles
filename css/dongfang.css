@@ -24,9 +24,28 @@
   --shadow-soft:0 24px 50px -30px rgba(var(--pine-deep-rgb),.14);
   --shadow-card:0 18px 40px -26px rgba(var(--pine-deep-rgb),.12);
   --font-lishu:"Oakville-Lishu","LiSu","STLiti","隶书","華文隸書",serif;
-  /* 易讀字級（長者友善 · 正文約 20px 起） */
+  /* 易讀字級（長者友善 · 正文 20px 起） */
   --text-2xs:16px; --text-xs:17px; --text-sm:19px; --text-base:20px;
   --text-md:22px; --text-lg:24px; --text-xl:26px; --text-2xl:28px;
+  /* 標題階梯（中文 · 與正文對比適中） */
+  --heading-hero:clamp(1.905rem,5vw,3.048rem);
+  --heading-page:clamp(1.952rem,5.2vw,3.125rem);
+  --heading-section:clamp(1.667rem,3.6vw,2.5rem);
+  --heading-block:clamp(1.381rem,2.8vw,1.857rem);
+  --heading-cta:clamp(1.476rem,2.8vw,2rem);
+  --heading-display:clamp(1.762rem,4.4vw,2.952rem);
+  --line-height-heading:1.2;
+  --line-height-prose:1.9;
+}
+html[lang="en"]{
+  /* 英文標題用 Cormorant，同 rem 視覺偏大 → 整體縮一級 */
+  --heading-hero:clamp(1.667rem,4.2vw,2.571rem);
+  --heading-page:clamp(1.667rem,4.4vw,2.381rem);
+  --heading-section:clamp(1.524rem,3.2vw,2.238rem);
+  --heading-block:clamp(1.286rem,2.6vw,1.667rem);
+  --heading-cta:clamp(1.381rem,2.6vw,1.857rem);
+  --heading-display:clamp(1.571rem,3.8vw,2.476rem);
+  --line-height-heading:1.22;
 }
 
 *{ box-sizing:border-box; }
@@ -464,10 +483,11 @@ html[lang="en"] .df-page-hero__watermark--long{
 .df-breadcrumb a:hover{ color:var(--cinnabar); }
 .df-breadcrumb svg{ width:13px; height:13px; }
 .df-page-hero__eyebrow{ font-family:"Noto Serif TC",serif; font-size:18.1px; letter-spacing:.4em; color:var(--ochre); margin-bottom:14px; }
-.df-page-hero__title{ font-weight:900; color:var(--pine); letter-spacing:.04em; line-height:1.15;
-  font-size:clamp(2.286rem,6vw,4rem); margin:0 0 22px; }
+.df-page-hero__title{ font-weight:900; color:var(--pine); letter-spacing:.04em; line-height:var(--line-height-heading);
+  font-size:var(--heading-page); margin:0 0 22px; }
+html[lang="en"] .df-page-hero__title{ letter-spacing:.02em; }
 .df-page-hero__title em{ font-style:normal; color:var(--cinnabar); }
-.df-page-hero__sub{ max-width:54ch; font-size:21.9px; line-height:2; color:var(--ink-soft); margin:0; }
+.df-page-hero__sub{ max-width:54ch; font-size:var(--text-md); line-height:var(--line-height-prose); color:var(--ink-soft); margin:0; }
 .df-page-hero__sub a{ color:var(--cinnabar); }
 .df-page-hero__sub a:hover{ text-decoration:underline; }
 .df-page-hero__cta{ display:flex; flex-wrap:wrap; gap:16px; margin-top:36px; }
@@ -478,7 +498,7 @@ html[lang="en"] .df-page-hero__watermark--long{
 .df-section--paper-deep{ background:var(--paper-deep); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
 .df-section--deep{ background:var(--pine-deep); color:rgba(var(--paper-rgb),.9); }
 .df-eyebrow{ font-family:"Noto Serif TC",serif; font-size:18.1px; letter-spacing:.4em; color:var(--ochre); margin:0 0 12px; }
-.df-title{ font-weight:900; color:var(--pine); letter-spacing:.03em; line-height:1.2; font-size:clamp(1.81rem,4.2vw,2.857rem); margin:0; }
+.df-title{ font-weight:900; color:var(--pine); letter-spacing:.03em; line-height:var(--line-height-heading); font-size:var(--heading-section); margin:0; }
 .df-section--deep .df-title{ color:var(--paper); }
 .df-title em{ font-style:normal; color:var(--cinnabar); }
 .df-section--deep .df-title em{ color:var(--ochre-light); }
@@ -526,7 +546,7 @@ html[lang="en"] .df-page-hero__watermark--long{
 .df-portrait__role{ font-size:18.1px; color:var(--cinnabar); margin-top:4px; }
 .df-portrait__no{ font-size:16.2px; color:var(--ink-faint); margin-top:6px; letter-spacing:.05em; }
 
-.df-prose p{ font-size:21px; line-height:2.1; color:var(--ink-soft); margin:0 0 18px; max-width:58ch; }
+.df-prose p{ font-size:var(--text-md); line-height:var(--line-height-prose); color:var(--ink-soft); margin:0 0 18px; max-width:58ch; }
 
 .df-quote{ position:relative; margin:36px 0; padding:24px 28px; background:rgba(var(--pine-rgb),.04); border-left:3px solid var(--cinnabar); border-radius:0 4px 4px 0; }
 .df-quote p{ font-size:21.9px; line-height:2; color:var(--pine); margin:0; }
@@ -585,7 +605,7 @@ html[lang="en"] .df-page-hero__watermark--long{
   border-radius:6px; padding:56px 44px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:32px; }
 .df-cta::after{ content:""; position:absolute; right:-40px; top:50%; transform:translateY(-50%);
   width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, rgba(var(--cinnabar-rgb),.18), transparent 60%); pointer-events:none; }
-.df-cta__title{ font-weight:900; font-size:clamp(1.524rem,3vw,2.095rem); color:var(--paper); margin:0 0 10px; letter-spacing:.03em; }
+.df-cta__title{ font-weight:900; font-size:var(--heading-cta); color:var(--paper); margin:0 0 10px; letter-spacing:.03em; }
 .df-cta__text{ color:rgba(var(--paper-rgb),.78); font-size:20px; line-height:1.9; margin:0; max-width:48ch; }
 .df-cta__actions{ display:flex; flex-wrap:wrap; gap:14px; position:relative; z-index:1; }
 
@@ -1046,7 +1066,7 @@ html[lang="en"] .df-form-card__title{ font-family:"Noto Serif",Georgia,"Times Ne
 .df-article-meta{ display:flex; flex-wrap:wrap; gap:16px; font-size:17.1px; color:var(--ink-faint); margin-bottom:32px; padding-bottom:24px; border-bottom:1px solid var(--line); }
 
 /* ═══════════════════  UTILITIES (全站共用，取代 inline style)  ═══════════════════ */
-.df-title--section{ font-size:clamp(1.429rem,3vw,1.905rem); margin-bottom:24px; }
+.df-title--section{ font-size:var(--heading-block); margin-bottom:24px; }
 .df-btn--ghost-on-dark{ color:var(--paper); border-color:rgba(var(--paper-rgb),.32); }
 .df-trust-note{ margin-top:32px; padding:24px 28px; background:var(--paper-deep); border-radius:6px; border:1px solid var(--line-soft); }
 .df-trust-note p{ font-size:19px; line-height:1.9; color:var(--ink-soft); margin:0; }

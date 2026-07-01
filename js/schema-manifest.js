@@ -79,7 +79,7 @@
     '/process.html': webPage('/process.html', '診症流程與收費', '了解伍厚臻中醫師的診症流程、收費標準及預約政策。'),
     '/contact.html': webPage('/contact.html', '聯絡與預約', 'WhatsApp 或電話預約伍厚臻中醫師診症。'),
     '/services/pain.html': medicalPage('/services/pain.html', '中醫痛症治療', '針灸推拿治療頸椎痛、腰背痛、坐骨神經痛等痛症。', 'Pain Management'),
-    '/services/skin.html': medicalPage('/services/skin.html', '中醫皮膚科', '暗瘡、濕疹、敏感的中醫內外調理。', 'Dermatology'),
+    '/services/skin.html': medicalPage('/services/skin.html', '中醫皮膚科', '暗瘡、濕疹、敏感的中醫內外調理。', 'Skin care'),
     '/services/internal.html': medicalPage('/services/internal.html', '中醫內科調理', '失眠、腸胃、疲勞、免疫的中醫調理。', 'Internal Medicine'),
     '/services/gynaecology.html': medicalPage('/services/gynaecology.html', '中醫婦科調理', '月經、痛經、備孕、PCOS 的婦科中醫調理。', 'Gynecology'),
     '/services/acupuncture.html': medicalPage('/services/acupuncture.html', '針灸療法', '傳統針灸、美顏針及減肥針等療法。', 'Acupuncture'),

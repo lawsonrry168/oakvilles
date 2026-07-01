@@ -1,11 +1,11 @@
 ﻿window.SITE_SEARCH_INDEX = [
   { title: "首頁", url: "/", type: "頁面", keywords: "頤安本草 伍厚臻 中環 中醫" },
   { title: "關於伍厚臻醫師", url: "/about.html", type: "頁面", keywords: "醫師 資歷 25年 註冊 003769" },
-  { title: "診症專科總覽", url: "/services.html", type: "專科", keywords: "服務 專科 痛症 皮膚 婦科" },
-  { title: "痛症治療", url: "/services/pain.html", type: "專科", keywords: "頸痛 腰痛 坐骨神經 關節 肩周炎" },
+  { title: "診症專科總覽", url: "/services.html", type: "專科", keywords: "服務 專科 皮膚 內科 婦科 痛症" },
   { title: "皮膚科", url: "/services/skin.html", type: "專科", keywords: "暗瘡 濕疹 敏感" },
   { title: "內科調理", url: "/services/internal.html", type: "專科", keywords: "失眠 腸胃 疲勞 免疫" },
   { title: "婦科調理", url: "/services/gynaecology.html", type: "專科", keywords: "月經 痛經 不孕 PCOS 備孕" },
+  { title: "痛症治療", url: "/services/pain.html", type: "專科", keywords: "頸痛 腰痛 坐骨神經 關節 肩周炎" },
   { title: "針灸療法", url: "/services/acupuncture.html", type: "專科", keywords: "針灸 美顏針 減肥針" },
   { title: "中藥處方", url: "/services/herbs.html", type: "療法", keywords: "中藥 煎藥 沖劑 一人一方" },
   { title: "艾灸療法", url: "/services/moxibustion.html", type: "療法", keywords: "艾灸 溫通 祛寒" },

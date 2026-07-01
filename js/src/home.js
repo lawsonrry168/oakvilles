@@ -42,7 +42,7 @@ const HOME_UI = {
       treatment: { '0': 'Consultation only', '450': 'Acupuncture', '350': 'Cupping', '498': 'Manual pain therapy', '650': 'Integrated treatment', '290': 'Facial steam therapy', '351': 'Ear acupuncture' },
       meds: { '0': 'No herbs', '3': '3 days', '6': '6 days' }
     },
-    specialty: { pain: 'Pain management', skin: 'Dermatology', gyn: 'Gynaecology', gynaecology: 'Gynaecology', internal: 'Internal medicine' },
+    specialty: { pain: 'Pain management', skin: 'Skin care', gyn: 'Gynaecology', gynaecology: 'Gynaecology', internal: 'Internal medicine' },
     prefill: 'Estimate applied: ',
     step1: 'Step 1 / 2 · Service & date',
     step2: 'Step 2 / 2 · Contact details',
